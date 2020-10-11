@@ -1,68 +1,141 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Navigation
 
-## Available Scripts
+* [Quick Start Guide](#php-rest-api-quick-start-guide-and-demo)
+* [Change Log](#change-log-updates-for-2019-and-2020)
+* [Authorship and Credits](#authorship-and-credits)
+* [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
+* [Task Description](#php-application-development-excercise-task-description)
 
-In the project directory, you can run:
+# Project Overview
 
-### `npm start`
+This is a beginner's React turtorial. It was created for Facebook's 2020 Developer's challege by Marcus (Marcos) B.  It takes the reader from "Zero-knowlege" of react to marginally proficient in core react development concepts.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The student is guided into the creation of master-detail interface.  This intereface may be adpated to create an online store + shopping cart, an addressbok, and a todo-list, etc. avariety of appications
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
 
-### `npm test`
+# Getting Started
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Install
 
-### `npm run build`
+### node.js
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## React Dev Tools
 
-### `npm run eject`
+https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+https://react-devtools-tutorial.now.sh/
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## The Directory Structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+ Delete App.js (we will recreate), App.css, and logo.svg
+ 
+ src/components/:  manually created to store all components including App.js. All app UI elemnest get their own component
+ 
+ App.js: A container component and parent for react react applications.     Recreate and store in src/components. 
+ 
+ index.js:  Application entry point.  Renders App.js to an arbitrary id (default is id 'root') in public/index.html. Update to import App from './components/App' . 
+ Here is the code in index.js that renders the App component into `<div id=root>` of index.html: 
+``` 
+   ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+  );
+ ```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+ public/index.html: Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`.
 
-## Learn More
+ 
+ index.css: Global stylesheet. 
+ 
+ public/: folder with global read privaleges (i.e., public , web accesible).  Only store public content here suhc as images and html files
+ 
+ node_modules: standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React). 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+my-awesome-app-name/
+  ├── node_modules/
+  ├── public/
+  │ ├── index.html
+  | |     ...
+  | |── favicon.ico  
+  | └── robots.txt
+  ├── src/
+  │ ├── components/
+  | | ├── App.js 
+  │ | |── ComponentNum_1.js
+  | | |     ...
+  │ | └── ComponentNum_n.js
+  | └── images/
+  |
+  ├── index.css
+  ├── index.js
+  ├── .gitignore
+  ├── package.json
+  └── README.md
+```
 
-### Code Splitting
+## Thinking In React
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+https://reactjs.org/docs/thinking-in-react.html
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+### Wire Frame the App's Component Diagram
 
-### Making a Progressive Web App
+You may use a piece of paper or Diagrams
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+> how do you know what should be its own component? Use the same techniques for deciding if
+> you should create a new function or object. One such technique is the single responsibility
+> principle, that is, a component should ideally only do one thing. If it ends up growing, it
+> should be decomposed into smaller subcomponents.
+> *-- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy)*
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+> Separate your UI into components, where each component matches one piece of your data model.
+> your UI (and therefore your component structure) should map
+> - [Thinking in React](https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy)
 
-### Deployment
+### Arrange Components into a hierarchy
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Build Static Version of Site 
+
+This principle also entails rendering the UI with static data. Facebooks's reasoning for this approach is bullet proof.  To summarize:
+
+> ...building a static version requires a lot of typing and no thinking, and adding interactivity 
+> requires a lot of thinking and not a lot of typing.
+> - [Thinking in React](https://reactjs.org/docs/thinking-in-react.html#step-2-build-a-static-version-in-react)
+
+> In simpler examples, it’s usually easier to code your component model top-down [parent to child],
+> and on larger projects, it’s easier to go bottom-up and write tests as you build
+> - [Thinking in React](https://reactjs.org/docs/thinking-in-react.html#step-2-build-a-static-version-in-react)
+
+
+
+### Identify which components need to be state and convert them to Class Components
+
+Figure out the absolute minimal representation of the state your application needs. [Then] compute everything else you need on-demand. 
+
+or example, if you’re building a TODO list, keep an array of the TODO items around; don’t keep a separate state variable for the count. Instead, when you want to render the TODO count, take the length of the TODO items array.
+
+
+# Building in React
+
+## Components
+
+
+## Functional Components
+
+
+## Class Components
+
+## Passing and Managing Variables
+
+## Props
+
+## State
+
+# Conclusion
