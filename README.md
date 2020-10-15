@@ -8,16 +8,43 @@
 
 # Project Overview
 
-This is a beginner's React turtorial. It was created for Facebook's 2020 Developer's challege by Marcus (Marcos) B.  It takes the reader from "Zero-knowlege" of react to marginally proficient in core react development concepts.
+This is a beginner's React tutorial.  It was created for Facebook's 2020 Developer's challege by Marcus "Arroyo" B.  
 
-The student is guided into the creation of master-detail interface.  This intereface may be adpated to create an online store + shopping cart, an addressbok, and a todo-list, etc. avariety of appications
+It guides the learner in creating a static, but interactive application using functional components. It does assume the learner has zerop knowlege of react, but is marginally proficient in core JavaScript concepts.
+
+The student is guided into the creation of master-detail interface.  This intereface may be further adpated to create variety of applications (e.g., online store, an addressbok, and a todo-list)
 
 
 # Getting Started
 
-## Install
+## JavaScript Versioning
 
-### node.js
+
+React uses ESCM Script version 6, known as ES6 for shot.  ES6 brings new features to JavaScript that are used in traditional languages such as C and python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions.
+
+
+### let
+
+`let` is a variable declarion like var, but it localized and is limited to a given code block in which it is assigned.
+
+### const
+
+const` is the constant declaration 
+
+### Arrow Functions
+
+
+
+
+## Setting-up a Local Development Enviorment for React
+
+1. Install the LTS of version on [node.js](https://nodejs.org/en/). 
+
+2. Choose a project folder than run `npx create-react-app  *myAwesomeApp*
+
+
+> *npx:* a package runner tool that comes with npm 5.2+. The npm command is used for managing packages while the npx command actually executes those package
+> ***— [Create React App Tutotial](https://reactjs.org/tutorial/tutorial.html)***
 
 
 

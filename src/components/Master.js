@@ -1,8 +1,7 @@
 import React from 'react';
-import Detail from './Detail';
+import { DetailSummary } from './Detail';
 
-
-const masterList = [
+export const masterList = [
 
     {
     id: '1',        
@@ -41,12 +40,22 @@ const masterList = [
 
 
 function Master(){
-
-
-
-
-    
+    return(
+        <React.Fragment>
+            {masterList.map( (singleItem, index ) =>
+                <DetailSummary
+                    thumbnail={singleItem.thumbnail}
+                    category={singleItem.category}
+                    description = {singleItem.description}
+                    price = {singleItem.price}
+                    quantity = {singleItem.quantity}
+                    units = {singleItem.units}
+                    name={singleItem.name}
+                    key= {singleItem.id} //if data does not have a unique id, use index      
+                />
+            )}
+        </React.Fragment>
+    )
 }
 
-
-export default Master;
+export {Master};
