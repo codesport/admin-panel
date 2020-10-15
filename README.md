@@ -134,6 +134,46 @@ or example, if you’re building a TODO list, keep an array of the TODO items ar
 
 ## Passing and Managing Variables
 
+# Passing Down Callback Functions
+
+```JSX
+
+//Controller.js
+
+//...setup code
+class Main extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state ={
+      masterList: [],
+      selectedDetail: null
+    }
+  }
+
+  onDetailSelect( id ) {
+    this.setState({ selectedDetail: id});
+  }
+
+ render(){
+    return (
+      <div>
+
+          <Master 
+            masterList={this.state.masterList}
+            onClick={(id)=>this.onDetailSelect(id)}
+           />
+          {/*<Detail selectedDetail={this.state.selectedDetail} /> this sends all elements of selected Detail array*/}
+
+
+          <Detail selectedDetail={this.state.Detail.filter((detail) => detail.id === this.state.selectedDetail)[0]} /> 
+
+                 
+      </div>
+    
+
+
+
 ## Props
 
 ## State
