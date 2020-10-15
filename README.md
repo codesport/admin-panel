@@ -56,19 +56,19 @@ https://react-devtools-tutorial.now.sh/
 
 ```
 my-awesome-app-name/
-  ├── node_modules/
-  ├── public/
+  ├──📁 node_modules/
+  ├──📁 public/
   │ ├── index.html
   | |     ...
   | |── favicon.ico  
   | └── robots.txt
-  ├── src/
+  ├──📁 src/
   │ ├── components/
   | | ├── App.js 
   │ | |── ComponentNum_1.js
   | | |     ...
   │ | └── ComponentNum_n.js
-  | └── images/
+  | └──📁images/
   |
   ├── index.css
   ├── index.js
