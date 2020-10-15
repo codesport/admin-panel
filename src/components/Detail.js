@@ -42,4 +42,4 @@ DetailSummary.propTypes = {
 * https://stackoverflow.com/a/50073244/946957
 * https://dev.to/laurieontech/exports-and-imports-and-defaults-oh-my-fa3
 */
-export { DetailSummary };
+export default DetailSummary;
