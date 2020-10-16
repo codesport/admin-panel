@@ -20,7 +20,7 @@ The student is guided into the creation of master-detail interface.  This intere
 ## JavaScript Versioning
 
 
-React uses ESCM Script version 6, known as ES6 for shot.  ES6 brings new features to JavaScript that are used in traditional languages such as C and python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions.
+React uses ESCM Script version 6 which is abbreviated as ES6.  ES6 brings new features to JavaScript that are common traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions `() =>`.
 
 
 ### let
