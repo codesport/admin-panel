@@ -27,7 +27,7 @@ class Controller extends React.Component{
 
         //view =  !this.selectedDetail  && this.handleClick
         if (this.selectedDetail == null){
-            view = <Master onClick = {this.handleSelectedDetail} />
+            view = <Master onClick = {()=> this.handleSelectedDetail(id)} />
         } else {
             view = <Detail selectedDetail={this.state.Detail.filter((detail) => detail.id === this.state.selectedDetail)[0]} /> 
             console.log('Detail clicked')
