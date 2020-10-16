@@ -16,6 +16,7 @@ function DetailSummary ( props ){
 
     return(
         <React.Fragment>
+        {console.log('Reading Detail Component')}
             <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ props.thumbnail)} alt={props.description} />
             {/*<span className="spacer">{props.category}</span>*/}
             <span className="spacer">{props.name}&nbsp;&nbsp;&nbsp;</span>

@@ -49,7 +49,6 @@ function Master(props){
     console.log (props.onClick)
     return(
         <React.Fragment>
-         {console.log (props.handleSelectedDetail)}
             {masterList.map( (singleItem, index) => 
                 <div key={singleItem.id} onClick={() => props.onClick(singleItem.id)}>
                     <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ singleItem.thumbnail)} alt={singleItem.name} />
@@ -72,6 +71,7 @@ function Master_Version2(){
         <React.Fragment>
             {masterList.map( (singleItem, index ) =>
                 <DetailSummary
+                    onClick = {singleItem.onClick}
                     thumbnail={singleItem.thumbnail}
                     category={singleItem.category}
                     description = {singleItem.description}

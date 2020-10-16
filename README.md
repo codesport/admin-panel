@@ -8,44 +8,61 @@
 
 # Project Overview
 
-This is a beginner's React tutorial.  It was created for Facebook's 2020 Developer's challege by Marcus "Arroyo" B.  
+This tutorial is Part 1 in a two-part tutorial series created for Facebook's 2020 Developer's challenge. 
 
-It guides the learner in creating a static, but interactive application using functional components. It does assume the learner has zerop knowlege of react, but is marginally proficient in core JavaScript concepts.
+Through the creation of a harvest inventory app for a family-owned organic farm called *Arroyo Family Farms*, the learner will master basic, intermediate as well as some advanced React development concepts.
 
-The student is guided into the creation of master-detail interface.  This intereface may be further adpated to create variety of applications (e.g., online store, an addressbok, and a todo-list)
+This series and its resulting applications weere created by **Marcus "Arroyo" B.**  
+
+## Part 1 Beginner's Tutorial - Arroyo Family Farms' Inventory App
+
+Part 1 serves as a beginner's tutorial and guides the learner in creating a static, stateless, and non-interactive application using React functional components. 
+
+To this end, Part 1 assumes the learner is marginally proficient in core JavaScript concepts and is using [VS Code](https://code.visualstudio.com/) as their editor. 
+
+Additional emphasis is placed on understanding ESCM Script version 6 (ES6) Javascript concepts required to develop proficiency as a React development developer.  
 
 
-# Getting Started
 
-## JavaScript Versioning
+# About React
+React is a Javascript library created by Facebook and open-sourced the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch).  React is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). 
 
+## Functional Components
 
-React uses ESCM Script version 6 which is abbreviated as ES6.  ES6 brings new features to JavaScript that are common traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions `() =>`.
+## Updates to JavaScript from ES6
 
+React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions `() =>`.
 
-### let
+*[`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred var due its block-constrained localization which helps create more predicatable code outcomes.
 
-`let` is a variable declarion like var, but it localized and is limited to a given code block in which it is assigned.
-
-### const
-
-const` is the constant declaration 
+*[`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions
 
 ### Arrow Functions
 
 
 
 
+# Getting Started
+
+
 ## Setting-up a Local Development Enviorment for React
+
+### VSCode Setup
+
+1. Install [Babel Javascript](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel).  Created by Michael McDermont, it provides VSCode syntax highlighting for JavaScript ES6, React JSX, Flow, and GraphQL.
+
+2. Install Sergii Naumov's [Oceanic Theme](https://marketplace.visualstudio.com/items?itemName=naumovs.theme-oceanicnext). It supports a more granular level of syntax highlighting for nested properties.
+
+### React Environment Setup
 
 1. Install the LTS of version on [node.js](https://nodejs.org/en/). 
 
-2. Choose a project folder than run `npx create-react-app  *myAwesomeApp*
+2. Using your terminal (i.e., CLI), navigate to the project folder where you will save the project.  
 
+3. Within your terminal type `npx create-react-app  admin-panel`
+   * Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directves  
 
-> *npx:* a package runner tool that comes with npm 5.2+. The npm command is used for managing packages while the npx command actually executes those package
-> ***— [Create React App Tutotial](https://reactjs.org/tutorial/tutorial.html)***
-
+4. Finally, type `npm start` to run the default react application
 
 
 ## React Dev Tools
