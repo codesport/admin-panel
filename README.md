@@ -25,19 +25,41 @@ Additional emphasis is placed on understanding ESCM Script version 6 (ES6) Javas
 
 
 # About React
-React is a Javascript library created by Facebook and open-sourced the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch).  React is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). 
+React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). Raect uses a [JSX](https://www.google.com/search?what+is+JSX?) which allows the coder to combine HTML and JavaScript.  React was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch).  
 
 ## Functional Components
 
 ## Updates to JavaScript from ES6
 
-React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions `() =>`.
+React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions `() =>`. React uses a [Babel](https://www.google.com/search?q=what+is+babel) to allow ES6 to be backward compatible with older browsers.
 
-*[`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred var due its block-constrained localization which helps create more predicatable code outcomes.
 
-*[`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions
 
-### Arrow Functions
+*[`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its block-constrained localization which helps create more predictable code outcomes.
+
+*[`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps
+
+### Arrow Functions: `() =>`
+
+Arrow functions are a preferred subsitiute for 
+
+```javascript
+const OUTER = 10;
+let number = 5;
+
+function MyComponent (){
+  const INNER = 5;
+  return  OUTER * INNER;   //expect 5*10 = 50
+}
+
+MyOtherComponent = () => {
+  let number = 3;
+  number = number*OUTER; //expect 3*10 = 3-
+  return number;  
+}
+```
+
+Like let and const, arrow functions are "hyper-localized" and only exist in the scope where they were created. This is of particular interest to react developers because it negates the need to "manually" bind functions to a given class within its constructor. 
 
 
 
@@ -55,7 +77,7 @@ React uses Javascript ES6. ES6 brings new features (e.g., the support of classes
 
 ### React Environment Setup
 
-1. Install the LTS of version on [node.js](https://nodejs.org/en/). 
+1. Install the LTS of version of [node.js](https://nodejs.org/en/). 
 
 2. Using your terminal (i.e., CLI), navigate to the project folder where you will save the project.  
 
@@ -65,40 +87,35 @@ React uses Javascript ES6. ES6 brings new features (e.g., the support of classes
 4. Finally, type `npm start` to run the default react application
 
 
-## React Dev Tools
 
-https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html
-
-https://react-devtools-tutorial.now.sh/
 
 ## The Directory Structure
 
- Delete App.js (we will recreate), App.css, and logo.svg
+*node_modules/:* standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React). 
+
+*public/:* folder with global read privaleges (i.e., public , web accesible).  Only store public content here suhc as images and html files
+
+*public/index.html:* Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`.
+
+*index.css:* Global stylesheet. 
  
- src/components/:  manually created to store all components including App.js. All app UI elemnest get their own component
- 
- App.js: A container component and parent for react react applications.     Recreate and store in src/components. 
- 
- index.js:  Application entry point.  Renders App.js to an arbitrary id (default is id 'root') in public/index.html. Update to import App from './components/App' . 
+*index.js:*  Application entry point.  Renders App.js to an arbitrary id (default is id 'root') in public/index.html. Update to import App from './components/App' . 
  Here is the code in index.js that renders the App component into `<div id=root>` of index.html: 
-``` 
+```JSX
    ReactDOM.render(
     <App />,
     document.getElementById('root')
   );
- ```
+ ``` 
 
- public/index.html: Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`.
+*App.js:* A container component and parent for react react applications.     Recreate and store in src/components. 
+ 
+
 
  
- index.css: Global stylesheet. 
- 
- public/: folder with global read privaleges (i.e., public , web accesible).  Only store public content here suhc as images and html files
- 
- node_modules: standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React). 
 
 
-```
+```text
 my-awesome-app-name/
   ├──📁 node_modules/
   ├──📁 public/
@@ -122,6 +139,18 @@ my-awesome-app-name/
 ```
 
 ## Thinking In React
+
+A React application is composed of *modular peices of code* which compute and/or display a portion of application's UI. These modular pieces are called are encapsulated *components*.  Components should follow the single-use principle of SOLID Obect Oriented (OO) design.   If you are not familiar with SOLID principles, [Hash Bang Code](https://www.hashbangcode.com/article/solid-principles-php) has a excellent tutorial.
+
+Within react there are two kinds of components: functional and class. This means that React applications may be either created using OO Classes or pure functions
+
+
+
+You might find it helpful to famila
+
+Each component represents a portion of our view.  Compoents 
+
+
 
 https://reactjs.org/docs/thinking-in-react.html
 

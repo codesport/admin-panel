@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
  * @param {*} props 
  */
 function DetailSummary ( props ){
-
+    console.log('Reading Detail Component')
     //inline styles using CSS objects
     const detailSummaryCSS = {
         width: '5%',
