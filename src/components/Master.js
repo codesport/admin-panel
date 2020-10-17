@@ -8,42 +8,7 @@ Master.propTypes = {
     onClick: PropTypes.func
 };
 
-export const masterList = [
-
-    {
-        id: '1',        
-        category: 'Fruits',
-        description: 'Organic black grapes from our estate. Sold by the pound', 
-        name: 'Organic Black Grapes',
-        price: 2.99,
-        quantity_available: 100,
-        thumbnail: 'images/black-grapes.jpg',
-        units: 'lb'
-    },
-
-    {
-        id: '2',        
-        category: 'Fruits',
-        description: 'Organic red plumbs from our local farm. Sold by the pound',
-        name: 'Organic Plums',
-        price: 3.99,
-        quantity_available: 50,
-        thumbnail: 'images/red-plum.jpg',
-        units: 'lb'
-    },
-
-    {
-        id: '3',        
-        category: 'Vegetables',
-        description: ' Organic dino kale. Fresh from our farm. Sold by the bunch',
-        name: 'Organic Dino Kale',
-        price: 0.79,
-        quantity_available: 10,
-        thumbnail: 'images/dino-kale.jpg',
-        units: 'each'
-    },
-
-]
+//export const 
 
 function Master(props){
 
@@ -53,17 +18,23 @@ function Master(props){
         align: 'middle',
         margin: '2em',
     }
-    console.log (props.onClick)
+
+    const pointerCSS = {
+
+        cursor: 'pointer'
+    }
+
+    //console.log (props.onChange)
     return(
         <React.Fragment>
-            {masterList.map( (singleItem, index) => 
-            <div>
-                <span key={singleItem.id} onClick={() => props.onClick(singleItem.id)}>
+            {props.masterList.map( (singleItem, index) => 
+            <div key={singleItem.id}>
+                <span  onClick={() => props.onClick(singleItem.id)} style={pointerCSS}>
                     <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ singleItem.thumbnail)} alt={singleItem.name} />
                     <span className="spacer">{singleItem.name}&nbsp;&nbsp;&nbsp;</span>
                     <span className="spacer">${singleItem.price}/{singleItem.units}&nbsp;&nbsp;&nbsp;</span>
                 </span>
-                <input class="spacer check-box" type="checkbox" name="update-or-delete" />
+                <input className="spacer check-box" type="checkbox" name="update-or-delete" value={singleItem.id} onClick={() => props.onChange(singleItem.id)} />
                 <hr />
             </div>
             )}
