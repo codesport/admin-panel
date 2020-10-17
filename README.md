@@ -10,15 +10,31 @@
 
 This tutorial is Part 1 in a two-part tutorial series created for Facebook's 2020 Developer's challenge. 
 
+Through the creation of a harvest inventory app for a family-owned organic farm called *Arroyo Family Farms*, 
+
+The goal of this series is to teach mastery of basic and intermediate React development concepts. 
+
+This tutorial series and its resulting applications were created by **Marcus "Arroyo" B.**  
+
+## Inspiration
+
+The code used in this tutorial was inspired by a bevy of tutorials on Reactjs.org, expecially Thinking In React.
+
+
+
+---
+DELETE
+This tutorial is Part 1 in a two-part tutorial series created for Facebook's 2020 Developer's challenge. 
+
 Through the creation of a harvest inventory app for a family-owned organic farm called *Arroyo Family Farms*, the learner will master basic, intermediate as well as some advanced React development concepts.
 
-This series and its resulting applications weere created by **Marcus "Arroyo" B.**  
+---
 
 ## Part 1 Beginner's Tutorial - Arroyo Family Farms' Inventory App
 
 Part 1 serves as a beginner's tutorial and guides the learner in creating a static, stateless, and non-interactive application using React functional components. 
 
-To this end, Part 1 assumes the learner is marginally proficient in core JavaScript concepts and is using [VS Code](https://code.visualstudio.com/) as their editor. 
+It assumes the learner has zero knowlege of React but is marginally proficient in core JavaScript concepts and is using [VS Code](https://code.visualstudio.com/) as their editor. 
 
 Additional emphasis is placed on understanding ESCM Script version 6 (ES6) Javascript concepts required to develop proficiency as a React development developer.  
 
@@ -41,7 +57,7 @@ React uses Javascript ES6. ES6 brings new features (e.g., the support of classes
 
 A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class functions. If you choose to use arrow functions to define functional components, declare them as constants via `const`.
 
-Like `let` and `const`, arrow functions are "hyper-localized". This means they only execute in the scope where they were created. On the otherhand, traditional functions bubble up to the window scope. Because of this scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  They negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent/
+Like `let` and `const`, arrow functions are "hyper-localized". This means they only execute in the scope where they were created. On the otherhand, traditional functions bubble up to the window scope. Because of this scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  They negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent:
 
 ```javascript
 const OUTER = 10;
@@ -60,8 +76,9 @@ const MyOtherComponent = () => {
   return number;  
 }
 ```
+If arrow fucntions are not used to create class methods, they must be binded the method in the constructor likeso:
 
-
+`this.myMethodName = this.myMethodName .bind(this);`
 
 
 
