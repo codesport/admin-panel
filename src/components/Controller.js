@@ -33,12 +33,12 @@ class Controller extends React.Component{
         let view = null, view_v2 = null
 
         //view =  !this.selectedDetail  && this.handleClick
-        if (this.state.selectedDetail == null){
-            view = <Master onClick = {(id)=> this.handleSelectedDetail(id)} /> //anon arrow function w/no parameters
-            //view_v2 = <Master onClick={this.handleSelectedDetail_v2} />;
+        if (this.state.selectedDetail_v2 == null){
+           // view = <Master onClick = {(id)=> this.handleSelectedDetail(id)} /> //anon arrow function w/no parameters
+            view_v2 = <Master onClick={this.handleSelectedDetail_v2} />;
         } else {
-            view = <DetailFull selectedDetail={masterList.filter( (detail) => detail.id === this.state.selectedDetail)[0] } /> 
-           //view_v2 = <DetailFull selectedDetail = {this.state.selectedDetail_v2} />
+            //view = <DetailFull selectedDetail={masterList.filter( (detail) => detail.id === this.state.selectedDetail)[0] } /> 
+           view_v2 = <DetailFull selectedDetail = {this.state.selectedDetail_v2} />
         }
 
         return(
@@ -47,10 +47,10 @@ class Controller extends React.Component{
                 <hr />   
                 <h2>Version 1</h2>
 
-                {view}
+                {/*view*/}
                 {/*this.state.selectedDetail*/}
                 <h2>Version 2</h2>
-                {/*view_v2*/}
+                {view_v2}
                 {/*this.state.selectedDetail*/}
             </React.Fragment>
             
