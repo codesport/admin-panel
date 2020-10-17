@@ -26,9 +26,7 @@ class Controller extends React.Component{
         console.log(selectedDetail)
         this.setState(
             {selectedDetail_v2: selectedDetail}, 
-            function () {
-            console.log(this.state.selectedDetail_v2)
-            }
+      
         )
 
 
@@ -38,11 +36,6 @@ class Controller extends React.Component{
         //console.log(this.state.selectedDetail_v2 + ' called')
       }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (this.state.selectedDetail_v2 !== prevState.selectedDetail_v2) {
-            console.log(this.state.selectedDetail_v2)  
-        }
-    }
 
     
     render(){
