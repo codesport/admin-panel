@@ -23,7 +23,6 @@ To this end, Part 1 assumes the learner is marginally proficient in core JavaScr
 Additional emphasis is placed on understanding ESCM Script version 6 (ES6) Javascript concepts required to develop proficiency as a React development developer.  
 
 
-
 # About React
 React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). Raect uses a [JSX](https://www.google.com/search?what+is+JSX?) which allows the coder to combine HTML and JavaScript.  React was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch).  
 
@@ -34,32 +33,34 @@ React is a Javascript library created by Facebook. It is focused on User Interfa
 React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions `() =>`. React uses a [Babel](https://www.google.com/search?q=what+is+babel) to allow ES6 to be backward compatible with older browsers.
 
 
+*[`let`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
 
-*[`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its block-constrained localization which helps create more predictable code outcomes.
-
-*[`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps
+*[`const`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps. Method names are written as first letter c
 
 ### Arrow Functions: `() =>`
 
-Arrow functions are a preferred subsitiute for 
+A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class functions. If you choose to use arrow functions to define functional components, declare them as constants via `const`.
+
+Like `let` and `const`, arrow functions are "hyper-localized". This means they only execute in the scope where they were created. On the otherhand, traditional functions bubble up to the window scope. Because of this scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  They negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent/
 
 ```javascript
 const OUTER = 10;
-let number = 5;
 
-function MyComponent (){
-  const INNER = 5;
-  return  OUTER * INNER;   //expect 5*10 = 50
+//Traditional Function
+function MyComponent(){
+  let number = 3;
+  number = number*OUTER; //expect 3*10 = 3-
+  return number;
 }
 
-MyOtherComponent = () => {
+//Arrow Function
+const MyOtherComponent = () => {
   let number = 3;
   number = number*OUTER; //expect 3*10 = 3-
   return number;  
 }
 ```
 
-Like let and const, arrow functions are "hyper-localized" and only exist in the scope where they were created. This is of particular interest to react developers because it negates the need to "manually" bind functions to a given class within its constructor. 
 
 
 
@@ -100,7 +101,7 @@ Like let and const, arrow functions are "hyper-localized" and only exist in the 
 *index.css:* Global stylesheet. 
  
 *index.js:*  Application entry point.  Renders App.js to an arbitrary id (default is id 'root') in public/index.html. Update to import App from './components/App' . 
- Here is the code in index.js that renders the App component into `<div id=root>` of index.html: 
+ Here is the code in index.js that renders the App component within the `<div id=root>` of index.html: 
 ```JSX
    ReactDOM.render(
     <App />,
