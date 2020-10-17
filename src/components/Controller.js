@@ -27,6 +27,19 @@ class Controller extends React.Component{
     }
 
 
+    buildEditArray(){
+
+        //https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes
+        let checkedBoxes = document.querySelectorAll('input[name=update-or-delete]:checked');
+
+        //document.getElementsByClassName('check-box');
+        //document.getElementById('demo');
+        //document.querySelector('input[name=hey]').value
+
+
+
+    }
+
     
     render(){
 

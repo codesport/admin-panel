@@ -57,12 +57,15 @@ function Master(props){
     return(
         <React.Fragment>
             {masterList.map( (singleItem, index) => 
-                <div key={singleItem.id} onClick={() => props.onClick(singleItem.id)}>
+            <div>
+                <span key={singleItem.id} onClick={() => props.onClick(singleItem.id)}>
                     <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ singleItem.thumbnail)} alt={singleItem.name} />
                     <span className="spacer">{singleItem.name}&nbsp;&nbsp;&nbsp;</span>
-                    <span className="spacer">${singleItem.price}/{singleItem.units}</span>
-                    <hr />
-                </div>
+                    <span className="spacer">${singleItem.price}/{singleItem.units}&nbsp;&nbsp;&nbsp;</span>
+                </span>
+                <input class="spacer check-box" type="checkbox" name="update-or-delete" />
+                <hr />
+            </div>
             )}
         </React.Fragment>
 
