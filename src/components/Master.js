@@ -1,5 +1,12 @@
 import React from 'react';
 //import DetailSummary from './Detail';
+import PropTypes from 'prop-types';
+
+
+Master.propTypes = {
+    //masterList: PropTypes.array,
+    onClick: PropTypes.func
+};
 
 export const masterList = [
 
