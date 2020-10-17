@@ -142,6 +142,8 @@ class Controller extends React.Component{
         //view =  !this.selectedDetail  && this.handleClick
         if (this.state.selectedDetail_v2 == null){
            // view = <Master onClick = {(id)=> this.handleSelectedDetail(id)} /> //anon arrow function w/no parameters
+
+           //library of JS events: https://www.tutorialspoint.com/javascript/javascript_events.htm
             view_v2 = <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail_v2} onChange={this.buildEditArray}/>;
         } else {
             //view = <DetailFull selectedDetail={masterList.filter( (detail) => detail.id === this.state.selectedDetail)[0] } /> 

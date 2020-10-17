@@ -23,12 +23,25 @@ function Master(props){
 
         cursor: 'pointer'
     }
+  
+    //https://stackoverflow.com/questions/52512701/change-inline-color-on-mouseover-react
+  //https://codesandbox.io/s/mouseover-and-randomize-text-color-forked-qei73
+  const onMouseOver = event => {
+        const el = event.target;
+        el.style.backgroundColor = "skyblue";
+      };
+      
+      const onMouseOut = event => {
+        const el = event.target;
+        el.style.backgroundColor = "White";
+      };   
 
+    
     //console.log (props.onChange)
     return(
         <React.Fragment>
             {props.masterList.map( (singleItem, index) => 
-            <div key={singleItem.id}>
+            <div key={singleItem.id}  onMouseEnter={event => onMouseOver(event)} onMouseOut={event => onMouseOut(event)} >
                 <span  onClick={() => props.onClick(singleItem.id)} style={pointerCSS}>
                     <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ singleItem.thumbnail)} alt={singleItem.name} />
                     <span className="spacer">{singleItem.name}&nbsp;&nbsp;&nbsp;</span>
