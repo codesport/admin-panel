@@ -1,9 +1,48 @@
 import React from 'react';
-import { masterList, Master} from './Master';
+import { Master} from './Master';
 import { DetailFull } from './Detail';
 import Header from './Header';
 import Update from './Update';
 import Create from './Create';
+
+
+let seedList = [
+
+    {
+        id: '1fgh',        
+        category: 'Fruits',
+        description: 'Organic black grapes from our estate. Sold by the pound', 
+        name: 'Organic Black Grapes',
+        price: 2.99,
+        quantity_available: 100,
+        thumbnail: 'images/black-grapes.jpg',
+        units: 'lb'
+    },
+
+    {
+        id: '2cde',        
+        category: 'Fruits',
+        description: 'Organic red plumbs from our local farm. Sold by the pound',
+        name: 'Organic Plums',
+        price: 3.99,
+        quantity_available: 50,
+        thumbnail: 'images/red-plum.jpg',
+        units: 'lb'
+    },
+
+    {
+        id: '3abc',        
+        category: 'Vegetables',
+        description: ' Organic dino kale. Fresh from our farm. Sold by the bunch',
+        name: 'Organic Dino Kale',
+        price: 0.79,
+        quantity_available: 10,
+        thumbnail: 'images/dino-kale.jpg',
+        units: 'each'
+    },
+
+]
+
 
 class Controller extends React.Component{
 
@@ -12,8 +51,8 @@ class Controller extends React.Component{
         this.state ={
             selectedDetail: null,
             arrayToEdit:[],
-            masterList: masterList,
-            view: <Master masterList={masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>,
+            masterList: seedList,
+            view: <Master masterList={seedList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>,
         }
     }
 
@@ -131,7 +170,7 @@ class Controller extends React.Component{
     }
 
     handleRead = () => {
-
+        console.log('manualy loading data')
         this.setState({
             view: <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray} />
         })
