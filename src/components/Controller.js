@@ -41,6 +41,7 @@ let LIST = [
 ]
 
 class Controller extends React.Component{
+
     constructor(props){
         super(props)
         this.state ={
@@ -64,6 +65,16 @@ class Controller extends React.Component{
         
         })
     }
+
+    handleUpdate = (updates) =>{
+        const updatedDetail = this.state.masterList.filter( detail => detail.id !== updates.id).concat(updates)
+        this.setState({
+            masterList: updatedDetail,
+
+        })
+    }
+
+
 
 
     buildEditArray = (id)=>{
@@ -93,10 +104,6 @@ class Controller extends React.Component{
 
     }
 
-    handleUpdate = () => {
-        const updateMe =  this.buildEditArray
-
-    }
 
 
 
