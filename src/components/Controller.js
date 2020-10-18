@@ -74,7 +74,25 @@ class Controller extends React.Component{
         })
     }
 
+    handleUpdatePrepocessor = (id) =>{
 
+
+
+    }
+
+
+    handleCreate = (newDetail) =>{
+
+        const newMasterList = this.state.masterList.concat(newDetail)
+        
+        this.setState({
+            masterList: newMasterList,
+
+        })
+
+
+
+    }
 
 
     buildEditArray = (id)=>{
@@ -109,7 +127,6 @@ class Controller extends React.Component{
 
 
     handleDelete = () => {
-
 
         console.log('Delete function called')
         console.log(this.state.arrayToEdit)
