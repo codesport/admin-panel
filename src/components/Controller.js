@@ -60,13 +60,18 @@ class Controller extends React.Component{
 
 
     handleSelectedDetail = (id) => {
-        const selectedDetail = this.state.masterList.filter( detail => detail.id === id )[0];
-        
-        this.setState({
-            selectedDetail: selectedDetail,
-        
-        }, function(){console.log(this.state.selectedDetail)})
 
+        console.log('ID of selected detail: ' + id)
+        const selectedDetail_1 = this.state.masterList.filter( detail => detail.id === id )[0];
+        console.log('Contents of selected detail: '); console.log(selectedDetail_1)
+
+        this.setState({
+            selectedDetail: selectedDetail_1,
+        
+             }, function(){console.log(this.state.selectedDetail)}
+            )
+
+        console.log(this.state.selectedDetail)
         this.setState({            
             view: <DetailFull selectedDetail = {this.state.selectedDetail} onSelect={this.buildEditArray} />,
         })
