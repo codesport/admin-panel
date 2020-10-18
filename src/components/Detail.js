@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
  */
 function DetailSummary ( props ){
     //inline styles using CSS objects
-    const detailSummaryCSS = {
+    const detailSummaryPhotoCSS = {
         width: '5%',
         align: 'middle',
         margin: '2em',
@@ -16,7 +16,7 @@ function DetailSummary ( props ){
     return(
         <React.Fragment>
         {console.log('Reading Detail Component')}
-            <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ props.thumbnail)} alt={props.description} />
+            <img style={detailSummaryPhotoCSS} align="middle" className="spacer" src={require('../'+ props.thumbnail)} alt={props.description} />
             {/*<span className="spacer">{props.category}</span>*/}
             <span className="spacer">{props.name}&nbsp;&nbsp;&nbsp;</span>
             <span className="spacer">${props.price}/{props.units}</span>
