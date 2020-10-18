@@ -55,6 +55,7 @@ function Master(props){
         <React.Fragment>
             {props.masterList.map( (singleItem, index) => 
             <div key={singleItem.id}  onMouseEnter={event => onMouseOver(event)} onMouseOut={event => onMouseOut(event)} >
+            {/*must use arrow functions when sending arguments to a function */}
                 <span  onClick={() => props.onClick(singleItem.id)} style={pointerCSS}>
                     <img style={detailSummaryPhotoCSS} align="middle" className="spacer" src={require('../'+ singleItem.thumbnail)} alt={singleItem.name} />
                     <span className="spacer">{singleItem.name}&nbsp;&nbsp;&nbsp;</span>

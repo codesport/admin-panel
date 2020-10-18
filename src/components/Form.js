@@ -16,7 +16,7 @@ function Form( props ){
             name: e.target.name.value,
             units: e.target.units.value,
             quantity_available: e.target.quantity_available.value,
-            id: props.uuid
+            id: v4()
 
         });
 

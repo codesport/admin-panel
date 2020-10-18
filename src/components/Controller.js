@@ -2,8 +2,10 @@ import React from 'react';
 import { Master} from './Master';
 import { DetailFull } from './Detail';
 import Header from './Header';
+import Update from './Update';
+import Create from './Create';
 
-let LIST = [
+let list = [
 
     {
         id: '1fgh',        
@@ -48,7 +50,7 @@ class Controller extends React.Component{
             selectedDetail: null,
             selectedDetail_v2: null,
             arrayToEdit:[],
-            masterList: LIST
+            masterList: list,
         }
     }
 
@@ -81,9 +83,9 @@ class Controller extends React.Component{
     }
 
 
-    handleCreate = (newDetail) =>{
+    handleCreate = ( creation ) =>{
 
-        const newMasterList = this.state.masterList.concat(newDetail)
+        const newMasterList = this.state.masterList.concat( creation )
         
         this.setState({
             masterList: newMasterList,
@@ -156,8 +158,31 @@ class Controller extends React.Component{
     }
 
     
+showCreateForm(){
+
+    this.setState({
+        view: <Create onSubmit={this.handleCreate} />
+    })
 
 
+}
+
+showRead(){
+
+    this.setState({
+        view: <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail_v2} onChange={this.buildEditArray} />
+    })
+
+
+}
+
+showUpdateForm(){
+
+    this.setState({
+        view: <Update onSubmit={this.handleUpdate} detail={this.state.arrayToEdit[0]} />
+    })
+
+}
     
     render(){
 
@@ -170,7 +195,7 @@ class Controller extends React.Component{
             view_v2 = <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail_v2} onChange={this.buildEditArray}/>;
         } else {
             //view = <DetailFull selectedDetail={masterList.filter( (detail) => detail.id === this.state.selectedDetail)[0] } /> 
-           view_v2 = <DetailFull selectedDetail = {this.state.selectedDetail_v2} />
+           view_v2 = <DetailFull selectedDetail = {this.state.selectedDetail_v2} onSelect={this.buildEditArray} />
         }
 
         return(
@@ -184,7 +209,7 @@ class Controller extends React.Component{
                 <h2>Version 2</h2>
                 <button id="update-button" onClick={this.handleCreate}>Create</button>
                 <button id="update-button" onClick={this.handleRead}>Read</button>
-                <button id="update-button" onClick={this.handleUpdate}>Update</button>
+                <button id="update-button" onClick={this.showUpdateForm}>Update</button>
                 <button id="delete-button" onClick={this.handleDelete}>Delete</button>
 
                 {view_v2}

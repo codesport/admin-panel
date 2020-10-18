@@ -1,10 +1,24 @@
 import React from 'react';
-import Form from './Form';
+import { v4 } from 'uuid';
 
 
 function Create(props){
 
+    function handleFormSubmit(e){
+        e.preventDefault();
 
+        props.onSubmittingForm({
+            thumbnail: e.target.thumbnail.value,
+            category: e.target.category.value,
+            description: e.target.description.value,
+            price: parseFloat(e.target.price.value),
+            name: e.target.name.value,
+            units: e.target.units.value,
+            quantity_available: e.target.quantity_available.value,
+            id: v4()
+        });
+    }
+    
     return(
         <React.Fragment>
             <h3>Create New Items</h3>
