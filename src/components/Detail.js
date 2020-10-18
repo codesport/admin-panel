@@ -29,6 +29,8 @@ function DetailSummary ( props ){
 
   
 function DetailFull(props){
+
+    console.log(props);
     const {selectedDetail} = props //object destructuring with props otherwise do props.nameSentToComponent.propertyname
 
     const tableCenterCSS = {

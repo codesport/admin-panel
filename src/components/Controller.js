@@ -1,46 +1,9 @@
 import React from 'react';
-import { Master} from './Master';
+import { masterList, Master} from './Master';
 import { DetailFull } from './Detail';
 import Header from './Header';
 import Update from './Update';
 import Create from './Create';
-
-let list = [
-
-    {
-        id: '1fgh',        
-        category: 'Fruits',
-        description: 'Organic black grapes from our estate. Sold by the pound', 
-        name: 'Organic Black Grapes',
-        price: 2.99,
-        quantity_available: 100,
-        thumbnail: 'images/black-grapes.jpg',
-        units: 'lb'
-    },
-
-    {
-        id: '2cde',        
-        category: 'Fruits',
-        description: 'Organic red plumbs from our local farm. Sold by the pound',
-        name: 'Organic Plums',
-        price: 3.99,
-        quantity_available: 50,
-        thumbnail: 'images/red-plum.jpg',
-        units: 'lb'
-    },
-
-    {
-        id: '3abc',        
-        category: 'Vegetables',
-        description: ' Organic dino kale. Fresh from our farm. Sold by the bunch',
-        name: 'Organic Dino Kale',
-        price: 0.79,
-        quantity_available: 10,
-        thumbnail: 'images/dino-kale.jpg',
-        units: 'each'
-    },
-
-]
 
 class Controller extends React.Component{
 
@@ -48,23 +11,25 @@ class Controller extends React.Component{
         super(props)
         this.state ={
             selectedDetail: null,
-            selectedDetail_v2: null,
             arrayToEdit:[],
-            masterList: list,
+            masterList: masterList,
+            view: <Master masterList={masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>,
         }
     }
 
 
-    handleSelectedDetail(id){
-        this.setState({ selectedDetail: id});
-    }
 
 
-    handleSelectedDetail_v2 = (id) => {
+    handleSelectedDetail = (id) => {
         const selectedDetail = this.state.masterList.filter( detail => detail.id === id )[0];
-        this.setState({
-            selectedDetail_v2: selectedDetail,
         
+        this.setState({
+            selectedDetail: selectedDetail,
+        
+        }, function(){console.log(this.state.selectedDetail)})
+
+        this.setState({            
+            view: <DetailFull selectedDetail = {this.state.selectedDetail} onSelect={this.buildEditArray} />,
         })
     }
 
@@ -157,89 +122,49 @@ class Controller extends React.Component{
 
     }
 
-    
-showCreateForm(){
+        
+    showCreateForm = () => {
 
-    this.setState({
-        view: <Create onSubmit={this.handleCreate} />
-    })
+        this.setState({
+            view: <Create onSubmit={this.handleCreate} />
+        })
+    }
 
+    handleRead = () => {
 
-}
+        this.setState({
+            view: <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray} />
+        })
+        
+    }
 
-showRead(){
+    showUpdateForm = () => {
 
-    this.setState({
-        view: <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail_v2} onChange={this.buildEditArray} />
-    })
+        this.setState({
+            view: <Update onSubmit={this.handleUpdate} detail={this.state.arrayToEdit[0]} />
+        })
 
-
-}
-
-showUpdateForm(){
-
-    this.setState({
-        view: <Update onSubmit={this.handleUpdate} detail={this.state.arrayToEdit[0]} />
-    })
-
-}
+    }
     
     render(){
-
-        let view = null, view_v2 = null
-
-        //view =  !this.selectedDetail  && this.handleClick
-        if (this.state.selectedDetail_v2 == null){
-           // view = <Master onClick = {(id)=> this.handleSelectedDetail(id)} /> //anon arrow function w/no parameters
-           //library of JS events: https://www.tutorialspoint.com/javascript/javascript_events.htm
-            view_v2 = <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail_v2} onChange={this.buildEditArray}/>;
-        } else {
-            //view = <DetailFull selectedDetail={masterList.filter( (detail) => detail.id === this.state.selectedDetail)[0] } /> 
-           view_v2 = <DetailFull selectedDetail = {this.state.selectedDetail_v2} onSelect={this.buildEditArray} />
-        }
 
         return(
             <React.Fragment>
                 <Header masterList = {this.state.masterList} />
                 <hr />   
-                <h2>Version 1</h2>
 
-                {/*view*/}
-                {/*this.state.selectedDetail*/}
-                <h2>Version 2</h2>
-                <button id="update-button" onClick={this.handleCreate}>Create</button>
+                <button id="update-button" onClick={this.showCreate}>Create</button>
                 <button id="update-button" onClick={this.handleRead}>Read</button>
                 <button id="update-button" onClick={this.showUpdateForm}>Update</button>
                 <button id="delete-button" onClick={this.handleDelete}>Delete</button>
 
-                {view_v2}
-                {/*this.state.selectedDetail*/}
-            </React.Fragment>
-            
+                {this.state.view}
+                
+            </React.Fragment>   
         )
 
-
-
     }
-
-
-
-
 }
 
-
-/*
-
-function Controller(){
-    return(
-        <React.Fragment>
-            <Header masterList = {masterList} />
-            <hr />
-            <Master />
-        </React.Fragment>
-
-    )   
-}
-*/
 
 export default Controller;
