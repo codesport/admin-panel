@@ -16,24 +16,33 @@ function Form( props ){
             name: e.target.name.value,
             units: e.target.units.value,
             quantity_available: e.target.quantity_available.value,
-            id: v4()
+            id: props.uuid
 
         });
 
 
     }
-
-
+    const detailSummaryCSS = {
+        width: '5%',
+        align: 'middle',
+        margin: '2em',
+    }
+//https://reactjs.org/docs/forms.html
     return(//name, quantity, price, and units required
         <React.Fragment>
             <h3>Create New Items</h3>
-            <form onSubmit={handleFormSubmit}>
+            <form onSubmit={props.handleFormSubmit}>
             <label>Image</label>
+            <div>
+
+            <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ props.thumbnail)} alt={props.name} />
+            </div>
             <div>
                 <input
                     type='text'
                     name='thumbnail'
                     placeholder='Thumbnail location (url or file path)'
+                    value={props.thumbnail}
                     
                 />
             </div>
@@ -43,6 +52,7 @@ function Form( props ){
                     type='text'
                     name='category'
                     placeholder='prouct category (e.g., fruits)'
+                    value={props.category}
       
                 />
             </div>
@@ -52,16 +62,20 @@ function Form( props ){
                     type='text'
                     name='name'
                     placeholder='(e.g., apples)'
+                    value={props.name}
                     required 
                 />
             </div>
             <label>Description</label>
 
             <div>
-                <input
-                    type='text'
+                <textarea
+                    rows='5'
+                    cols='30'
                     name='description'
                     placeholder='product description'
+                    value={props.description}
+
                 />
             </div>                                 
             <label>Unit Price*</label>
@@ -72,6 +86,7 @@ function Form( props ){
                     placeholder='price per unit'
                     min="0.25"
                     step="0.01"
+                    value={props.price}
                     required 
                 />
             </div>
@@ -82,18 +97,19 @@ function Form( props ){
                     name='quantity_available'
                     placeholder='3'
                     required
+                    value={props.quantity_available}
                 /> 
             </div>
             <label>Quantity Units*</label>
             <div>
-                <select id="" name="units" required>
+                <select id="" name="units" required value={props.units}>
                     <option value disabled>--Quantity Units--</option>
                     <option value="lb">lbs</option>
                     <option value="oz">oz</option>
                     <option value="each">units</option>                        
                 </select>                                   
             </div>    
-                <button id="add=new-detail" type="submit" >Submit</button>
+                <button id="add=new-detail" type="submit" >{props.buttonText}</button>
             </form>
             
         </React.Fragment>
