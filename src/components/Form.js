@@ -31,7 +31,7 @@ function Form( props ){
     return(//name, quantity, price, and units required
         <React.Fragment>
             <h3>Create New Items</h3>
-            <form onSubmit={props.handleFormSubmit}>
+            <form onSubmit={handleFormSubmit}>
             <label>Image</label>
             <div>
 
