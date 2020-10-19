@@ -7,7 +7,7 @@ function Create(props){
     function handleFormSubmit(e){
         e.preventDefault();
 
-        props.onSubmittingForm({
+        props.onCallbackSubmit({
             thumbnail: e.target.thumbnail.value,
             category: e.target.category.value,
             description: e.target.description.value,
@@ -18,11 +18,11 @@ function Create(props){
             id: v4()
         });
     }
-    
+
     return(
         <React.Fragment>
             <h3>Create New Items</h3>
-            <form onCreate={handleFormSubmit}> {/*2. onSubmit we call our local form submssion handler*/}
+            <form onSubmit={handleFormSubmit}> {/*2. onSubmit we call our local form submssion handler*/}
             <label>Image</label>
             <div>
                 <input

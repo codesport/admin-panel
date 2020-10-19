@@ -56,77 +56,86 @@ class Controller extends React.Component{
         }
     }
 
+    emptyArrayToEdit = () =>{
+        this.setState({
+            arrayToEdit:[]
+        })
+    }
 
     renderView = (view) =>{
         this.setState({            
             view: view,
         })
-
-        this.componentDidUpdate()
-
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (this.state.view !== prevState.view) {
-          console.log( prevState.view)
+
+    handleSelectedDetail = (id, selectOrUpdate) => {
+    
+        if (id){
+            console.log('ID of selected detail: ' + id)
+            const selectedDetail = this.state.masterList.filter( detail => detail.id === id )[0];
+            console.log('Contents of selected detail: '); console.log(selectedDetail)
+
+            this.setState({
+                selectedDetail: selectedDetail,
+            }, function(){
+                //https://stackoverflow.com/questions/30782948/why-calling-react-setstate-method-doesnt-mutate-the-state-immediately
+                !selectOrUpdate && this.renderView(<DetailFull selectedDetail = {this.state.selectedDetail} onSelect={this.buildEditArray} />)
+                selectOrUpdate && this.renderView( <Update onCallbackSubmit={this.handleUpdate} detail={selectedDetail} />)
+
+            })
+        } else{
+            this.renderView(
+            <React.Fragment>
+            <h3>Update Attempt Aborted. Please Select an Item to Update</h3> 
+            <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>
+            </React.Fragment> )
         }
-    }
-    handleSelectedDetail = (id) => {
-
-        console.log('ID of selected detail: ' + id)
-        const selectedDetail = this.state.masterList.filter( detail => detail.id === id )[0];
-        console.log('Contents of selected detail: '); console.log(selectedDetail)
-
-        this.setState({
-            selectedDetail: selectedDetail,
-        })
-
-        this.renderView(<DetailFull selectedDetail = {selectedDetail} onSelect={this.buildEditArray} />)
 
     }
 
     handleUpdate = (updates) =>{
         const updatedDetail = this.state.masterList.filter( detail => detail.id !== updates.id).concat(updates)
+        console.log('Contents of Updated Detail:')
+        console.log(updatedDetail)
         this.setState({
             masterList: updatedDetail,
-
-        })
+            }, function(){
+                    this.emptyArrayToEdit()
+                    this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/> )
+                }
+            )
     }
-
-    handleUpdatePrepocessor = (id) =>{
-
-
-
-    }
-
 
     handleCreate = ( creation ) =>{
-
         const newMasterList = this.state.masterList.concat( creation )
         
         this.setState({
             masterList: newMasterList,
-
-        })
-
-
-
+            }, function(){this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>)}
+        )
     }
 
 
-    buildEditArray = (id)=>{
+    /**
+     * Stores UUID of selected items in an array saved to state.arrayToEdit
+     * 
+     * This function call is embeded in the Master list. It uses querySelectorAll() and Array.from() to find and parse UUIDs that are checked
+     * 
+     * @tutorial https://stackoverflow.com/a/31113246/946957 and https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes
+     * @tutorial https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
+     * @tutorial https://developer.mozilla.org/en-US/docs/Web/API/NodeList  
+     * @tutorial https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+     */
+    buildEditArray = ()=>{
 
-        //https://stackoverflow.com/a/31113246/946957
-        //https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
         let checkedBoxes = document.querySelectorAll('input[name=update-or-delete]:checked');
-        //https://developer.mozilla.org/en-US/docs/Web/API/NodeList  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
         checkedBoxes = Array.from(checkedBoxes)
 
         let newArrayToEdit=[]        
+        
         checkedBoxes.map( (selected, index)  => 
-
             newArrayToEdit[index] = selected.value
-
         )
 
        // const newArrayToEdit = this.state.arrayToEdit.concat(id)
@@ -149,57 +158,47 @@ class Controller extends React.Component{
         let newMasterList 
         this.state.arrayToEdit.map( ( id, index) =>     
             newMasterList = this.state.masterList.filter( detail => detail.id !== id)    
-     
         )
+
         console.log(newMasterList)
         console.log(this.state.masterList)
       
         this.setState({
           masterList: newMasterList,       
-        })
-
-        //update view
-
-        this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>)
-
+        }, function(){
+            this.emptyArrayToEdit()
+            console.log(this.state.masterList)
+            this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray} />)
+        });
 
     }
-
-        
-    showCreateForm = () => {
-
+     
+    handleCreateFormView = () => {
         this.setState({
-            view: <Create onSubmit={this.handleCreate} />
+            view: <Create onCallbackSubmit={this.handleCreate} />
         })
     }
 
     handleRead = () => {
         console.log('manualy loading data')
+        this.emptyArrayToEdit()
         this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/> )       
     }
 
-    showUpdateForm = () => {
 
-        this.setState({
-            view: <Update onSubmit={this.handleUpdate} detail={this.state.arrayToEdit[0]} />
-        })
-
-    }
     
     render(){
-
         return(
             <React.Fragment>
                 <Header masterList = {this.state.masterList} />
                 <hr />   
 
-                <button id="update-button" onClick={this.showCreate}>Create</button>
+                <button id="update-button" onClick={this.handleCreateFormView}>Create</button>
                 <button id="update-button" onClick={this.handleRead}>Read</button>
-                <button id="update-button" onClick={this.showUpdateForm}>Update</button>
+                <button id="update-button" onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit[0], 'update') }>Update</button>
                 <button id="delete-button" onClick={this.handleDelete}>Delete</button>
 
-                {this.state.view}
-                
+                {this.state.view}                
             </React.Fragment>   
         )
 
