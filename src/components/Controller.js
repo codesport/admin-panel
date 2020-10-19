@@ -57,24 +57,32 @@ class Controller extends React.Component{
     }
 
 
+    renderView = (view) =>{
+        this.setState({            
+            view: view,
+        })
 
+        this.componentDidUpdate()
 
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if (this.state.view !== prevState.view) {
+          console.log( prevState.view)
+        }
+    }
     handleSelectedDetail = (id) => {
 
         console.log('ID of selected detail: ' + id)
-        const selectedDetail_1 = this.state.masterList.filter( detail => detail.id === id )[0];
-        console.log('Contents of selected detail: '); console.log(selectedDetail_1)
+        const selectedDetail = this.state.masterList.filter( detail => detail.id === id )[0];
+        console.log('Contents of selected detail: '); console.log(selectedDetail)
 
         this.setState({
-            selectedDetail: selectedDetail_1,
-        
-             }, function(){console.log(this.state.selectedDetail)}
-            )
-
-        console.log(this.state.selectedDetail)
-        this.setState({            
-            view: <DetailFull selectedDetail = {this.state.selectedDetail} onSelect={this.buildEditArray} />,
+            selectedDetail: selectedDetail,
         })
+
+        this.renderView(<DetailFull selectedDetail = {selectedDetail} onSelect={this.buildEditArray} />)
+
     }
 
     handleUpdate = (updates) =>{
@@ -134,35 +142,26 @@ class Controller extends React.Component{
     }
 
 
-
-
-
     handleDelete = () => {
 
         console.log('Delete function called')
         console.log(this.state.arrayToEdit)
         let newMasterList 
-        this.state.arrayToEdit.map( ( id, index) =>
-        
+        this.state.arrayToEdit.map( ( id, index) =>     
             newMasterList = this.state.masterList.filter( detail => detail.id !== id)    
-        
+     
         )
         console.log(newMasterList)
         console.log(this.state.masterList)
-       // this.buildEditArray()
- /*       //console.log(this.state.arrayToEdit)
-
-        const newMasterList = this.state.masterList.filter( detail => detail.id !== id);
-        //console.log(newMasterList)
-
-        //masterList = newMasterList
-
-        //console.log( masterList)
-*/      
+      
         this.setState({
-          masterList: newMasterList,
-          
-        }, function(){console.log(this.state.masterList)});
+          masterList: newMasterList,       
+        })
+
+        //update view
+
+        this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>)
+
 
     }
 
@@ -176,10 +175,7 @@ class Controller extends React.Component{
 
     handleRead = () => {
         console.log('manualy loading data')
-        this.setState({
-            view: <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray} />
-        })
-        
+        this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/> )       
     }
 
     showUpdateForm = () => {
