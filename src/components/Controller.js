@@ -56,6 +56,8 @@ class Controller extends React.Component{
         }
     }
 
+
+    //housekeeping methods
     emptyArrayToEdit = () =>{
         this.setState({
             arrayToEdit:[]
@@ -68,6 +70,28 @@ class Controller extends React.Component{
         })
     }
 
+    //https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+    hideButton = (id) =>{
+
+        console.log('hiding button: '+ id)
+
+        const button = document.getElementById(id)
+        console.log('hiding button: '+ id)
+
+
+        if ( button.style.display === 'inline' ){
+            button.style.display = 'none';
+        }
+    }
+    showButton = (id) =>{
+        const button = document.getElementById(id)
+        if ( button.style.display === 'none' ){
+            button.style.display = 'inline';
+        }
+    } 
+       
+
+    //housekeeping methods
 
     handleSelectedDetail = (id, selectOrUpdate) => {
     
@@ -177,6 +201,7 @@ class Controller extends React.Component{
         this.setState({
             view: <Create onCallbackSubmit={this.handleCreate} />
         })
+        this.hideButton('create-button')
     }
 
     handleRead = () => {
@@ -193,10 +218,10 @@ class Controller extends React.Component{
                 <Header masterList = {this.state.masterList} />
                 <hr />   
 
-                <button id="update-button" onClick={this.handleCreateFormView}>Create</button>
-                <button id="update-button" onClick={this.handleRead}>Read</button>
-                <button id="update-button" onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit[0], 'update') }>Update</button>
-                <button id="delete-button" onClick={this.handleDelete}>Delete</button>
+                <button onClick={this.handleCreateFormView} id="create-button" style="display:inline">Create</button>
+                <button onClick={this.handleRead} id="read-button" style="display:inline">Read</button>
+                <button onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit[0], 'update')} id="update-button" style="display:inline">Update</button>
+                <button onClick={this.handleDelete} id="delete-button" style="display:inline">Delete</button>
 
                 {this.state.view}                
             </React.Fragment>   
