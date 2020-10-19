@@ -40,9 +40,11 @@ Additional emphasis is placed on understanding ESCM Script version 6 (ES6) Javas
 
 
 # About React
-React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). Raect uses a [JSX](https://www.google.com/search?what+is+JSX?) which allows the coder to combine HTML and JavaScript.  React was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch).  
+React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). React apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the coder to combine HTML and JavaScript.  
 
 ## Functional Components
+
+
 
 ## Updates to JavaScript from ES6
 
@@ -55,9 +57,15 @@ React uses Javascript ES6. ES6 brings new features (e.g., the support of classes
 
 ### Arrow Functions: `() =>`
 
-A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class functions. If you choose to use arrow functions to define functional components, declare them as constants via `const`.
+A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class functions. 
 
-Like `let` and `const`, arrow functions are "hyper-localized". This means they only execute in the scope where they were created. On the otherhand, traditional functions bubble up to the window scope. Because of this scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  They negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent:
+If you choose to use arrow functions to define functional components, declare them as constants via `const`.
+
+Finally, if your event handler (e.g., onClick, onMouseOver, etc) requires arguments to be passed, you must use arrow functions to prevent the function from automattically excutng when the page is rendered
+
+Like `let` and `const`, arrow functions are "hyper-localized". This means they are only "aware of" and execute in the scope where they were created. On the otherhand, traditional JavaScript functions bubble up to the window scope.
+
+ Because of scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  Arrow functions negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent:
 
 ```javascript
 const OUTER = 10;
@@ -78,7 +86,7 @@ const MyOtherComponent = () => {
 ```
 If arrow fucntions are not used to create class methods, they must be binded the method in the constructor likeso:
 
-`this.myMethodName = this.myMethodName .bind(this);`
+`this.myMethodName = this.myMethodName.bind(this);`
 
 
 
