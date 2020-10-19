@@ -72,13 +72,7 @@ class Controller extends React.Component{
 
     //https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
     hideButton = (id) =>{
-
-        console.log('hiding button: '+ id)
-
         const button = document.getElementById(id)
-        console.log('hiding button: '+ id)
-
-
         if ( button.style.display === 'inline' ){
             button.style.display = 'none';
         }
@@ -179,22 +173,29 @@ class Controller extends React.Component{
 
         console.log('Delete function called')
         console.log(this.state.arrayToEdit)
-        let newMasterList 
-        this.state.arrayToEdit.map( ( id, index) =>     
-            newMasterList = this.state.masterList.filter( detail => detail.id !== id)    
-        )
+        if(this.state.arrayToEdit.length > 0){    
+            let newMasterList 
+            this.state.arrayToEdit.map( ( id, index) =>     
+                newMasterList = this.state.masterList.filter( detail => detail.id !== id)    
+            )
 
-        console.log(newMasterList)
-        console.log(this.state.masterList)
-      
-        this.setState({
-          masterList: newMasterList,       
-        }, function(){
-            this.emptyArrayToEdit()
+            console.log(newMasterList)
             console.log(this.state.masterList)
-            this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray} />)
-        });
-
+        
+            this.setState({
+            masterList: newMasterList,       
+            }, function(){
+                this.emptyArrayToEdit()
+                console.log(this.state.masterList)
+                this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray} />)
+            });
+        } else {        
+            this.renderView(
+                <React.Fragment>
+                <h3>Delete Attempt Aborted. Please Select an Item to Delete.</h3> 
+                <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>
+                </React.Fragment> )
+        }
     }
      
     handleCreateFormView = () => {
@@ -207,7 +208,9 @@ class Controller extends React.Component{
     handleRead = () => {
         console.log('manualy loading data')
         this.emptyArrayToEdit()
-        this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/> )       
+        this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/> ) 
+        this.showButton('create-button')
+      
     }
 
 
@@ -218,10 +221,10 @@ class Controller extends React.Component{
                 <Header masterList = {this.state.masterList} />
                 <hr />   
 
-                <button onClick={this.handleCreateFormView} id="create-button" style="display:inline">Create</button>
-                <button onClick={this.handleRead} id="read-button" style="display:inline">Read</button>
-                <button onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit[0], 'update')} id="update-button" style="display:inline">Update</button>
-                <button onClick={this.handleDelete} id="delete-button" style="display:inline">Delete</button>
+                <button onClick={this.handleCreateFormView} id="create-button" style={{display:'inline'}}>Create</button>
+                <button onClick={this.handleRead} id="read-button" style={{display:'inline'}}>Read</button>
+                <button onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit[0], 'update')} id="update-button" style={{display:'inline'}}>Update</button>
+                <button onClick={this.handleDelete} id="delete-button" style={{display:'inline'}}>Delete</button>
 
                 {this.state.view}                
             </React.Fragment>   
