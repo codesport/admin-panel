@@ -6,15 +6,32 @@
 * [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
 * [Task Description](#php-application-development-excercise-task-description)
 
-# Project Overview
+# Introduction and Project Overview
 
-This tutorial is Part 1 in a two-part tutorial series created for Facebook's 2020 Developer's challenge. 
+This tutorial was created for Facebook's 2020 Developer's challenge. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
 
-Through the creation of a harvest inventory app for a family-owned organic farm called *Arroyo Family Farms*, 
+The goal of this tutorial is to provide teh learner with a strong foundation in React. To this end, an discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding ESCM Script version 6 (ES6) Javascript concepts required to develop proficiency as a React development developer.  
 
-The goal of this series is to teach mastery of basic and intermediate React development concepts. 
+The learner is guided in creating stateful and interactive master-detail interface with Create, Update, and Delete (CRUD) functionality. This application may be readily adpated to create variety of applications (e.g., online store, an addressbok, and a todo-list).
 
-This tutorial series and its resulting applications were created by **Marcus "Arroyo" B.**  
+This tutorial its resulting application were created by **Marcus "Arroyo" B.**. Arroyo is a Software Engineer In Residence (SEIR) within Code Sport Lab's Unit X Divsion.  
+
+## Stage 1: Static Website
+Our first step is to create a static, non-interactve website.  We'll start by wireframing. You may use a pencil and paper, photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html) to design your wireframe.
+
+
+Each section of the wireframe will will respresent a React Component
+
+## Stage 2: Master-Detail Page
+
+![image info](./images/wire-fram-simple.png)
+
+
+## Stage 3: Reade / Create / Delete Functionality
+
+## Stage 4: Update Functionality
+
+
 
 ## Inspiration
 
@@ -22,45 +39,47 @@ The code used in this tutorial was inspired by a bevy of tutorials on Reactjs.or
 
 
 
----
-DELETE
-This tutorial is Part 1 in a two-part tutorial series created for Facebook's 2020 Developer's challenge. 
-
-Through the creation of a harvest inventory app for a family-owned organic farm called *Arroyo Family Farms*, the learner will master basic, intermediate as well as some advanced React development concepts.
-
----
-
 ## Part 1 Beginner's Tutorial - Arroyo Family Farms' Inventory App
 
 Part 1 serves as a beginner's tutorial and guides the learner in creating a static, stateless, and non-interactive application using React functional components. 
 
-It assumes the learner has zero knowlege of React but is marginally proficient in core JavaScript concepts and is using [VS Code](https://code.visualstudio.com/) as their editor. 
+It assumes the learner has zero knowlege of React but is marginally proficient in core JavaScript concepts and is 
 
-Additional emphasis is placed on understanding ESCM Script version 6 (ES6) Javascript concepts required to develop proficiency as a React development developer.  
 
 
 # About React
 React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). React apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
 
+## Conventions
+In React, functional and class compoennts are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components,variables, an constants are declared using `camelCase` (i.e., first letter is lowercase).
+
+Technically you can have all your  components in 1 file, however, for manageabilty, many developers prefer to have one component per file and use import statements when components need to be resused.
+
+Refer to the Reacts documentation for more info on [conventions and use](https://reactjs.org/docs/components-and-props.html).
+
 ## Functional Components
+Functional components in React are composed of pure functions which are [first class objects (functions)](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) in JavaScript. As functions, a given set of inputs will always provide a predicatbel and guaranteed output. As first class objects, JavaScropt functions may be treated as variables.
 
-React apps can get complicated very quickly. To minimze this we will establish some rules that will help beginners.
 
-Traditionally, only class components could manage state.  There are now exceptions such as useState.  However, 
+## Class Components
 
-Create a single parent component that will control and ocherstrate application state. This parent compnent will be a class compoente
+Class compoenents are used to manage state in React applications.
 
-Children should be functional components. Their state will be lifted to and manage by the parent component
 
-If you find yourself repeating the same lines of code in your parent or child component or combine it into a method or function, respectively
+React apps can get complicated very quickly. To minimze this tutorial will establish some rules that will help beginners to maximize their prouctivuty.  Traditionally, only class components could manage state.  There are now exceptions such as useState.  However, 
 
-If you find yourself using the same function in more than 2 component's seperate that function into a seperate compoenent and import it.
+1. Create a single parent component that will control application state. This parent component will be a class compoente
+
+    a. **Corrollary:** Children should be functional components. Their state will be lifted into and therefore manage by the parent component
+
+2. If you find yourself repeating the same lines of code thtoughout a given parent or child component, combine that code into a method or function. Then call when needed
+
+3. If you find yourself needing the same function in more than 2 component's, seperate that function into a seperate child 1. 1component and import it!
 
 
 ## Updates to JavaScript from ES6
 
 React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow funtions `() =>`. React uses a [Babel](https://www.google.com/search?q=what+is+babel) to allow ES6 to be backward compatible with older browsers.
-
 
 *[`let`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
 
@@ -95,10 +114,8 @@ const MyOtherComponent = () => {
   return number;  
 }
 ```
-If arrow fucntions are not used to create class methods, they must be binded the method in the constructor likeso:
 
-`this.myMethodName = this.myMethodName.bind(this);`
-
+If arrow fucntions are not used to create a method, the method must be "manually" binded the class in the constructor likeso: `this.myMethodName = this.myMethodName.bind(this);`
 
 
 # Getting Started
@@ -107,6 +124,8 @@ If arrow fucntions are not used to create class methods, they must be binded the
 ## Setting-up a Local Development Enviorment for React
 
 ### VSCode Setup
+
+[VS Code](https://code.visualstudio.com/) is our editor of choice. The below suggestions will optimize it for React development
 
 1. Install [Babel Javascript](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel).  Created by Michael McDermont, it provides VSCode syntax highlighting for JavaScript ES6, React JSX, Flow, and GraphQL.
 
@@ -118,7 +137,8 @@ If arrow fucntions are not used to create class methods, they must be binded the
 
 2. Using your terminal (i.e., CLI), navigate to the project folder where you will save the project.  
 
-3. Within your terminal type `npx create-react-app  admin-panel`
+3. Within your terminal type `npx create-react-app  admin-panel`  
+   * NB: `admin-panel` is the name of the application in this tutorial.
    * Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directves  
 
   * ESLint is correctly letting you know that you are writing weak code
@@ -149,7 +169,7 @@ If arrow fucntions are not used to create class methods, they must be binded the
 *App.js:* A container component and parent for react react applications.     Recreate and store in src/components. 
  
 
-
+Create a folder
  
 
 

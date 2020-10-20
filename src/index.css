@@ -1,6 +1,4 @@
 body {
-  margin-left: 2em;
-  margin-right: 2em;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -14,7 +12,11 @@ code {
 }
 
 
-/*https://www.adventuresintechland.com/bootstrap-css-buttons-only/*/
+/* 
+* Bootstrap CSS button stylings lifted from:
+* https://www.adventuresintechland.com/bootstrap-css-buttons-only/
+*
+*/
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,7 +40,10 @@ code {
 .btn:active:focus,
 .btn.active:focus {
   outline: thin dotted;
-  /*outline: 5px auto -webkit-focus-ring-color;*/
+  /*
+  * Delete below to remove Chromes ugly button black border
+  * outline: 5px auto -webkit-focus-ring-color;
+  */
   outline-offset: -2px;
 }
 .btn:hover,
@@ -389,29 +394,34 @@ input[type="button"].btn-block {
   font-weight: bold;
   margin:0.25em 0.25em 0.25em 0.25em
 }
+
+
 /*
-*:focus {
-  outline: none;
-}
+* Center App on web page
 */
 body{
-
   width: 65%;
   margin: 0 auto;
 }
 
-#align-metadata{
-  float: right;
-  margin-top: -13em;
-  margin-right: -1em;
+/* 
+* Allow Detail page to work on smaller Devices 
+*/
+@media screen and (min-width: 1100px){
+  #align-metadata{
+    float: right;
+    margin-top: -13em;
+    margin-right: -1em;
+  }
+
+  #align-metadata.update-detail{
+  margin-top: -15em;
+  }
 }
 
-#align-metadata.update-detail{
-margin-top: -15em;
-}
-
-
-/*Kill ugly Chrome Borders on Forms: https://css-tricks.com/snippets/css/glowing-blue-input-highlights/*/
+/*
+* Kill ugly Chrome Borders on Forms: https://css-tricks.com/snippets/css/glowing-blue-input-highlights/ 
+*/
 input[type=text], input[type=number], select, textarea {
   transition: all 0.30s ease-in-out;
   outline: none;
