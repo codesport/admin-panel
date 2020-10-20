@@ -1,6 +1,6 @@
 # Navigation
 
-* [Quick Start Guide](#php-rest-api-quick-start-guide-and-demo)
+* [Introduction and Project Overview](#introduction-and-project-overview)
 * [Change Log](#change-log-updates-for-2019-and-2020)
 * [Authorship and Credits](#authorship-and-credits)
 * [PHP Application Development Excercise: Detailed Overview](#php-application-development-excercise-overview)
@@ -17,14 +17,21 @@ The learner is guided in creating stateful and interactive master-detail interfa
 This tutorial its resulting application were created by **Marcus "Arroyo" B.**. Arroyo is a Software Engineer In Residence (SEIR) within Code Sport Lab's Unit X Divsion.  
 
 ## Stage 1: Static Website
-Our first step is to create a static, non-interactve website.  We'll start by wireframing. You may use a pencil and paper, photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html) to design your wireframe.
+Our first step is to create a static, non-interactve website.  A common way to plan an application's design and development is by wireframing. You may use a pencil and paper, photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html) to design your wireframe. 
 
+However, we've opted to create a color-block diagram with Adobe Photoshop
 
-Each section of the wireframe will will respresent a React Component
+![image info](src/images/color-block-simple-v2.png)
+**Figure 1: Stage 1 Layout of Appication**
+
+Take Away: Each section of the wireframe will will respresent a React Component. Each Component can be firther subdivided into addional compont sif needed.
+
+Each part of your app which renders data should be it's own compoenent.  To manage the compoeents we create a parent compoent called Conroller.
+
+Furthermore
 
 ## Stage 2: Master-Detail Page
 
-![image info](./images/wire-fram-simple.png)
 
 
 ## Stage 3: Reade / Create / Delete Functionality
@@ -48,7 +55,7 @@ It assumes the learner has zero knowlege of React but is marginally proficient i
 
 
 # About React
-React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). React apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
+React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). React uses JavascScript ES6 and its apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
 
 ## Conventions
 In React, functional and class compoennts are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components,variables, an constants are declared using `camelCase` (i.e., first letter is lowercase).
