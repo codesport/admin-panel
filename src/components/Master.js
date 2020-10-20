@@ -38,22 +38,26 @@ export const masterList = [
 
 ]
 
+function Master( props ){
 
-function Master(){
+    //inline styles using CSS objects
+    const detailSummaryCSS = {
+        width: '5%',
+        align: 'middle',
+        margin: '2em',
+    }
+
     return(
         <React.Fragment>
-            {masterList.map( (singleItem, index ) =>
-                <DetailSummary
-                    thumbnail={singleItem.thumbnail}
-                    category={singleItem.category}
-                    description = {singleItem.description}
-                    price = {singleItem.price}
-                    quantity = {singleItem.quantity}
-                    units = {singleItem.units}
-                    name={singleItem.name}
-                    key= {singleItem.id} //if data does not have a unique id, use index      
-                />
-            )}
+
+        masterList.map( (singleItem, index) => 
+            <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ props.thumbnail)} alt={props.description} />
+            {/*<span className="spacer">{props.category}</span>*/}
+            <span className="spacer">{props.name}&nbsp;&nbsp;&nbsp;</span>
+            <span className="spacer">${props.price}/{props.units}</span>
+            <hr />
+
+        )    
         </React.Fragment>
     )
 }
