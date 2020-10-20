@@ -405,8 +405,24 @@ body{
   margin-top: -13em;
   margin-right: -1em;
 }
-/*
+
 #align-metadata.update-detail{
-margin-top: -18em;
+margin-top: -15em;
 }
-*/
+
+
+/*Kill ugly Chrome Borders on Forms: https://css-tricks.com/snippets/css/glowing-blue-input-highlights/*/
+input[type=text], input[type=number], select, textarea {
+  transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #9e9a9a;
+}
+ 
+input[type=text]:focus, input[type=number]:focus, select:focus, textarea:focus {
+  box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}

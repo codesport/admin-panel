@@ -101,8 +101,7 @@ class Controller extends React.Component{
             button.style.display = 'inline';
         }
     } 
-       
-
+    
     //housekeeping methods
 
     handleSelectedDetail = (id, selectOrUpdate) => {
@@ -111,7 +110,8 @@ class Controller extends React.Component{
         this.state.arrayToEdit && (id = this.state.arrayToEdit)
 */
 
-        if (id.length && this.state.arrayToEdit.length === 0){ //item selected from detail page
+        if (id.length && this.state.arrayToEdit.length === 0){ 
+            //Normal Usage: item selected for update from detail page
 
             this.setState({
                 arrayToEdit: id.split(',')
@@ -119,23 +119,23 @@ class Controller extends React.Component{
 
             console.log('TEST 1 ID of selected detail: ' + id)
 
-        } else if (id.length && !Array.isArray(id) && Array.isArray(this.state.arrayToEdit) ) { //multiple items selected from master, then click item in master to detail page
+        } else if (id.length && !Array.isArray(id) && Array.isArray(this.state.arrayToEdit) ) { 
+            //Edge Case Fix: multiple items selected from master && click 1 item in master to detail page
 
             this.setState({
                 arrayToEdit: id.split(',')
             })
 
-            console.log('TEST 3 ID of selected detail: ' + id)
+            console.log('TEST 2 ID of selected detail: ' + id)
         
-        } else if ( Array.isArray(id) || !id ) { //choose the first item selected from master page || no ID Selected
+        } else if ( Array.isArray(id) || !id ) { 
+            //Edge Case Fix: choose the first item selected from master page || no ID Selected
 
                 console.log('TEST 4 ID of selected detail: ' + id)
 
                 id = id[0]
 
-                console.log('After assigning id = id[0]: TEST 4 ID of selected detail: ' + id)
-
-
+                console.log('After assigning id = id[0]: TEST 3 ID of selected detail: ' + id)
         }
     
         if (id){
@@ -145,20 +145,20 @@ class Controller extends React.Component{
 
             this.setState({
                 selectedDetail: selectedDetail,
-            }, function(){
-                //https://stackoverflow.com/questions/30782948/why-calling-react-setstate-method-doesnt-mutate-the-state-immediately
+            }, function(){ //https://stackoverflow.com/questions/30782948/why-calling-react-setstate-method-doesnt-mutate-the-state-immediately
                     if( !selectOrUpdate ){
                    
                         this.renderView('', <DetailFull selectedDetail = {this.state.selectedDetail} />)
 
                     }else {
+
                         this.renderView('', <Update onCallbackSubmit={this.handleUpdate} detail={selectedDetail} />)
                         this.hideButton('update-button')
 
                     }
             })
 
-        } else{
+        } else {
 
             this.renderView( <h3>Update Attempt Aborted. Please Select an Item to Update</h3>  )
             
@@ -193,7 +193,7 @@ class Controller extends React.Component{
 
 
     /**
-     * Allows actions (e.g., delete) on multiple items at once based on checkboxes selected
+     * Utility Function: Allows actions (e.g., delete) on multiple items at once based on checkboxes selected
      * 
      * This function call is embeded in the Master list. It uses querySelectorAll() and Array.from()
      * to find and parse UUIDs items that are checked. Stores UUID of selected items in an array
@@ -205,6 +205,13 @@ class Controller extends React.Component{
      * @tutorial https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
      * @tutorial https://developer.mozilla.org/en-US/docs/Web/API/NodeList  
      * @tutorial https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+     * 
+     * Select elements with JavaScript
+     * 
+     *  document.getElementsByClassName('check-box');
+     *  document.getElementById('demo');
+     *  document.querySelector('input[name=hey]').value
+     * 
      */
     buildEditArray = ()=>{
 
@@ -221,11 +228,6 @@ class Controller extends React.Component{
         this.setState({
             arrayToEdit: newArrayToEdit, 
         }, function(){console.log(this.state.arrayToEdit)})
-        
-
-        //document.getElementsByClassName('check-box');
-        //document.getElementById('demo');
-        //document.querySelector('input[name=hey]').value
 
     }
 
@@ -284,7 +286,6 @@ class Controller extends React.Component{
         this.hideButton('create-button')
         this.hideButton('update-button')
         this.hideButton('delete-button')
-
     }
 
     handleRead = () => {
