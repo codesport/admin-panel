@@ -2,7 +2,7 @@
 
 function checkImagePath(path){
 
-    if ( path.indexOf('https') === -1){
+    if ( path.indexOf('https') === -1 ){
 
         return require('../'+ path)
 
@@ -11,7 +11,19 @@ function checkImagePath(path){
         return path
     }
 
+}
+
+function formatBundleTotalInventoryDsiplay(units){
+
+    if ( units.indexOf('each') === -1 ){
+
+        return units
+
+    } else {
+
+        return 'bundles'
+    }
 
 }
 
-export {checkImagePath}
+export {checkImagePath, formatBundleTotalInventoryDsiplay}
