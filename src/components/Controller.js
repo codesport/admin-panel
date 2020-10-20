@@ -4,6 +4,7 @@ import { DetailFull } from './Detail';
 import Header from './Header';
 import Update from './Update';
 import Create from './Create';
+import UpdateHeader from './UpdateHeader';
 
 
 let seedList = [
@@ -51,8 +52,10 @@ class Controller extends React.Component{
         this.state ={
             selectedDetail: null,
             arrayToEdit:[],
+            appHeader:'Arroyo Family Farms Inventory App',
             masterList: seedList,
-            view: <Master masterList={seedList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>,
+            view: <React.Fragment><h3>Welcome! App has been Seeded with Sample Inventory Data</h3><Master masterList={seedList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/></React.Fragment>,
+            headerView: <Header masterList={seedList} header='Double Click/Tap to Update Title' onDoubleClick={this.handleShowHeaderUpdateForm} />,
         }
     }
 
@@ -64,10 +67,25 @@ class Controller extends React.Component{
         })
     }
 
-    renderView = (view) =>{
+
+    /**
+     * Simplifies rendering of the page view stored in state
+     * 
+     * @param {HTMLHeaderElement} message  - HTML header element and text
+     * @param {string} view - Child component render with props
+     */
+    renderView = ( message, view = <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/> ) =>{
+
+        view = <React.Fragment>{message}{view}</React.Fragment>
+
         this.setState({            
             view: view,
         })
+
+        this.showButton('create-button')
+        this.showButton('update-button')
+        this.showButton('delete-button')
+
     }
 
     //https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
@@ -88,6 +106,37 @@ class Controller extends React.Component{
     //housekeeping methods
 
     handleSelectedDetail = (id, selectOrUpdate) => {
+/*
+        !this.state.arrayToEdit && this.setState({arrayToEdit: id })
+        this.state.arrayToEdit && (id = this.state.arrayToEdit)
+*/
+
+        if (id.length && this.state.arrayToEdit.length === 0){ //item selected from detail page
+
+            this.setState({
+                arrayToEdit: id.split(',')
+            })
+
+            console.log('TEST 1 ID of selected detail: ' + id)
+
+        } else if (id.length && !Array.isArray(id) && Array.isArray(this.state.arrayToEdit) ) { //multiple items selected from master, then click item in master to detail page
+
+            this.setState({
+                arrayToEdit: id.split(',')
+            })
+
+            console.log('TEST 3 ID of selected detail: ' + id)
+        
+        } else if ( Array.isArray(id) || !id ) { //choose the first item selected from master page || no ID Selected
+
+                console.log('TEST 4 ID of selected detail: ' + id)
+
+                id = id[0]
+
+                console.log('After assigning id = id[0]: TEST 4 ID of selected detail: ' + id)
+
+
+        }
     
         if (id){
             console.log('ID of selected detail: ' + id)
@@ -98,16 +147,21 @@ class Controller extends React.Component{
                 selectedDetail: selectedDetail,
             }, function(){
                 //https://stackoverflow.com/questions/30782948/why-calling-react-setstate-method-doesnt-mutate-the-state-immediately
-                !selectOrUpdate && this.renderView(<DetailFull selectedDetail = {this.state.selectedDetail} onSelect={this.buildEditArray} />)
-                selectOrUpdate && this.renderView( <Update onCallbackSubmit={this.handleUpdate} detail={selectedDetail} />)
+                    if( !selectOrUpdate ){
+                   
+                        this.renderView('', <DetailFull selectedDetail = {this.state.selectedDetail} />)
 
+                    }else {
+                        this.renderView('', <Update onCallbackSubmit={this.handleUpdate} detail={selectedDetail} />)
+                        this.hideButton('update-button')
+
+                    }
             })
+
         } else{
-            this.renderView(
-            <React.Fragment>
-            <h3>Update Attempt Aborted. Please Select an Item to Update</h3> 
-            <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>
-            </React.Fragment> )
+
+            this.renderView( <h3>Update Attempt Aborted. Please Select an Item to Update</h3>  )
+            
         }
 
     }
@@ -120,7 +174,9 @@ class Controller extends React.Component{
             masterList: updatedDetail,
             }, function(){
                     this.emptyArrayToEdit()
-                    this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/> )
+                    this.renderView( 
+                            <h3>Successfuly Updated {updates.name}!</h3> 
+                    )
                 }
             )
     }
@@ -130,15 +186,20 @@ class Controller extends React.Component{
         
         this.setState({
             masterList: newMasterList,
-            }, function(){this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>)}
+            }, function(){this.renderView( <h3>Successfuly Created {creation.name}!</h3> )}
         )
+
     }
 
 
     /**
-     * Stores UUID of selected items in an array saved to state.arrayToEdit
+     * Allows actions (e.g., delete) on multiple items at once based on checkboxes selected
      * 
-     * This function call is embeded in the Master list. It uses querySelectorAll() and Array.from() to find and parse UUIDs that are checked
+     * This function call is embeded in the Master list. It uses querySelectorAll() and Array.from()
+     * to find and parse UUIDs items that are checked. Stores UUID of selected items in an array
+     * saved to state.arrayToEdit
+     * 
+     * Resources used to research and build this functionality:
      * 
      * @tutorial https://stackoverflow.com/a/31113246/946957 and https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes
      * @tutorial https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
@@ -170,61 +231,104 @@ class Controller extends React.Component{
 
 
     handleDelete = () => {
-
-        console.log('Delete function called')
-        console.log(this.state.arrayToEdit)
-        if(this.state.arrayToEdit.length > 0){    
-            let newMasterList 
-            this.state.arrayToEdit.map( ( id, index) =>     
-                newMasterList = this.state.masterList.filter( detail => detail.id !== id)    
-            )
-
-            console.log(newMasterList)
-            console.log(this.state.masterList)
         
-            this.setState({
-            masterList: newMasterList,       
-            }, function(){
+        console.log('Delete function called')
+
+        if(this.state.arrayToEdit.length > 0){ 
+               
+            const confirmDelete = window.confirm('Are you sure you want to delete these ' + this.state.arrayToEdit.length + ' items?')
+            
+            if (confirmDelete === true) {
+
+                let newMasterList = this.state.masterList 
+                this.state.arrayToEdit.map( ( id, index) =>     
+                    newMasterList = newMasterList.filter( detail => detail.id !== id)    
+                )
+
+                console.log(newMasterList)
+            
+                this.setState({
+
+                    masterList: newMasterList, 
+
+                }, function(){
+                    this.emptyArrayToEdit()
+                    console.log(this.state.masterList)
+                    this.renderView( 
+                        <h3>Success! { this.state.arrayToEdit.length } Item(s) Deleted</h3>  
+                    )
+                
+                })
+
+            }  else {
                 this.emptyArrayToEdit()
-                console.log(this.state.masterList)
-                this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray} />)
-            });
-        } else {        
+                this.renderView(
+                    <h3>Delete Process Canceled By User.</h3> 
+                     )
+                    
+            } 
+            
+        } else {
+
             this.renderView(
-                <React.Fragment>
                 <h3>Delete Attempt Aborted. Please Select an Item to Delete.</h3> 
-                <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/>
-                </React.Fragment> )
-        }
+                )
+                
+        }    
+ 
+
     }
      
     handleCreateFormView = () => {
-        this.setState({
-            view: <Create onCallbackSubmit={this.handleCreate} />
-        })
+        this.renderView('', <Create onCallbackSubmit={this.handleCreate} />) 
         this.hideButton('create-button')
+        this.hideButton('update-button')
+        this.hideButton('delete-button')
+
     }
 
     handleRead = () => {
         console.log('manualy loading data')
         this.emptyArrayToEdit()
-        this.renderView( <Master masterList={this.state.masterList} onClick={this.handleSelectedDetail} onChange={this.buildEditArray}/> ) 
-        this.showButton('create-button')
-      
+        this.renderView( '' ) 
     }
 
+    handleShowHeaderUpdateForm = () =>{
 
+        console.log('Loading header update form')
+
+        this.setState({
+            headerView: <UpdateHeader masterList={this.state.masterList} header={this.state.appHeader} onCallbackSubmit={this.updateHeader} />
+        })
+
+    }
+    
+    updateHeader = (newText) =>{
+
+        console.log('Loading New Header')
+        console.log(newText.header)
+
+        this.setState({
+            appHeader: newText.header,
+            headerView: <Header masterList={this.state.masterList} header={newText.header} onDoubleClick={this.handleShowHeaderUpdateForm} />,
+
+        }, function(){console.log(this.state.headerView)}
+        )
+
+    }
     
     render(){
         return(
             <React.Fragment>
-                <Header masterList = {this.state.masterList} />
+                {this.state.headerView}
                 <hr />   
 
-                <button onClick={this.handleCreateFormView} id="create-button" style={{display:'inline'}}>Create</button>
-                <button onClick={this.handleRead} id="read-button" style={{display:'inline'}}>Read</button>
-                <button onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit[0], 'update')} id="update-button" style={{display:'inline'}}>Update</button>
-                <button onClick={this.handleDelete} id="delete-button" style={{display:'inline'}}>Delete</button>
+                <button onClick={this.handleCreateFormView} id="create-button" style={{display:'inline'}} className="btn btn-primary btn-sm">Create</button>
+                <button onClick={this.handleRead} id="read-button" style={{display:'inline'}} className="btn btn-success btn-sm">Read</button>
+                <button onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit, 'update')} id="update-button" style={{display:'inline'}} className="btn btn-warning btn-sm">Update</button>
+                <button onClick={this.handleDelete} id="delete-button" style={{display:'inline'}} className="btn btn-danger btn-sm">Delete</button>
+
+                <hr />
 
                 {this.state.view}                
             </React.Fragment>   

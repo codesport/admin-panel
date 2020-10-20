@@ -1,11 +1,14 @@
 import React from 'react';
-//import DetailSummary from './Detail';
+import { checkImagePath } from './ReusableHousekeepingFunctions';
 import PropTypes from 'prop-types';
 
 
 Master.propTypes = {
-    //masterList: PropTypes.array,
-    onClick: PropTypes.func
+    masterList: PropTypes.array,
+    onClick: PropTypes.func,
+    description: PropTypes.string,
+    price: PropTypes.number, 
+    quantity: PropTypes.number,    
 };
 
 
@@ -16,9 +19,13 @@ function Master(props){
 
     //inline styles using CSS objects
     const detailSummaryPhotoCSS = {
-        width: '5%',
+        
         align: 'middle',
+        verticalAlign: 'middle',
         margin: '2em',
+        maxWidth: '20%',
+        height: 'auto',
+
     }
 
     const pointerCSS = {
@@ -52,6 +59,8 @@ function Master(props){
       onMouseOut={() => setStyle("#fdfdfd", "#424246")}
 
  */  
+
+
     //console.log (props.onChange)
     return(
         <React.Fragment>
@@ -59,7 +68,7 @@ function Master(props){
             <div key={singleItem.id}  onMouseEnter={event => onMouseOver(event)} onMouseOut={event => onMouseOut(event)} >
             {/*must use arrow functions when sending arguments to a function */}
                 <span  onClick={() => props.onClick(singleItem.id)} style={pointerCSS}>
-                    <img style={detailSummaryPhotoCSS} align="middle" className="spacer" src={require('../'+ singleItem.thumbnail)} alt={singleItem.name} />
+                    <img style={detailSummaryPhotoCSS} align="middle" className="spacer" src={ checkImagePath( singleItem.thumbnail ) } alt={singleItem.name} />
                     <span className="spacer">{singleItem.name}&nbsp;&nbsp;&nbsp;</span>
                     <span className="spacer">${singleItem.price}/{singleItem.units}&nbsp;&nbsp;&nbsp;</span>
                 </span>

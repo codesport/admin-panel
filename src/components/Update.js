@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { checkImagePath } from './ReusableHousekeepingFunctions';
 
 function Update(props){
 
@@ -47,7 +47,7 @@ function Update(props){
             <tbody>
                 <tr>
                     <td>
-                        <img className="border" src={require('../'+ props.detail.thumbnail)} alt={props.detail.name} /><br />
+                        <img className="border" src={ checkImagePath( props.detail.thumbnail ) } alt={props.detail.name} /><br />
                         <input type='text' name='thumbnail' placeholder='Thumbnail location (url or file path)' defaultValue={props.detail.thumbnail} size="50" form="update-form"/>                   
                     </td>
                     <td>

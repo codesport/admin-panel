@@ -40,10 +40,21 @@ Additional emphasis is placed on understanding ESCM Script version 6 (ES6) Javas
 
 
 # About React
-React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). React apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the coder to combine HTML and JavaScript.  
+React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). React apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
 
 ## Functional Components
 
+React apps can get complicated very quickly. To minimze this we will establish some rules that will help beginners.
+
+Traditionally, only class components could manage state.  There are now exceptions such as useState.  However, 
+
+Create a single parent component that will control and ocherstrate application state. This parent compnent will be a class compoente
+
+Children should be functional components. Their state will be lifted to and manage by the parent component
+
+If you find yourself repeating the same lines of code in your parent or child component or combine it into a method or function, respectively
+
+If you find yourself using the same function in more than 2 component's seperate that function into a seperate compoenent and import it.
 
 
 ## Updates to JavaScript from ES6
@@ -110,6 +121,7 @@ If arrow fucntions are not used to create class methods, they must be binded the
 3. Within your terminal type `npx create-react-app  admin-panel`
    * Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directves  
 
+  * ESLint is correctly letting you know that you are writing weak code
 4. Finally, type `npm start` to run the default react application
 
 
@@ -174,7 +186,7 @@ Within react there are two kinds of components: functional and class. This means
 
 You might find it helpful to famila
 
-Each component represents a portion of our view.  Compoents 
+Each component represents a portion of our view.  Components 
 
 
 

@@ -7,14 +7,14 @@ function Header(props){
     //inline styles using CSS objects
     const styledHeader = {
         color: 'brown',
-        marginLeft:'2em',
-        /*marginRight:'2em',*/
+        /*marginLeft:'2em',
+        marginRight:'2em',*/
     }
 
     return(
         <React.Fragment>
-            <h3 style={styledHeader}>Arroyo Family Farms Inventory List</h3>
-            <h4 style={styledHeader}>Total Unique Items: {props.masterList.length}</h4>
+            <h3 onDoubleClick={props.onDoubleClick} style={styledHeader}>{props.header}</h3>
+            <h4 style={styledHeader}>Total Unique Inventory: {props.masterList.length}</h4>
         </React.Fragment>
 
     )
