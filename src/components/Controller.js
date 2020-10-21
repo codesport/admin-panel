@@ -1,6 +1,6 @@
 import React from 'react';
 import { Master} from './Master';
-import { DetailFull } from './Detail';
+import { Detail } from './Detail';
 import Header from './Header';
 import Update from './Update';
 import Create from './Create';
@@ -148,7 +148,7 @@ class Controller extends React.Component{
             }, function(){ //https://stackoverflow.com/questions/30782948/why-calling-react-setstate-method-doesnt-mutate-the-state-immediately
                     if( !selectOrUpdate ){
                    
-                        this.renderView('', <DetailFull selectedDetail = {this.state.selectedDetail} />)
+                        this.renderView('', <Detail selectedDetail = {this.state.selectedDetail} />)
 
                     }else {
 

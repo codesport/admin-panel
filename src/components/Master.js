@@ -36,17 +36,18 @@ function Master(props){
 /**
  * Use onMouseEnter to change element's color:
  *  
- * @link https://stackoverflow.com/questions/52512701/change-inline-color-on-mouseover-react
- * @link https://codesandbox.io/s/mouseover-and-randomize-text-color-forked-qei73
- * @link https://dev.to/hunterbecton/react-tutorial-change-state-with-react-hooks-and-mouse-events-1g3m
+ * @tutorial https://stackoverflow.com/questions/52512701/change-inline-color-on-mouseover-react
+ * @tutorial https://codesandbox.io/s/mouseover-and-randomize-text-color-forked-qei73
+ * @tutorial useState: https://dev.to/hunterbecton/react-tutorial-change-state-with-react-hooks-and-mouse-events-1g3m
+ * @tutorial https://linguinecode.com/post/how-to-add-onmouseenter-or-onmouseover-in-reactjs
  */
 
-    const onMouseOver = event => {
+    const enter = event => {
         const el = event.target;
         el.style.backgroundColor = "skyblue";
     };
       
-      const onMouseOut = event => {
+      const exit = event => {
         const el = event.target;
         el.style.backgroundColor = "White";
       };   
@@ -65,7 +66,7 @@ function Master(props){
     return(
         <React.Fragment>
             {props.masterList.map( (singleItem, index) => 
-            <div key={singleItem.id}  onMouseEnter={event => onMouseOver(event)} onMouseOut={event => onMouseOut(event)} >
+            <div key={singleItem.id}  onMouseEnter={event => enter(event)} onMouseOut={event => exit(event)} >
             {/*must use arrow functions when sending arguments to a function */}
                 <span  onClick={() => props.onClick(singleItem.id)} style={pointerCSS}>
                     <img style={detailSummaryPhotoCSS} align="middle" className="spacer" src={ checkImagePath( singleItem.thumbnail ) } alt={singleItem.name} />

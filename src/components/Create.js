@@ -1,13 +1,39 @@
 import React from 'react';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
+
+/**
+ * Enable strict typechecking
+ * 
+ * @tutorial https://reactjs.org/docs/typechecking-with-proptypes.html
+ */
+Create.propTypes = {
+    onCallbackSubmit: PropTypes.func
+  };
 
 
+/**
+ * Displays form to collect data from user. 
+ * 
+ * On submit, data is sent to parent to process:
+ * 
+ *  1. <form onSubmit={handleFormSubmit}>: Call local form submssion handler ( i.e., handleFormSubmit(event) )
+ * 
+ *  2. function handleFormSubmit(event): Unpack callback from parent (i.e, props.onCallbackSubmit={this.handleCreate} )
+ * 
+ *  3. this.handleCreate(creation): Control.js method to process form submission. Accepts one parameter which is an object
+ * 
+ * @param {function} props - callback function sent from Controller method this.handleCreateFormView()
+ *                           via <Create onCallbackSubmit={this.handleCreate} />
+ * 
+ * @tutorial https://reactjs.org/docs/forms.html
+ */
 function Create(props){
 
-    function handleFormSubmit(e){
+    function handleFormSubmit(e){ 
         e.preventDefault();
 
-        props.onCallbackSubmit({
+        props.onCallbackSubmit({ //2. Unpack the callback from parent
             thumbnail: e.target.thumbnail.value,
             category: e.target.category.value,
             description: e.target.description.value,
@@ -22,7 +48,7 @@ function Create(props){
     return(
         <React.Fragment>
             <h3>Create New Items</h3>
-            <form onSubmit={handleFormSubmit}> {/*2. onSubmit we call our local form submssion handler*/}
+            <form onSubmit={handleFormSubmit}> {/*1. onSubmit we call our local form submssion handler*/}
             <label>Image</label>
             <div>
                 <input
@@ -94,8 +120,6 @@ function Create(props){
         </React.Fragment>
 
     )
-
-
 
 }
 
