@@ -3,7 +3,6 @@ import {masterList, Master} from './Master';
 import Header from './Header';
 
 
-//
 function Controller(){
     return(
         <React.Fragment>
@@ -11,9 +10,7 @@ function Controller(){
             <hr />
             <Master />
         </React.Fragment>
-
     )   
-
 }
 
 export default Controller;

@@ -11,7 +11,9 @@ function Header(props){
 
     /**
      * Pro Tip 1: "Figure out the absolute minimal representation of the state your 
-     * application needs and compute everything else you need on-demand."
+     * application needs and compute everything else you need on-demand." 
+     * 
+     *  Source: - Thinking in React
      * 
      * Pro Tip 2: If you’re building a list, store the list in an array. And, don’t
      * keep a separate state variable for the count. Instead, when you want to render
