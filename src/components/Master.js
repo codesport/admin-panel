@@ -1,17 +1,16 @@
 import React from 'react';
-import { DetailSummary } from './Detail';
 
 export const masterList = [
 
     {
-    id: '1',        
-    category: 'Fruits',
-    description: 'Organic black grapes from our estate. Sold by the pound',
-    name: 'Organic Black Grapes',
-    price: 2.99,
-    quantity_available: 100,
-    thumbnail: 'images/black-grapes.jpg',
-    units: 'lb'
+        id: '1',        
+        category: 'Fruits',
+        description: 'Organic black grapes from our estate. Sold by the pound',
+        name: 'Organic Black Grapes',
+        price: 2.99,
+        quantity_available: 100,
+        thumbnail: 'images/black-grapes.jpg',
+        units: 'lb'
     },
 
     {
@@ -38,7 +37,7 @@ export const masterList = [
 
 ]
 
-function Master( props ){
+function Master(){
 
     //inline styles using CSS objects
     const detailSummaryCSS = {
@@ -49,17 +48,23 @@ function Master( props ){
 
     return(
         <React.Fragment>
-
-        masterList.map( (singleItem, index) => 
-            <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ props.thumbnail)} alt={props.description} />
-            {/*<span className="spacer">{props.category}</span>*/}
-            <span className="spacer">{props.name}&nbsp;&nbsp;&nbsp;</span>
-            <span className="spacer">${props.price}/{props.units}</span>
-            <hr />
-
-        )    
+            {masterList.map( (singleItem, index) => 
+            <div key={singleItem.id /*Each child in a list should have a unique key prop. */ }>
+                <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ singleItem.thumbnail)} alt={singleItem.description} />
+                {/*<span className="spacer">{singleItem.category}</span>*/}
+                <span className="spacer">{singleItem.name}&nbsp;&nbsp;&nbsp;</span>
+                <span className="spacer">${singleItem.price}/{singleItem.units}</span>
+                <hr />
+            </div>
+            )}    
         </React.Fragment>
     )
 }
 
+/** 
+* Named Exports
+* 
+* @tutorial https://stackoverflow.com/a/50073244/946957
+* @tutorial https://dev.to/laurieontech/exports-and-imports-and-defaults-oh-my-fa3
+*/
 export {Master};
