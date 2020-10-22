@@ -1,5 +1,5 @@
 import React from 'react';
-import { checkImagePath } from './ReusableHousekeepingFunctions';
+import { checkImagePath, formatBundleTotalInventoryDisplay } from './ReusableHousekeepingFunctions';
 
 function Update(props){
 
@@ -58,7 +58,7 @@ function Update(props){
                                 <option value="each">units</option>
                             </select></h3>
                             <p style={inventoryTextCSS}><strong>Amount in Stock:</strong> <input type='number' size="5" name='quantity_available' placeholder='3' required 
-                            defaultValue={props.detail.quantity_available} form="update-form"/>  {props.detail.units}</p>
+                            defaultValue={props.detail.quantity_available} form="update-form"/>  {formatBundleTotalInventoryDisplay(props.detail.units)}</p>
                     </div>
                 </div>
             </div>

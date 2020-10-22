@@ -1,5 +1,5 @@
 import React from 'react';
-import { checkImagePath, formatBundleTotalInventoryDsiplay } from './ReusableHousekeepingFunctions';
+import { checkImagePath, formatBundleTotalInventoryDisplay } from './ReusableHousekeepingFunctions';
 import PropTypes from 'prop-types';
 
 /**
@@ -21,7 +21,7 @@ function Detail(props){
                         <div className="divTableCell" id="align-metadata">
                             <p><strong>Description:</strong> {selectedDetail.description}</p>
                             <h3>Price: ${selectedDetail.price}/{selectedDetail.units}</h3>
-                            <p><strong>Amount in Stock:</strong> {selectedDetail.quantity_available} { formatBundleTotalInventoryDsiplay(selectedDetail.units) }</p>
+                            <p><strong>Amount in Stock:</strong> {selectedDetail.quantity_available} { formatBundleTotalInventoryDisplay(selectedDetail.units) }</p>
                         </div>
                     </div>
                 </div>

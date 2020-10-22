@@ -39,17 +39,19 @@ function Master(props){
  * @tutorial https://stackoverflow.com/questions/52512701/change-inline-color-on-mouseover-react
  * @tutorial https://codesandbox.io/s/mouseover-and-randomize-text-color-forked-qei73
  * @tutorial useState: https://dev.to/hunterbecton/react-tutorial-change-state-with-react-hooks-and-mouse-events-1g3m
+ * 
+ * onMouseOver triggers on element's children. OnMouseEnter only triggers on parent element 
  * @tutorial https://linguinecode.com/post/how-to-add-onmouseenter-or-onmouseover-in-reactjs
  */
 
-    const enter = event => {
-        const el = event.target;
-        el.style.backgroundColor = "skyblue";
+    const enter = (event) => {
+        event.target.style.backgroundColor = "skyblue";
+        //console.log('on mouse enter activated')
     };
       
       const exit = event => {
-        const el = event.target;
-        el.style.backgroundColor = "White";
+        event.target.style.backgroundColor = "white";
+        //console.log('On mouse out activated')
       };   
 /*
       const setStyle = (background, font) => {
@@ -61,17 +63,17 @@ function Master(props){
 
  */  
 
-
     //console.log (props.onChange)
     return(
         <React.Fragment>
             {props.masterList.map( (singleItem, index) => 
-            <div key={singleItem.id}  onMouseEnter={event => enter(event)} onMouseOut={event => exit(event)} >
+            <div key={singleItem.id}  onMouseOver={event => enter(event)} onMouseOut={event => exit(event)} >
             {/*must use arrow functions when sending arguments to a function */}
-                <span  onClick={() => props.onClick(singleItem.id)} style={pointerCSS}>
+                <span onClick={() => props.onClick(singleItem.id)} style={pointerCSS}>
+
                     <img style={detailSummaryPhotoCSS} align="middle" className="spacer" src={ checkImagePath( singleItem.thumbnail ) } alt={singleItem.name} />
-                    <span className="spacer">{singleItem.name}&nbsp;&nbsp;&nbsp;</span>
-                    <span className="spacer">${singleItem.price}/{singleItem.units}&nbsp;&nbsp;&nbsp;</span>
+                    {singleItem.name}&nbsp;&nbsp;&nbsp;   ${singleItem.price}/{singleItem.units}&nbsp;&nbsp;&nbsp;
+
                 </span>
                 <input className="spacer check-box" type="checkbox" name="update-or-delete" value={singleItem.id} onClick={() => props.onChange(singleItem.id)} />
                 <hr />

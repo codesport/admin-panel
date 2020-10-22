@@ -55,6 +55,7 @@ function Create(props){
                     type='text'
                     name='thumbnail'
                     placeholder='Thumbnail location (url or file path)'
+                    size='50'
                     
                 />
             </div>
@@ -81,7 +82,7 @@ function Create(props){
             <div>
                 <textarea
                     rows='5'
-                    cols='30'
+                    cols='40'
                     name='description'
                     placeholder='product description'
                 />
@@ -92,24 +93,26 @@ function Create(props){
                     type='number'
                     name='price'
                     placeholder='price per unit'
-                    min="0.25"
-                    step="0.01"
+                    min='0.25'
+                    step='0.01'
+                    size='5'
                     required 
                 />
             </div>
-            <label>Quanity Available*</label>
+            <label>Quantity Available*</label>
             <div>    
                 <input
-                    type='numeric'
+                    type='number'
                     name='quantity_available'
                     placeholder='3'
+                    size='4'
                     required
                 /> 
             </div>
             <label>Quantity Units*</label>
             <div>
                 <select id="" name="units" required>
-                    <option value disabled>--Quantity Units--</option>
+                    <option value defaultValue disabled>--Quantity Units--</option>
                     <option value="lb">lbs</option>
                     <option value="oz">oz</option>
                     <option value="each">units</option>                        

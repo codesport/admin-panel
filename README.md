@@ -17,19 +17,30 @@ The learner is guided in creating stateful and interactive master-detail interfa
 This tutorial its resulting application were created by **Marcus "Arroyo" B.**. Arroyo is a Software Engineer In Residence (SEIR) within Code Sport Lab's Unit X Divsion.  
 
 ## Stage 1: Static Website
-Our first step is to create a static, non-interactve website.  A common way to plan an application's design and development is by wireframing. You may use a pencil and paper, photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html) to design your wireframe. 
+Our first step is to create a static, non-interactve website.  A common way to plan an application's design and development is by wireframing. You may use a pencil and paper, photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial I opted for a color-block diagram which I created using Adobe Photoshop/
 
-However, we've opted to create a color-block diagram with Adobe Photoshop
+**Note:** Each part of your app which renders data should be its own component.  To manage the components we create a parent compo,ent called Conroller. It dictates the layout of each Component and in future iterations it will manahe state variables
 
-![image info](src/images/color-block-simple-v2.png)
+
+![Stage 1 Layout of Appication](src/images/color-block-simple-v2.png "Stage 1 Layout of Appication")
+
 **Figure 1: Stage 1 Layout of Appication**
 
-Take Away: Each section of the wireframe will will respresent a React Component. Each Component can be firther subdivided into addional compont sif needed.
+**Take Away:** Each section of the wireframe will will respresent a React Component. Each Component may be further subdivided into additonal ones, if needed.
 
-Each part of your app which renders data should be it's own compoenent.  To manage the compoeents we create a parent compoent called Conroller.
+---
 
-Furthermore
+![App.js](src/images/app.png "App.js for Static App")) ![Controller.js](src/images/controller.png "Controller.js for Static App")
 
+**Figure 2: App.js and Controller.js**
+
+---
+
+![Static Version of Admin App](src/images/static-version.png "Static Website Produced by the 3 Component Files")
+
+**Figure 3: Website Produced by Our 3 Files**
+
+---
 ## Stage 2: Master-Detail Page
 
 
@@ -156,16 +167,18 @@ If arrow fucntions are not used to create a method, the method must be "manually
 
 ## The Directory Structure
 
-*node_modules/:* standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React). 
+*node_modules/:* standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React).
+
+*package.json:* standard config, dependency, and script setup file for node projects
 
 *public/:* folder with global read privaleges (i.e., public , web accesible).  Only store public content here suhc as images and html files
 
-*public/index.html:* Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`.
+*public/index.html:* Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`
 
-*index.css:* Global stylesheet. 
+*index.css:* Global stylesheet for the react project 
  
-*index.js:*  Application entry point.  Renders App.js to an arbitrary id (default is id 'root') in public/index.html. Update to import App from './components/App' . 
- Here is the code in index.js that renders the App component within the `<div id=root>` of index.html: 
+*index.js:*  Application entry point.  Renders App.js to an arbitrary id (default is id 'root') in public/index.html. Open this file and update to `import App from './components/App'` Here is the code in index.js that renders the App component within the `<div id=root>` of index.html: 
+
 ```JSX
    ReactDOM.render(
     <App />,
@@ -175,13 +188,10 @@ If arrow fucntions are not used to create a method, the method must be "manually
 
 *App.js:* A container component and parent for react react applications.     Recreate and store in src/components. 
  
-
-Create a folder
  
 
-
 ```text
-my-awesome-app-name/
+admin-panel/
   ├──📁 node_modules/
   ├──📁 public/
   │ ├── index.html
@@ -202,6 +212,14 @@ my-awesome-app-name/
   ├── package.json
   └── README.md
 ```
+
+
+1. Create the `components/` folder under the `src/` directory.
+
+2. Delete `App.css` and `App-test.js` from `src/.`  Move `App.js` into  `components/`
+
+Your end result should look like this
+
 
 ## Thinking In React
 

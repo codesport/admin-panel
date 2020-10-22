@@ -13,7 +13,23 @@ function checkImagePath(path){
 
 }
 
-function formatBundleTotalInventoryDsiplay(units){
+function formatBundleTotalInventoryDisplay(units){
+/*
+
+    switch (units) {
+        case 'each':
+            return bundles
+            break;
+        
+        case 'lbs':
+            return 'lb'
+            break;    
+    
+        default:
+            return units
+            break;
+    }
+*/
 
     if ( units.indexOf('each') === -1 ){
 
@@ -21,9 +37,8 @@ function formatBundleTotalInventoryDsiplay(units){
 
     } else {
 
-        return 'bundles'
+        return 'bunches'
     }
-
 }
 
-export {checkImagePath, formatBundleTotalInventoryDsiplay}
+export {checkImagePath, formatBundleTotalInventoryDisplay}
