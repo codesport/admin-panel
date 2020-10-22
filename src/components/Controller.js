@@ -324,9 +324,9 @@ class Controller extends React.Component{
                 {this.state.headerView}
                 <hr />   
 
-                <button onClick={this.handleCreateFormView} id="create-button" style={{display:'inline'}} className="btn btn-primary btn-sm">Create</button>
-                <button onClick={this.handleRead} id="read-button" style={{display:'inline'}} className="btn btn-success btn-sm">Read</button>
-                <button onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit, 'update')} id="update-button" style={{display:'inline'}} className="btn btn-warning btn-sm">Update</button>
+                <button onClick={this.handleCreateFormView} id="create-button" style={{display:'inline'}} className="btn btn-primary btn-sm">Add (create)</button>
+                <button onClick={this.handleRead} id="read-button" style={{display:'inline'}} className="btn btn-success btn-sm">Refresh (read)</button>
+                <button onClick={()=>this.handleSelectedDetail(this.state.arrayToEdit, 'update')} id="update-button" style={{display:'inline'}} className="btn btn-warning btn-sm">Edit (update)</button>
                 <button onClick={this.handleDelete} id="delete-button" style={{display:'inline'}} className="btn btn-danger btn-sm">Delete</button>
 
                 <hr />

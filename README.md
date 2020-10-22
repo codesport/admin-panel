@@ -32,7 +32,9 @@ Our first step is to create a static, non-interactve website.  A common way to p
 
 ![App.js](src/images/app.png "App.js for Static App")) ![Controller.js](src/images/controller.png "Controller.js for Static App")
 
-**Figure 2: App.js and Controller.js**
+![Master.js](src/images/master.png "Master.js Functional Component for Static App"))
+
+**Figure 2: App.js, Controller.js, and Master.js**
 
 ---
 
