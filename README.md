@@ -228,7 +228,7 @@ You may use a pencil and paper, photoshop, or free online alternatives such as [
 
 Given the simplicity of the current our appication's current applicatiom, it can be justifably argued that the above is overkill.  That all of this ode could be placed in one file.  However, we want to design for scalabilty nd ease of matainance.  as we build-out our application and add state, the logic of this dsign pattern will become clearer.
 
-    **Controller.js:** As we build-out our complex application, To manage the components we create a parent component called Controller. Controller dictates the layout of each Component and in future iterations it will manage applcation state. 
+    **Controller.js:** As we build-out our complex application, To manage the components we create a parent component called Controller. Controller dictates the layout of each Component and in future iterations it will manage application state. 
 
     **App.js:** We'll keep App.js simple. It will maintain its utility as a single point of entry for called by index.js to renderinger into index.html
 
@@ -257,46 +257,12 @@ Now, by clicking an item on the master page, we are transported to a detail page
 Let's analyze the key pieces of code added:
 
 ## Controller
-```JSX
-import React from 'react';
-import {masterList, Master} from './Master';
-import { DetailFull } from './Detail';
-import Header from './Header';
+
+We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data or a layout/representation in the DOM.
 
 
-class Controller extends React.Component{
-    constructor(props){
-        super(props)
-        this.state ={
-            selectedDetail: null,
-        }
-    }
+![Stage 2 - Analysis of teh Controller's constructor](src/images/stage-2-controller-constuctor.png "Stage 2: Analysis of the Controller's constructorMaster Detail Application Layout") 
 
-    handleSelectedDetail_v2 = (id) => {
-        const selectedDetail = masterList.filter( detail => detail.id === id )[0];
-        this.setState(
-            {selectedDetail: selectedDetail}, 
-        )
-    }
-
-    
-    render(){
-
-        let view = null
-
-        if (this.state.selectedDetail_v2 == null){
-            view = <Master onClick={this.handleSelectedDetail} />;
-        } else {
-           view = <DetailFull selectedDetail = {this.state.selectedDetail} />
-        }
-
-        return(
-            <React.Fragment>
-                <Header masterList = {masterList} />
-                <hr />   
-                {view}
-            </React.Fragment>
-```
 
 ## Master
 
