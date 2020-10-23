@@ -17,7 +17,6 @@ Master.propTypes = {
  * The event handler is a callback (this.handleSelectedDetail) sent by Controller.js. The 
  * callback accepts a list item's id as a parameter
  * 
- * 
  * @param { any } props 
  */
 function Master(props){
@@ -42,12 +41,7 @@ function Master(props){
                 </div>
             )}
         </React.Fragment>
-
-
     )
-
-
 }
-
 
 export { Master };
