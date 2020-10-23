@@ -1,7 +1,4 @@
-
-
-
-const masterList = [
+const data = [
 
     {
         id: '1',        
@@ -38,4 +35,4 @@ const masterList = [
 
 ]
 
-export default masterList;
+export default data;

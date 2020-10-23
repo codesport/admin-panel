@@ -1,35 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-/**
- * Master component iterates through DetailSummary
- * @param {*} props 
- */
-function DetailSummary ( props ){
-    //inline styles using CSS objects
-    const detailSummaryCSS = {
-        width: '5%',
-        align: 'middle',
-        margin: '2em',
-    }
 
-    return(
-        <React.Fragment>
-        {console.log('Reading Detail Component')}
-            <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ props.thumbnail)} alt={props.description} />
-            {/*<span className="spacer">{props.category}</span>*/}
-            <span className="spacer">{props.name}&nbsp;&nbsp;&nbsp;</span>
-            <span className="spacer">${props.price}/{props.units}</span>
-            <hr />
-        </React.Fragment>
-    )
-    
-}
+Detail.propTypes = {
+    detail: PropTypes.object
+};
 
 
-  
-function DetailFull(props){
-    const {selectedDetail} = props //object destructuring with props otherwise do props.nameSentToComponent.propertyname
+function Detail(props){
+    const {selectedDetail} = props //object destructuring with props otherwise do props.nameSentToChild.propertyName
 
     const tableCenterCSS = {
         marginLeft: 'auto', 
@@ -57,25 +36,12 @@ function DetailFull(props){
         <hr/>
       </React.Fragment>
     );
-  }
-  
-
-
-DetailSummary.propTypes = {
-    description: PropTypes.string,
-    price: PropTypes.number, /*why is this behaving like a string?*/
-    quantity: PropTypes.number,
-    onDetailSelection_layer2: PropTypes.func,
 }
-
-
-DetailFull.propTypes = {
-    detail: PropTypes.object
-  };
+  
 
 /* 
 * Named Exports:
 * https://stackoverflow.com/a/50073244/946957
 * https://dev.to/laurieontech/exports-and-imports-and-defaults-oh-my-fa3
 */
-export { DetailSummary, DetailFull };
+export default Detail;
