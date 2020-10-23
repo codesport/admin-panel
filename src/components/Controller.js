@@ -58,8 +58,8 @@ class Controller extends React.Component{
      *  NB: The handleSelectDetail method is sent to Master as a callback function. It is 
      *      being stored in an arbitrary prop called "propertyFromController".
      *      
-     *      In Master.js the callback shall be activated via an "OnClick" event handler. 
-     *      In plain English this means when list item is clicked, the handleSelectDetail will be called
+     *      In Master.js the callback shall be activated via an "OnClick" event handler. In plain
+     *       English, this means when list item is clicked, the handleSelectDetail will be called
      * 
      * The Master component further "explodes" the callback by embedding the list items' IDs
      * as arguments to the handleSelectedDetail methods
@@ -67,11 +67,8 @@ class Controller extends React.Component{
      * NB: This is JSX: <ComponentName  propName = {value} />
      * 
      *     1. As such, the below JS assigns the output of Master and Detail to a variable called view
-     * 
      *     2. The variable called "view" is then "returned" as output for eventual rendering to the DOM
-     * 
      *     3. Observe that raw JavaScript must be encased in {} when using JSX
-     * 
      */
     render(){
         let view = null
