@@ -34,9 +34,11 @@ React is a Javascript library created by Facebook. It is focused on User Interfa
 React uses JavascScript ES6 and its apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
 
 ## React Coding Conventions
-In React, functional and class compoennts are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components,variables, an constants are declared using `camelCase` (i.e., first letter is lowercase).
+In React, functional and class compoennts are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components, variables, and constants are declared using `camelCase` (i.e., first letter is lowercase).
 
-Technically you can have all your  components in 1 file, however, for manageabilty, many developers prefer to have one component per file and use import statements when components need to be resused.
+Technically you can have all your  components in 1 file, however, for manageabilty, React developers prefer to have one component per file and use import statements when components need to be resused.
+
+React components 
 
 Refer to the Reacts documentation for more info on [conventions and use](https://reactjs.org/docs/components-and-props.html).
 
@@ -85,7 +87,7 @@ If you choose to use arrow functions to define functional components, declare th
 
 ### Import and Export Statements
 
-React leverages ES6 import and export statements for modularity.  React modules (i.e, components) must be exported in order to be imported.  Exports may either be named or "default".   We'll use both types in this project. Refer to [Mozilla](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) for documentation on the usage.
+React leverages ES6 import and export statements for modularity.  React modules (i.e, components) must be exported in order to be imported.  Exports may either be named or "default".   We'll use both types in this project. Refer to [Mozilla](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) for documentation.
 
 
 ## React Components
@@ -255,6 +257,46 @@ Now, by clicking an item on the master page, we are transported to a detail page
 Let's analyze the key pieces of code added:
 
 ## Controller
+```JSX
+import React from 'react';
+import {masterList, Master} from './Master';
+import { DetailFull } from './Detail';
+import Header from './Header';
+
+
+class Controller extends React.Component{
+    constructor(props){
+        super(props)
+        this.state ={
+            selectedDetail: null,
+        }
+    }
+
+    handleSelectedDetail_v2 = (id) => {
+        const selectedDetail = masterList.filter( detail => detail.id === id )[0];
+        this.setState(
+            {selectedDetail: selectedDetail}, 
+        )
+    }
+
+    
+    render(){
+
+        let view = null
+
+        if (this.state.selectedDetail_v2 == null){
+            view = <Master onClick={this.handleSelectedDetail} />;
+        } else {
+           view = <DetailFull selectedDetail = {this.state.selectedDetail} />
+        }
+
+        return(
+            <React.Fragment>
+                <Header masterList = {masterList} />
+                <hr />   
+                {view}
+            </React.Fragment>
+```
 
 ## Master
 
