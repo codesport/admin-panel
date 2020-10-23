@@ -36,7 +36,9 @@ export const masterList = [
     },
 
 ]
-
+/**
+ *  Programmatically builds a list of items using Array.map()
+ */
 function Master(){
 
     //inline styles using CSS objects
