@@ -51,7 +51,6 @@ function Master(){
             {masterList.map( (singleItem, index) => 
             <div key={singleItem.id /*Each child in a list should have a unique key prop. */ }>
                 <img style={detailSummaryCSS} align="middle" className="spacer" src={require('../'+ singleItem.thumbnail)} alt={singleItem.description} />
-                {/*<span className="spacer">{singleItem.category}</span>*/}
                 <span className="spacer">{singleItem.name}&nbsp;&nbsp;&nbsp;</span>
                 <span className="spacer">${singleItem.price}/{singleItem.units}</span>
                 <hr />
@@ -64,7 +63,7 @@ function Master(){
 /** 
 * Named Exports
 * 
-* @tutorial https://stackoverflow.com/a/50073244/946957
-* @tutorial https://dev.to/laurieontech/exports-and-imports-and-defaults-oh-my-fa3
+* {@link https://stackoverflow.com/a/50073244/946957|Named Exports on Stackoverflow}
+* {@link https://dev.to/laurieontech/exports-and-imports-and-defaults-oh-my-fa3|Named exports tutorial}
 */
 export {Master};
