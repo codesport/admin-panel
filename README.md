@@ -13,7 +13,7 @@
 
 This tutorial was created for Facebook's 2020 Developer's challenge. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
 
-The goal of this tutorial is to provide teh learner with a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6 (ES6)** Javascript concepts required to develop proficiency as a React development developer.  
+The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6 (ES6)** additions to Javascript. concepts required to develop proficiency as a React development developer.  
 
 The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. This application may be readily adpated to create variety of applications (e.g., online store, an addressbok, and a todo-list).
 
@@ -45,7 +45,7 @@ Refer to the Reacts documentation for more info on [conventions and use](https:/
 
 ## Updates to JavaScript Via ES6
 
-React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses a [Babel](https://www.google.com/search?q=what+is+babel) to allow ES6 to be backward compatible with older browsers.
+React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses the [Babel](https://www.google.com/search?q=what+is+babel) transcompiler which allows ES6 to be backward compatible with older browsers.
 
 *[`let`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
 
@@ -135,7 +135,6 @@ React apps can get complicated very quickly. To minimze this tutorial will estab
         i. NB: `admin-panel` is the name of the application in this tutorial.
         ii. Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directves  
 
-  * ESLint is correctly letting you know that you are writing weak code
 
     d. Finally, type `npm start` to run the default react application. The app will render on your local machine at http://localhost:3000
 
@@ -226,11 +225,11 @@ You may use a pencil and paper, photoshop, or free online alternatives such as [
 
 **Figure 2: App.js, Controller.js, and Master.js**
 
-Given the simplicity of the current our appication's current applicatiom, it can be justifably argued that the above is overkill.  That all of this ode could be placed in one file.  However, we want to design for scalabilty nd ease of matainance.  as we build-out our application and add state, the logic of this dsign pattern will become clearer.
+Given the simplicity of the current appication, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true, however, as developers we alway want to code with modularity, ease of maintancne, and amenabilty to refactoring in mind. As we build-out our application and add state, the logic of this design pattern will become clearer.
 
     **Controller.js:** As we build-out our complex application, To manage the components we create a parent component called Controller. Controller dictates the layout of each Component and in future iterations it will manage application state. 
 
-    **App.js:** We'll keep App.js simple. It will maintain its utility as a single point of entry for called by index.js to renderinger into index.html
+    **App.js:** As a personal prefer I keep App.js simple. It will maintain its utility as a single point of entry for called by index.js to rendering into index.html
 
     **Master.js:** In lines Lines 4 through 38 show that we store our inventory in a JSON array. In the real-world we would store ur inventory in a database. In lines 40 through (see figure 3) we use the map() method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](GITHUB LINK HERE)
 
@@ -268,6 +267,8 @@ First, the required constructor method is added to initialize state as described
 
 **Figure 5: Analysis of Controller's Constructor Method**
 
+Of note in Figure 5 is the use of [`setState()`](https://www.google.com/search?q=setState()) to a assign new value to the `SelectedDetail` state variable. In React, [`setState()`](https://www.google.com/search?q=setState()) is always called to update state variables.
+
 
 
 Second, we have our event handler that determines which item's detail to render. Figure 6, Analysis of Controller's handleSelectedDetail Method, explains the code:
@@ -285,12 +286,18 @@ Finally, in Figure 7  we have the updated render method. It sends its view prese
 **Figure 7: Analysis of Controller's Render Method**
 
  
-
-
 ## Master
+
+![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
+
+**Figure 7: Analysis of Controller's Render Method**
+
 
 ## Detail
 
+![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
+
+**Figure 7: Analysis of Controller's Render Method**
 
 ---
 # Stage 3: Expand State by Adding Create and Delete Functionality
