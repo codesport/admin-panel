@@ -30,7 +30,7 @@ class Controller extends React.Component{
      * Uses the built-in JavaScript filter method to find list item clicked based on id provided 
      * by callback. 
      * 
-     * NB: Array.filter() returns an array with elements that satisify the test criteria. 
+     * NB: Array.filter() returns an array with elements that satisfy the test criteria. 
      *     our array is in fact a JSON object, we explicity extract the object by identifying 
      *     its position with "[0]"
      * 
@@ -38,7 +38,8 @@ class Controller extends React.Component{
      * array.filter( arbitrary_variable_name_for_single_array_item_to_test =>  
      *               test_expression_on_variable_name_for_single_array_item_to_test )
      *         
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter }
+     * See {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter|Filter}
+     * for more information
      * 
      * @param { string, number} id 
      */
