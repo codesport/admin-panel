@@ -244,7 +244,7 @@ Given the simplicity of the current our appication's current applicatiom, it can
 ---
 # Stage 2: Add State and Build-out Master-Detail Functionality
 
-Although each Raect component may generate and contain data, it is a best practice to `lift state up` to the parent component. Lifting up staate is a ca core React design pricinple. It brings organization and simplicity, to soemthing potentially quite complex and unweildy.
+Although each React component may generate and contain data, it is a best practice to `lift state up` to the parent component. Lifting up staate is a ca core React design principle. It brings organization and simplicity, to soemthing potentially quite complex and unweildy.
 
 As mentioned earlier, state is complex and it's easier to have one file as a nexus and controller of all things state.
 
@@ -252,16 +252,39 @@ Here is our updated application layout:
 
 ![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout") 
 
+**Figure 4: Layout Diagram for Master Detail**
+
 Now, by clicking an item on the master page, we are transported to a detail page.
 
 Let's analyze the key pieces of code added:
 
 ## Controller
 
-We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data or a layout/representation in the DOM.
+We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data or a layout/representation in the DOM. Explanations to code section are embedded in the images via code comments
+
+First, the required constructor method is added to initialize state as described in Figure 5: 
+
+![Stage 2 - Analysis of Controller's Constructor Method](src/images/stage-2-controller-constructor.png "Stage 2: Analysis of Controller's Constructor")
+
+**Figure 5: Analysis of Controller's Constructor Method**
 
 
-![Stage 2 - Analysis of teh Controller's constructor](src/images/stage-2-controller-constuctor.png "Stage 2: Analysis of the Controller's constructorMaster Detail Application Layout") 
+
+Second, we have our event handler that determines which item's detail to render. Figure 6, Analysis of Controller's handleSelectedDetail Method, explains the code:
+
+![Stage 2 - Analysis of Controller's handleSelectedDetail Method](src/images/stage-2-controller-handleSelectedDetail.png "Stage 2: Analysis of Controller's handleSelectedDetail()")
+
+**Figure 6: Analysis of Controller's handleSelectedDetail Method**
+
+
+Finally, in Figure 7  we have the updated render method. It sends its view presentation to `App.js` for rendering to the DOM:
+
+
+![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
+
+**Figure 7: Analysis of Controller's Render Method**
+
+ 
 
 
 ## Master

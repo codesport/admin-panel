@@ -12,9 +12,6 @@ Master.propTypes = {
 };
 
 
-
-//export const 
-
 function Master(props){
 
     //inline styles using CSS objects
@@ -34,14 +31,16 @@ function Master(props){
     }
   
 /**
- * Use onMouseEnter to change element's color:
+ * Use onMouseEnter to change element's color.
+ * 
+ * Online resources to explore this feature in more detail:
  *  
- * @tutorial https://stackoverflow.com/questions/52512701/change-inline-color-on-mouseover-react
- * @tutorial https://codesandbox.io/s/mouseover-and-randomize-text-color-forked-qei73
- * @tutorial useState: https://dev.to/hunterbecton/react-tutorial-change-state-with-react-hooks-and-mouse-events-1g3m
+ * {@link https://stackoverflow.com/questions/52512701/change-inline-color-on-mouseover-react|stackoverflow}
+ * {@link https://codesandbox.io/s/mouseover-and-randomize-text-color-forked-qei73|Code Sand Box}
+ * {@link useState: https://dev.to/hunterbecton/react-tutorial-change-state-with-react-hooks-and-mouse-events-1g3m|UseState}
  * 
  * onMouseOver triggers on element's children. OnMouseEnter only triggers on parent element 
- * @tutorial https://linguinecode.com/post/how-to-add-onmouseenter-or-onmouseover-in-reactjs
+ * {@link https://linguinecode.com/post/how-to-add-onmouseenter-or-onmouseover-in-reactjs}
  */
 
     const enter = (event) => {
@@ -63,7 +62,6 @@ function Master(props){
 
  */  
 
-    //console.log (props.onChange)
     return(
         <React.Fragment>
             {props.masterList.map( (singleItem, index) => 

@@ -195,18 +195,18 @@ class Controller extends React.Component{
     /**
      * Utility Function: Allows actions (e.g., delete) on multiple items at once based on checkboxes selected
      * 
-     * This function call is embeded in the Master list. It uses querySelectorAll() and Array.from()
+     * This function call is embedded in the Master list. It uses querySelectorAll() and Array.from()
      * to find and parse UUIDs items that are checked. Stores UUID of selected items in an array
      * saved to state.arrayToEdit
      * 
      * Resources used to research and build this functionality:
      * 
-     * @tutorial https://stackoverflow.com/a/31113246/946957 and https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes
-     * @tutorial https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll
-     * @tutorial https://developer.mozilla.org/en-US/docs/Web/API/NodeList  
-     * @tutorial https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+     * {@link https://stackoverflow.com/a/31113246/946957|Stackoverflow} and https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes
+     * {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll|QuerySelectAll}
+     * {@link https://developer.mozilla.org/en-US/docs/Web/API/NodeList|NodeList}  
+     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from||Arrayfrom}
      * 
-     * Select elements with JavaScript
+     * Examples of how to select elements with JavaScript
      * 
      *  document.getElementsByClassName('check-box');
      *  document.getElementById('demo');
@@ -289,7 +289,7 @@ class Controller extends React.Component{
     }
 
     handleRead = () => {
-        console.log('manualy loading data')
+        console.log('manually loading data')
         this.emptyArrayToEdit()
         this.renderView( '' ) 
     }
