@@ -17,7 +17,7 @@ Create.propTypes = {
  * 
  * On submit, data is sent to parent to process:
  * 
- *  1. <form onSubmit={handleFormSubmit}>: Call local form submssion handler ( i.e., handleFormSubmit(event) )
+ *  1. <form onSubmit={handleFormSubmit}>: Call local form submission handler ( i.e., handleFormSubmit(event) )
  * 
  *  2. function handleFormSubmit(event): Unpack callback from parent (i.e, props.onCallbackSubmit={this.handleCreate} )
  * 
@@ -26,7 +26,7 @@ Create.propTypes = {
  * @param {function} props - callback function sent from Controller method this.handleCreateFormView()
  *                           via <Create onCallbackSubmit={this.handleCreate} />
  * 
- * @tutorial https://reactjs.org/docs/forms.html
+ * The official documentation on {@link https://reactjs.org/docs/forms.html|React Forms} 
  */
 function Create(props){
 
@@ -48,7 +48,7 @@ function Create(props){
     return(
         <React.Fragment>
             <h3>Create New Items</h3>
-            <form onSubmit={handleFormSubmit}> {/*1. onSubmit we call our local form submssion handler*/}
+            <form onSubmit={handleFormSubmit}> {/*1. onSubmit we call our local form submission handler*/}
             <label>Image</label>
             <div>
                 <input

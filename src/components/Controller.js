@@ -175,7 +175,7 @@ class Controller extends React.Component{
             }, function(){
                     this.emptyArrayToEdit()
                     this.renderView( 
-                            <h3>Successfuly Updated {updates.name}!</h3> 
+                            <h3>Successfully Updated {updates.name}!</h3> 
                     )
                 }
             )
@@ -186,7 +186,7 @@ class Controller extends React.Component{
         
         this.setState({
             masterList: newMasterList,
-            }, function(){this.renderView( <h3>Successfuly Created {creation.name}!</h3> )}
+            }, function(){this.renderView( <h3>Successfully Created {creation.name}!</h3> )}
         )
 
     }
@@ -337,6 +337,5 @@ class Controller extends React.Component{
 
     }
 }
-
 
 export default Controller;

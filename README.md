@@ -43,7 +43,7 @@ Refer to the Reacts documentation for more info on [conventions and use](https:/
 
 ## Updates to JavaScript Via ES6
 
-React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses the [Babel](https://www.google.com/search?q=what+is+babel) transcompiler which allows ES6 to be backward compatible with older browsers.
+React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses the [Babel](https://www.google.com/search?q=what+is+babel) transcompiler which allows ES6 to be backward compatible with older and non-chromium based browsers.
 
 *[`let`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
 
@@ -199,50 +199,64 @@ admin-panel/
 
 ---
 
-# Stage 1 Build-out: Application Planning and Building a Static Website
+# Stage 1: Planning and Static Application Build Out
 
-Our first step is to create a static, non-interactve website. Often the abode of UX/UI specialists, wireframing  is a common way to plan an application's design and development.  However, as a developer, you will find that diagraming an application's layout is an expedient and tactical methodlogy for planning and strategizing React applications.
+Our first step is to create a static, non-interactve website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagraming an application's layout is an expedient and tactical methodlogy for planning and strategizing React applications.
 
-You may use a pencil and paper, photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
+You may use a pencil and paper, Photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
 
 ![Stage 1 - Application Layout and Files Mirroring Application Layout ](src/images/color-block-simple-v2-and-folder-layout.png "Stage 1 Application Layout and Folder Layout Mirroring Layout Diagram") 
 
-**Figure 1: Stage 1 - Appication Layout Diagram With Corresponding File and Fider Structure**
+  **Figure 1: Stage 1 - Application Layout Diagram with Corresponding File Structure**
 
 **Note:** As shown in the folder in Figure 1, each part of the application which is responsible for rendering view a should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game paln for development of our application.
 
 **Take Away:** Each section of the wireframe will will respresent a React Component. Each Component may be further subdivided into additonal ones, if needed.
 
 
-## Coding the Static Website
+## Coding the Static Website: App.js, Controller.js, Header.js, and Master.js
+
+The code for the App, Controller, Header, and Master components is shown in Figure 2 with comments.  Here is a summary:
+
+1. **Controller.js:** Will manage the ensuing complexity of our application. Controller dictates the layout of each component. In future iterations it will manage application state. 
+
+2.  **Master.js:** Does the heavy lifting.  Lines Lines 4 through 38 show that we store our inventory in a JSON array. In the real-world we would store ur inventory in a database. In lines 40 through (see figure 3) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](GITHUB LINK HERE)
+
+3. **Header.js:** Displays the title of the application. Also uses JavaScript's length property to count the total inventory.
+
+4.  **App.js:** Many developers prefer to keep App.js simple. For this project, it will maintain its utility as a single point of entry called by index.js for rendering into index.html. Controller is imported into App.js
+
+
 
 ![App.js](src/images/stage-1-app.png "App.js for Static App")) ![Controller.js](src/images/stage-1-controller.png "Controller.js for Static App")
 
-![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App"))
+![Header.js](src/images/stage-1-header.png "Header.js Functional Component for Static App")) ![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App"))
 
 **Figure 2: App.js, Controller.js, and Master.js**
 
-Given the simplicity of the current appication, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true, however, as developers we alway want to code with modularity, ease of maintancne, and amenabilty to refactoring in mind. As we build-out our application and add state, the logic of this design pattern will become clearer.
+Given the simplicity of the current iteration of our appication, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true, however, as developers we alway want to code with modularity, ease of maintancne, and amenabilty to refactoring in mind. As we build-out our application and add state, the logic of this design pattern will become clearer.
 
-    **Controller.js:** As we build-out our complex application, To manage the components we create a parent component called Controller. Controller dictates the layout of each Component and in future iterations it will manage application state. 
 
-    **App.js:** As a personal prefer I keep App.js simple. It will maintain its utility as a single point of entry for called by index.js to rendering into index.html
-
-    **Master.js:** In lines Lines 4 through 38 show that we store our inventory in a JSON array. In the real-world we would store ur inventory in a database. In lines 40 through (see figure 3) we use the map() method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](GITHUB LINK HERE)
 
 
 ### Resulting Website
 
 ![Static Version of Admin App](src/images/static-version.png "Static Website Produced by the 3 Component Files")
 
-**Figure 3: Website Produced by Our 3 Files**
+**Figure 3: Stage 1: The Static Application Produced by Our 3 Files**
 
 ---
 # Stage 2: Add State and Build-out Master-Detail Functionality
 
-Stage 2 involved converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
+**PRO TIP 7**
+     > Figure out the absolute minimal representation of the state your 
+     > application needs and compute everything else you need on-demand." 
+     > 
+     >  *- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)*
 
-Although each React component may generate and contain data, it is a best practice to `lift state up` to the parent component. Lifting up saate is a core React design principle. It brings organization and simplicity, to what can potentially be quite complex and unweildy codebase.
+Stage 2 involves converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
+
+Although each React component may generate and contain data, it is a best practice to *lift state up* to the parent component. *Lifting up state* is a core React design principle. It brings organization and simplicity to what can potentially be quite complex and unwieldy codebase.
 
 As mentioned earlier, state is complex and it's easier to have one file as a nexus and controller of all things state.
 
@@ -310,24 +324,190 @@ Of note, however, is that when passing arguments to other components, they are s
 ---
 # Stage 3: Expand State by Adding Create and Delete Functionality
 
-Let's examine our new code:
+As our Controller becomes mre complex it is prudent to identify ways to refactor and simplify our code.  In Stage 3,our controller uses conditionals to decide what to render to the user.  To manage the viw more eleganfly, we will create a custom method called renderView that will automate this process.
 
 
-## Create
 
-## Controller
+## Controller's `renderView()` Method
 
-## Delete
+Render view is a helper method within Controller.  It which manages `this.state.view` and processes what gets displayed to the user. 
+
+
+![Stage 3 - renderView() Helper Method](src/images/stage-3-controller=renderview.png "Stage 3 - renderView() Helper Method")
+
+**Figure 10: The renderView() Helper Method for Stage 3 Manages Our Application's Increased Complexity**
+
+## Controller's handleDelete() Method
+
+Here is an analysis of the handleDelete method:
+
+
+1. Retrieves a list of inventory items we wish to delete. This is stored in this.state.arrayToEdit
+
+2. Makes a copy of the existing inventory array this.state.masterList
+
+3. Applies [`Array.filter()`] to the copy to return everything **_except_** the element contianing the ID we wish to delete
+
+
+```JSX
+    handleDelete = () => {
+        
+        console.log('Delete function called')
+
+        if(this.state.arrayToEdit.length > 0){ 
+               
+            const confirmDelete = window.confirm('Are you sure you want to delete these ' + this.state.arrayToEdit.length + ' items?')
+            
+            if (confirmDelete === true) {
+
+                let newMasterList = this.state.masterList 
+                this.state.arrayToEdit.map( ( id, index) =>     
+                    newMasterList = newMasterList.filter( detail => detail.id !== id)    
+                )
+
+                console.log(newMasterList)
+            
+                this.setState({
+
+                    masterList: newMasterList, 
+
+                }, function(){
+                    this.emptyArrayToEdit()
+                    console.log(this.state.masterList)
+                    this.renderView( 
+                        <h3>Success! { this.state.arrayToEdit.length } Item(s) Deleted</h3>  
+                    )
+                
+                })
+
+            }  else {
+                this.emptyArrayToEdit()
+                this.renderView(
+                    <h3>Delete Process Canceled By User.</h3> 
+                     )
+                   
+            } 
+            
+        } else {
+
+            this.renderView(
+                <h3>Delete Attempt Aborted. Please Select an Item to Delete.</h3> 
+                )                
+        }    
+    }
+```
+**Figure 11: Stage 3 - Delete Functionality Added to Controller**
+
+
+
+
+
+## Create.js
+
+The Create component displays the form to create a new item. However, controller processes the form through a callback function sent to the Create component.  Please refer to the comments in Figure 10 for a additional analysis of Create.js
+
+![Stage 3 - Create Component](src/images/stage-3-create.png "Stage 3 - Create Component")
+
+
+**Figure 12: Comments on Create Component's Functionality**
+
+
+
+
+## Controller's `handleCreateFormView()` Method
+
+*`handleCreateFormView()`* sends a callback to Create.js and manipulates what's displayed on to the user
+
+```JSX
+    handleCreateFormView = () => {
+        this.renderView('', <Create onCallbackSubmit={this.handleCreate} />) 
+        this.hideButton('create-button')
+        this.hideButton('update-button')
+        this.hideButton('delete-button')
+    }
+```
+
+**Figure 13: The Controller's handleCreateFormView Method **
+
+## Controller's `handleCreate()` Method
+
+*`handleCreate()`* concatenates the newly created inventory object to a copy of our inventory list (masterList). It then updates the masterList by means of [`setState()`](https://www.google.com/search?q=setState())
+
+
+```JSX
+    handleCreate = ( creation ) =>{
+        const newMasterList = this.state.masterList.concat( creation )
+        
+        this.setState({
+            masterList: newMasterList,
+            }, function(){this.renderView( <h3>Successfuly Created {creation.name}!</h3> )}
+        )
+
+    }
+```
+**Figure 14: The Controller's handleCreateFormView Method**
+
+
 
 ---
 
-# Stage 4: Update Functionality
+# Stage 4: Update 
+
+To provide an optimal user experience, the update form was tightly integrated into what appears to be a the Detail view.  However, it is in fact separate component that overlays and HTML5 form into the code used to generate teh Detail component.
+
+The React form property [`defaultValue`](https://reactjs.org/docs/uncontrolled-components.html#default-values) is used to pre-populate the form with the item's information.
+
+Similiar to Create.js, Update.js receives a callback function fro the color and populates it with form information. The code is quite trivial, so you may reveiew thet code here.
+
+Of note however, is how we update in controller.  
+
+1. handleSelectedDetail()
+
+    A housekeeping and helper method called handleSelectedDetail mehtod. It uses a series of conditionals to dertermin if the detail or update view shoudl be displayed.
+
+2. handleUpdate()
+
+    Updates the list first filtering out the item being edited from a copy existing list. Afterwards, it concatenates the updated item the the copy. FInally, it uses setState() to actually update the masterList.  Do note these are array maaipulation operations. If we were storing in a database. This functionality would be diferrent.
+
+```JSX
+    handleUpdate = (updates) =>{
+        const updatedDetail = this.state.masterList.filter( detail => detail.id !== updates.id).concat(updates)
+        console.log('Contents of Updated Detail:')
+        console.log(updatedDetail)
+        this.setState({
+            masterList: updatedDetail,
+            }, function(){
+                    this.emptyArrayToEdit()
+                    this.renderView( 
+                            <h3>Successfully Updated {updates.name}!</h3> 
+                    )
+                }
+            )
+    }
+```
 
 
+**Figure 15: The Controller's `handleUpdate` Method **
 
 
 
 # Conclusion
+
+Next steps of this project would include:
+
+
+* Integration with a NoSQL database such as Firebase or Mongo
+* Adding Authentication and Access Control for security
+* Hosting on a live sever running node and NGINX
+* Potentially using Redux to manage state as our application continues to grow and state management becomes more complex.
+* Using Jest to run automated test and to incorporate test driven development best practices
+* Explore using React Router as a means of handling navigation and URL management
+
+
+
+
+
+
 
 
 # Trash
@@ -342,4 +522,3 @@ The code used in this tutorial was inspired by a bevy of tutorials on Reactjs.or
 
 Part 1 serves as a beginner's tutorial and guides the learner in creating a static, stateless, and non-interactive application using React functional components. 
 
-It assumes the learner has zero knowlege of React but is marginally proficient in core JavaScript concepts and is 
