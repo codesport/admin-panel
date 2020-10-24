@@ -6,20 +6,19 @@ function Header(props){
     const styledHeader = {
         color: 'brown',
         marginLeft:'2em',
-        /*marginRight:'2em',*/
     }
 
     /**
-     * Pro Tip 1: "Figure out the absolute minimal representation of the state your 
-     * application needs and compute everything else you need on-demand." 
+     * Computes and displays the size of our inventory
      * 
-     *  Source: - Thinking in React
+     * Receives a prop from Controller.js containing the inventory list. It then computes
+     * the number of items in the list through JavaScript's Array.length property
      * 
-     * Pro Tip 2: If you’re building a list, store the list in an array. And, don’t
+     * Pro Tip: If you’re building a list, store the list in an array. And, don’t
      * keep a separate state variable for the count. Instead, when you want to render
      * the list count, take the length of the array.
      * 
-     * @tutorial https://reactjs.org/docs/thinking-in-react.html
+     *   Source: {@link https://reactjs.org/docs/thinking-in-react.html| Thinking in React}
      */
     return(
         <React.Fragment>
