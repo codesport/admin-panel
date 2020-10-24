@@ -5,7 +5,7 @@
 * [Getting Started: Setting Up a React Local Development Environment](#authorship-and-credits)
 * [Stage 1: Application Planning and Building a Static Website](#php-application-development-excercise-overview)
 * [Stage 2: Adding State and Build-out Master-Detail Functionality](#php-application-development-excercise-task-description)
-* [Stage 3: Expand State by Adding Create and Delete Functionality]
+* [Stage 3: Expanding State by Adding Create and Delete Functionality]
 * [Stage 4: Adding Update Functionality]
 * [Conclusions and Next Steps]
 
@@ -36,9 +36,7 @@ React uses JavascScript ES6 and its apps are often coded in [JSX](https://www.go
 ## React Coding Conventions
 In React, functional and class compoennts are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components, variables, and constants are declared using `camelCase` (i.e., first letter is lowercase).
 
-Technically you can have all your  components in 1 file, however, for manageabilty, React developers prefer to have one component per file and use import statements when components need to be resused.
-
-React components 
+Technically you can have all your  components in 1 file, however, for manageabilty, React developers prefer to have one component per file and use import and export statements to assemble an application. 
 
 Refer to the Reacts documentation for more info on [conventions and use](https://reactjs.org/docs/components-and-props.html).
 
@@ -101,18 +99,18 @@ Ideally, each component represents a portion of our view. Within react there are
 Functional components in React are composed of pure functions which are [first class objects (functions)](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) in JavaScript. As functions, a given set of inputs will always provide a predicatble and guaranteed output. As first class objects, JavaScript functions may be treated as variables.
 
 
+    **PRO TIP 3:** Generally speaking, child components should be functional components and not manage state. In fact, their state must be lifted into and therefore managed by its parent
+
+    **PRO TIP 4:** If you find yourself repeating the same lines of code thtoughout a given parent or child component, combine that code into a method or function. Then call when needed
+
+    **PRO TIP 5:** If you find yourself needing the same function in more than 2 component's, seperate that function into an additional child or sibling component and import it where needed!
+
+
 ### Class Components
-Class components are used to manage state in React applications. As the name implies, these are OO constructs 
+Class components are OO constructs that  are used to manage state in React applications. Every class component in React must have a `render()` method with a `return` statement.
 
-React apps can get complicated very quickly. To minimze this tutorial will establish some rules that will help beginners to maximize their prouctivuty.  Traditionally, only class components could manage state.  There are now exceptions such as useState.  
+  **PRO TIP 6:** Create a single parent component that will control application state. This parent component will be a class component
 
-    1. Create a single parent component that will control application state. This parent component will be a class compoente
-
-        a. **Corrollary:** Children should be functional components. Their state will be lifted into and therefore manage by the parent component
-
-    2. If you find yourself repeating the same lines of code thtoughout a given parent or child component, combine that code into a method or function. Then call when needed
-
-    3. If you find yourself needing the same function in more than 2 component's, seperate that function into a seperate child 1. 1component and import it!
 
 ---
 # Getting Started: Setting-up a React Local Development Enviornment 
@@ -134,7 +132,6 @@ React apps can get complicated very quickly. To minimze this tutorial will estab
     c. Within your terminal type `npx create-react-app  admin-panel`  
         i. NB: `admin-panel` is the name of the application in this tutorial.
         ii. Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directves  
-
 
     d. Finally, type `npm start` to run the default react application. The app will render on your local machine at http://localhost:3000
 
@@ -219,9 +216,9 @@ You may use a pencil and paper, photoshop, or free online alternatives such as [
 
 ## Coding the Static Website
 
-![App.js](src/images/app.png "App.js for Static App")) ![Controller.js](src/images/controller.png "Controller.js for Static App")
+![App.js](src/images/stage-1-app.png "App.js for Static App")) ![Controller.js](src/images/stage-1-controller.png "Controller.js for Static App")
 
-![Master.js](src/images/master.png "Master.js Functional Component for Static App"))
+![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App"))
 
 **Figure 2: App.js, Controller.js, and Master.js**
 
@@ -243,7 +240,9 @@ Given the simplicity of the current appication, it may be argued that the above 
 ---
 # Stage 2: Add State and Build-out Master-Detail Functionality
 
-Although each React component may generate and contain data, it is a best practice to `lift state up` to the parent component. Lifting up staate is a ca core React design principle. It brings organization and simplicity, to soemthing potentially quite complex and unweildy.
+Stage 2 involved converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
+
+Although each React component may generate and contain data, it is a best practice to `lift state up` to the parent component. Lifting up saate is a core React design principle. It brings organization and simplicity, to what can potentially be quite complex and unweildy codebase.
 
 As mentioned earlier, state is complex and it's easier to have one file as a nexus and controller of all things state.
 
@@ -257,47 +256,56 @@ Now, by clicking an item on the master page, we are transported to a detail page
 
 Let's analyze the key pieces of code added:
 
-## Controller
+## 1. Controller.js Analysis
 
-We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data or a layout/representation in the DOM. Explanations to code section are embedded in the images via code comments
+We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data or a layout/representation in the DOM. Explanations to code section are embedded in the images via code comments.  Our code in the controller may be divided into 3 methods
 
+### `constructor()`
 First, the required constructor method is added to initialize state as described in Figure 5: 
 
 ![Stage 2 - Analysis of Controller's Constructor Method](src/images/stage-2-controller-constructor.png "Stage 2: Analysis of Controller's Constructor")
 
 **Figure 5: Analysis of Controller's Constructor Method**
 
-Of note in Figure 5 is the use of [`setState()`](https://www.google.com/search?q=setState()) to a assign new value to the `SelectedDetail` state variable. In React, [`setState()`](https://www.google.com/search?q=setState()) is always called to update state variables.
-
-
-
 Second, we have our event handler that determines which item's detail to render. Figure 6, Analysis of Controller's handleSelectedDetail Method, explains the code:
+
+### `handleSelectedDetail()`
+Of note in Figure 6 is JavaScript's built-in [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method and is the use of [`setState()`](https://www.google.com/search?q=setState()) to a assign new value to the `SelectedDetail` state variable. In React, [`setState()`](https://www.google.com/search?q=setState()) is always called to update state variables.
+
 
 ![Stage 2 - Analysis of Controller's handleSelectedDetail Method](src/images/stage-2-controller-handleSelectedDetail.png "Stage 2: Analysis of Controller's handleSelectedDetail()")
 
 **Figure 6: Analysis of Controller's handleSelectedDetail Method**
 
 
+### `render()`
+
 Finally, in Figure 7  we have the updated render method. It sends its view presentation to `App.js` for rendering to the DOM:
 
 
 ![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
 
-**Figure 7: Analysis of Controller's Render Method**
+**Figure 7: Analysis of Controller's Render Method with Emphasis on Callback Sent to the Master Componennt**
 
  
-## Master
+## 2. Master.js Analysis
 
-![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
+Master.js and its callback are discussed in detail within Figure 7's comments. 
 
-**Figure 7: Analysis of Controller's Render Method**
+Of note, however, is that when passing arguments to other components, they are sent as objects. These objects are accessed with the "props" paramenter combined with dot notation. 
 
 
-## Detail
 
-![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
+![Stage 2 - Analysis of the Master Functional Component](src/images/stage-2-master.png "Stage 2: The Master Functional Component")
 
-**Figure 7: Analysis of Controller's Render Method**
+**Figure 8: The Master Component**
+
+
+## 3. Detail.js Analysis
+
+![Stage 2 - The Detail Component](src/images/stage-2-detail.png "Stage 2: Detail Component")
+
+**Figure 9: The Detail Component**
 
 ---
 # Stage 3: Expand State by Adding Create and Delete Functionality
@@ -318,120 +326,6 @@ Let's examine our new code:
 
 
 
-
-
-
-
-
-
-
-## Thinking In React
-
-
-
-
-You might find it helpful to famila
-
-
-
-
-
-
-### Wire Frame the App's Component Diagram
-
-You may use a piece of paper or Diagrams
-
-> how do you know what should be its own component? Use the same techniques for deciding if
-> you should create a new function or object. One such technique is the single responsibility
-> principle, that is, a component should ideally only do one thing. If it ends up growing, it
-> should be decomposed into smaller subcomponents.
-> *-- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy)*
-
-
-> Separate your UI into components, where each component matches one piece of your data model.
-> your UI (and therefore your component structure) should map
-> - [Thinking in React](https://reactjs.org/docs/thinking-in-react.html#step-1-break-the-ui-into-a-component-hierarchy)
-
-### Arrange Components into a hierarchy
-
-
-
-### Build Static Version of Site 
-
-This principle also entails rendering the UI with static data. Facebooks's reasoning for this approach is bullet proof.  To summarize:
-
-> ...building a static version requires a lot of typing and no thinking, and adding interactivity 
-> requires a lot of thinking and not a lot of typing.
-> - [Thinking in React](https://reactjs.org/docs/thinking-in-react.html#step-2-build-a-static-version-in-react)
-
-> In simpler examples, it’s usually easier to code your component model top-down [parent to child],
-> and on larger projects, it’s easier to go bottom-up and write tests as you build
-> - [Thinking in React](https://reactjs.org/docs/thinking-in-react.html#step-2-build-a-static-version-in-react)
-
-
-
-### Identify which components need to be state and convert them to Class Components
-
-Figure out the absolute minimal representation of the state your application needs. [Then] compute everything else you need on-demand. 
-
-or example, if you’re building a TODO list, keep an array of the TODO items around; don’t keep a separate state variable for the count. Instead, when you want to render the TODO count, take the length of the TODO items array.
-
-
-# Building in React
-
-## Components
-
-
-## Functional Components
-
-
-## Class Components
-
-## Passing and Managing Variables
-
-# Passing Down Callback Functions
-
-```JSX
-
-//Controller.js
-
-//...setup code
-class Main extends React.Component{
-
-  constructor(props){
-    super(props);
-    this.state ={
-      masterList: [],
-      selectedDetail: null
-    }
-  }
-
-  onDetailSelect( id ) {
-    this.setState({ selectedDetail: id});
-  }
-
- render(){
-    return (
-      <div>
-
-          <Master 
-            masterList={this.state.masterList}
-            onClick={(id)=>this.onDetailSelect(id)}
-           />
-          {/*<Detail selectedDetail={this.state.selectedDetail} /> this sends all elements of selected Detail array*/}
-
-
-          <Detail selectedDetail={this.state.Detail.filter((detail) => detail.id === this.state.selectedDetail)[0]} /> 
-
-                 
-      </div>
- ```   
-
-
-
-## Props
-
-## State
 
 # Conclusion
 
