@@ -13,7 +13,7 @@ function Detail(props){
       
     return (
         <React.Fragment>
-            <h1>Full Detail for {selectedDetail.name} Category: {selectedDetail.category}</h1>
+            <h1>Full Detail for {selectedDetail.name} | Category: {selectedDetail.category}</h1>
             <div className="divTable">
                 <div className="divTableBody">
                     <div className="divTableRow">
