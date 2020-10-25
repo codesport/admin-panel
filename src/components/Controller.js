@@ -60,7 +60,8 @@ class Controller extends React.Component{
     }
 
 
-    //housekeeping methods
+    //start housekeeping methods
+    
     emptyArrayToEdit = () =>{
         this.setState({
             arrayToEdit:[]
@@ -88,6 +89,51 @@ class Controller extends React.Component{
 
     }
 
+
+    /**
+     * Helper function to update Header title and inventory count
+     * 
+     * this.state.headerView is called for Create, Delete, and Header Update - 3 times.
+     * 
+     * @param {string} componentName - name of the component to render in 
+     * @param {string} event - (optional) unused
+     * 
+     * Using spread operator to pass and deconstruct props:
+     *  {@link https://stackoverflow.com/questions/28452358/what-is-the-meaning-of-this-props-in-reactjs|Props and Spread Operator}
+     * 
+     * Sending component names as parameters to functions: 
+     *  {@link https://www.google.com/search?q=send+a+component+name+as+a+variable+in+react|Google Search}
+     *
+     * Sending Components as parameters to functions: 
+     *  {@link https://stackoverflow.com/questions/29875869/react-jsx-dynamic-component-name| Authoritative Solution}
+     *  {@link https://stackoverflow.com/a/38823404| Dynamic Loading for index.js}
+     *  {@link https://stackoverflow.com/questions/28842459/react-jsx-dynamic-component-names| Other Solution on stackoverflow}
+     * 
+     */
+    renderHeaderView = ( componentName, event ) =>{
+
+        let headerView = null
+
+        console.log('Rendering component "'+ componentName + '" in header')
+
+        if( componentName === 'Header'){
+
+            headerView = <Header masterList={this.state.masterList} header={this.state.appHeader} onDoubleClick={this.handleShowHeaderUpdateForm} />
+
+        } else{
+
+            headerView  = <UpdateHeader masterList={this.state.masterList} header={this.state.appHeader} onCallbackSubmit={this.updateHeader} />
+
+        }
+
+        this.setState({
+            headerView: headerView
+        })
+
+    }
+
+
+
     //https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
     hideButton = (id) =>{
         const button = document.getElementById(id)
@@ -102,7 +148,7 @@ class Controller extends React.Component{
         }
     } 
     
-    //housekeeping methods
+    //end housekeeping methods
 
     handleSelectedDetail = (id, selectOrUpdate) => {
 /*
@@ -256,6 +302,9 @@ class Controller extends React.Component{
                 }, function(){
                     this.emptyArrayToEdit()
                     console.log(this.state.masterList)
+ 
+                    this.renderHeaderView('Header', 'onDoubleClick' )
+                    
                     this.renderView( 
                         <h3>Success! { this.state.arrayToEdit.length } Item(s) Deleted</h3>  
                     )
@@ -297,10 +346,8 @@ class Controller extends React.Component{
     handleShowHeaderUpdateForm = () =>{
 
         console.log('Loading header update form')
-
-        this.setState({
-            headerView: <UpdateHeader masterList={this.state.masterList} header={this.state.appHeader} onCallbackSubmit={this.updateHeader} />
-        })
+        
+        this.renderHeaderView( 'UpdateHeader', 'onCallbackSubmit' )
 
     }
     
@@ -311,9 +358,10 @@ class Controller extends React.Component{
 
         this.setState({
             appHeader: newText.header,
-            headerView: <Header masterList={this.state.masterList} header={newText.header} onDoubleClick={this.handleShowHeaderUpdateForm} />,
 
-        }, function(){console.log(this.state.headerView)}
+        }, function(){   
+                this.renderHeaderView( 'Header',  'onDoubleClick' )
+            }
         )
 
     }

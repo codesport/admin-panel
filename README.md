@@ -172,7 +172,7 @@ Class components are OO constructs that  are used to manage state in React appli
 
     3. Follow the *TODOs* mentioned above.
 
-We'll add our component files later, however, your folder structure should look like this:
+We'll add our component files in the next section. However, your folder structure should resemble this:
 
 ```text
 admin-panel/
@@ -183,7 +183,7 @@ admin-panel/
   | |── favicon.ico  
   | └── robots.txt
   ├──📁 src/
-  │ ├── components/
+  │ ├──📁 components/
   | | ├── App.js 
   │ | |── ComponentNum_1.js
   | | |     ...
@@ -207,9 +207,9 @@ You may use a pencil and paper, Photoshop, or free online alternatives such as [
 
 ![Stage 1 - Application Layout and Files Mirroring Application Layout ](src/images/color-block-simple-v2-and-folder-layout.png "Stage 1 Application Layout and Folder Layout Mirroring Layout Diagram") 
 
-  **Figure 1: Stage 1 - Application Layout Diagram with Corresponding File Structure**
+  **Figure 2: Stage 1 - Application Layout Diagram with Corresponding File Structure**
 
-**Note:** As shown in the folder in Figure 1, each part of the application which is responsible for rendering view a should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game paln for development of our application.
+**Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering view a should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game paln for development of our application.
 
 **Take Away:** Each section of the wireframe will will respresent a React Component. Each Component may be further subdivided into additonal ones, if needed.
 
@@ -220,7 +220,7 @@ The code for the App, Controller, Header, and Master components is shown in Figu
 
 1. **Controller.js:** Will manage the ensuing complexity of our application. Controller dictates the layout of each component. In future iterations it will manage application state. 
 
-2.  **Master.js:** Does the heavy lifting.  Lines Lines 4 through 38 show that we store our inventory in a JSON array. In the real-world we would store ur inventory in a database. In lines 40 through (see figure 3) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](GITHUB LINK HERE)
+2.  **Master.js:** Does the heavy lifting.  Lines Lines 4 through 38 show that we store our inventory in a JSON array. In the real-world we would store ur inventory in a database. In lines 40 through of Master.js (see figure 3 below) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](GITHUB LINK HERE)
 
 3. **Header.js:** Displays the title of the application. Also uses JavaScript's length property to count the total inventory.
 
@@ -232,7 +232,7 @@ The code for the App, Controller, Header, and Master components is shown in Figu
 
 ![Header.js](src/images/stage-1-header.png "Header.js Functional Component for Static App")) ![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App"))
 
-**Figure 2: App.js, Controller.js, and Master.js**
+**Figure 3: App.js, Controller.js, and Master.js**
 
 Given the simplicity of the current iteration of our appication, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true, however, as developers we alway want to code with modularity, ease of maintancne, and amenabilty to refactoring in mind. As we build-out our application and add state, the logic of this design pattern will become clearer.
 
@@ -243,7 +243,7 @@ Given the simplicity of the current iteration of our appication, it may be argue
 
 ![Static Version of Admin App](src/images/static-version.png "Static Website Produced by the 3 Component Files")
 
-**Figure 3: Stage 1: The Static Application Produced by Our 3 Files**
+**Figure 4: Stage 1: The Static Application Produced by Our 3 Files**
 
 ---
 # Stage 2: Add State and Build-out Master-Detail Functionality
@@ -264,7 +264,7 @@ Here is our updated application layout:
 
 ![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout") 
 
-**Figure 4: Layout Diagram for Master Detail**
+**Figure 5: Layout Diagram for Master Detail**
 
 Now, by clicking an item on the master page, we are transported to a detail page.
 
@@ -275,13 +275,13 @@ Let's analyze the key pieces of code added:
 We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data or a layout/representation in the DOM. Explanations to code section are embedded in the images via code comments.  Our code in the controller may be divided into 3 methods
 
 ### `constructor()`
-First, the required constructor method is added to initialize state as described in Figure 5: 
+First, the required constructor method is added to initialize state as described in Figure 6: 
 
 ![Stage 2 - Analysis of Controller's Constructor Method](src/images/stage-2-controller-constructor.png "Stage 2: Analysis of Controller's Constructor")
 
-**Figure 5: Analysis of Controller's Constructor Method**
+**Figure 6: Analysis of Controller's Constructor Method**
 
-Second, we have our event handler that determines which item's detail to render. Figure 6, Analysis of Controller's handleSelectedDetail Method, explains the code:
+Second, we have our event handler that determines which item's detail to render. Figure 7, Analysis of Controller's handleSelectedDetail Method, explains the code:
 
 ### `handleSelectedDetail()`
 Of note in Figure 6 is JavaScript's built-in [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method and is the use of [`setState()`](https://www.google.com/search?q=setState()) to a assign new value to the `SelectedDetail` state variable. In React, [`setState()`](https://www.google.com/search?q=setState()) is always called to update state variables.
@@ -289,37 +289,38 @@ Of note in Figure 6 is JavaScript's built-in [`Array.filter()`](https://develope
 
 ![Stage 2 - Analysis of Controller's handleSelectedDetail Method](src/images/stage-2-controller-handleSelectedDetail.png "Stage 2: Analysis of Controller's handleSelectedDetail()")
 
-**Figure 6: Analysis of Controller's handleSelectedDetail Method**
+**Figure 7: Analysis of Controller's handleSelectedDetail Method**
 
 
 ### `render()`
 
-Finally, in Figure 7  we have the updated render method. It sends its view presentation to `App.js` for rendering to the DOM:
+Finally, in Figure 8  we have the updated render method. It sends its view presentation to `App.js` for rendering to the DOM:
 
 
 ![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
 
-**Figure 7: Analysis of Controller's Render Method with Emphasis on Callback Sent to the Master Componennt**
+**Figure 8: Analysis of Controller's Render Method with Emphasis on Callback Sent to the Master Componennt**
 
  
 ## 2. Master.js Analysis
 
-Master.js and its callback are discussed in detail within Figure 7's comments. 
+Master.js and its callback are already discussed in detail within Figure 8's comments.  
 
-Of note, however, is that when passing arguments to other components, they are sent as objects. These objects are accessed with the "props" paramenter combined with dot notation. 
-
+However, it is worth mentionin that when passing arguments to other components, they are sent as objects. These objects are accessed with the "props" paramenter combined with dot notation. 
 
 
 ![Stage 2 - Analysis of the Master Functional Component](src/images/stage-2-master.png "Stage 2: The Master Functional Component")
 
-**Figure 8: The Master Component**
+**Figure 9: The Master Component**
 
 
 ## 3. Detail.js Analysis
 
+
+
 ![Stage 2 - The Detail Component](src/images/stage-2-detail.png "Stage 2: Detail Component")
 
-**Figure 9: The Detail Component**
+**Figure 10: The Detail Component**
 
 ---
 # Stage 3: Expand State by Adding Create and Delete Functionality
@@ -333,9 +334,9 @@ As our Controller becomes mre complex it is prudent to identify ways to refactor
 Render view is a helper method within Controller.  It which manages `this.state.view` and processes what gets displayed to the user. 
 
 
-![Stage 3 - renderView() Helper Method](src/images/stage-3-controller=renderview.png "Stage 3 - renderView() Helper Method")
+![Stage 3 - renderView() Helper Method](src/images/stage-3-controller-renderview.png "Stage 3 - renderView() Helper Method")
 
-**Figure 10: The renderView() Helper Method for Stage 3 Manages Our Application's Increased Complexity**
+**Figure 11: The renderView() Helper Method for Stage 3 Manages Our Application's Increased Complexity**
 
 ## Controller's handleDelete() Method
 
@@ -384,10 +385,9 @@ Here is an analysis of the handleDelete method:
                 this.emptyArrayToEdit()
                 this.renderView(
                     <h3>Delete Process Canceled By User.</h3> 
-                     )
-                   
+                     )                  
             } 
-            
+         
         } else {
 
             this.renderView(
@@ -396,7 +396,7 @@ Here is an analysis of the handleDelete method:
         }    
     }
 ```
-**Figure 11: Stage 3 - Delete Functionality Added to Controller**
+**Figure 12: Stage 3 - Delete Functionality Added to Controller**
 
 
 
@@ -409,7 +409,7 @@ The Create component displays the form to create a new item. However, controller
 ![Stage 3 - Create Component](src/images/stage-3-create.png "Stage 3 - Create Component")
 
 
-**Figure 12: Comments on Create Component's Functionality**
+**Figure 13: Comments on Create Component's Functionality**
 
 
 
@@ -427,7 +427,7 @@ The Create component displays the form to create a new item. However, controller
     }
 ```
 
-**Figure 13: The Controller's handleCreateFormView Method **
+**Figure 14: The Controller's handleCreateFormView Method **
 
 ## Controller's `handleCreate()` Method
 
@@ -445,7 +445,7 @@ The Create component displays the form to create a new item. However, controller
 
     }
 ```
-**Figure 14: The Controller's handleCreateFormView Method**
+**Figure 15: The Controller's handleCreateFormView Method**
 
 
 
@@ -467,7 +467,7 @@ Of note however, is how we update in controller.
 
 2. handleUpdate()
 
-    Updates the list first filtering out the item being edited from a copy existing list. Afterwards, it concatenates the updated item the the copy. FInally, it uses setState() to actually update the masterList.  Do note these are array maaipulation operations. If we were storing in a database. This functionality would be diferrent.
+    Updates the list by first removing the property being edited from a copy existing list. Afterwards, it concatenates the updated item the the copy. FInally, it uses setState() to actually update the masterList.  Do note these are array maaipulation operations. If we were storing in a database. This functionality would be diferrent.
 
 ```JSX
     handleUpdate = (updates) =>{
