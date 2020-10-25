@@ -525,7 +525,7 @@ The pedagogical design of this tutorial was inspired by [Thinking in React](http
 
 The application's UX was inspired by [Amazon's/Wholefoods mobile app](https://www.amazon.com/alm/storefront??tag=7475725-20)
 
-The CSS used for the [action buttons] is from [Adventures In Tech Land](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
+The CSS used for the [action buttons](https://github.com/codesport/admin-panel/blob/main-final-public/src/index.css) is from [Adventures In Techland](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
 
 As shown in Figure 18 below, the comments throughout this application's codebase reference specific Stackoverflow posts as well as other sources that were useful in building this application.
 
