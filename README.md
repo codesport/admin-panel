@@ -21,10 +21,10 @@ This tutorial and its resulting application were created by **Marcus "Arroyo" B.
 
 This is a comprehensive React tutorial. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
 
-The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. This application may be readily adapted to create variety of applications (e.g., online store, an address book, and a todo-list).
+The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. Furthermore, this application may be readily adapted to create variety of applications (e.g., online store, an address book, and a todo-list).
 
 ## ESCM Script version 6 (ES6)
-The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6 (ES6)** additions to JavaScript. Understanding ES6 enhancements is helpful in developing proficiency as a React development developer.  
+The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6's (ES6)** enhancements to JavaScript. Many developers would agree that such an understanding is helpful in developing proficiency as a React developer.  
 
 
 ## How to Use This Tutorial
@@ -51,7 +51,7 @@ In React, functional and class components are declared using `PascalCase` (i.e.,
 
 Technically you can have all your  components in 1 file, however, for manageability, React developers prefer to have one component per file and use import and export statements to assemble an application. 
 
-Refer to the Reacts documentation for more info on [conventions and use](https://reactjs.org/docs/components-and-props.html).
+Refer to the Reacts documentation for more info on its coding [conventions and use syntax](https://reactjs.org/docs/components-and-props.html).
 
 
 ## Updates to JavaScript Via ES6
@@ -164,7 +164,7 @@ Class components are OO constructs that  are used to manage state in React appli
 
 1.  **public/index.html:** Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`
 
-1.  **index.css:** Global stylesheet for the react project. Within the React developer community it is considered a best practice to opt for component-specific CSS.  Such CSS is written directly into the component.  It's accomplished via CSS objects or [CSS in JavaScript libraries](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap] such as styled-components, react-bootstrap, etc.
+1.  **index.css:** Global stylesheet for the react project. Within the React developer community it is considered a best practice to opt for component-specific CSS.  Such CSS is written directly into the component.  It's accomplished via CSS objects or [CSS in JavaScript libraries](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap) such as styled-components, react-bootstrap, etc.
 
 1.  **App.css:** external style sheet for App.js. It is minified and aggregated into a 'global' style sheet on application build and compile. **TODO:** Delete this file
  
@@ -245,7 +245,7 @@ The code for the App, Controller, Header, and Master components is shown in Figu
 Given the simplicity of the current iteration of our application, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true!  However, as developers we always want to code with modularity, ease of maintenance, and amenability to refactoring in mind. As we build-out our application and add state, the logic of this design ethos will become clearer.
 
 
-### Resulting Website
+### Resulting Screenshot of the Static Version of the Application
 
 ![Static Version of Admin App](src/images/static-version.png "Static Website Produced by the 3 Component Files")
 
@@ -532,5 +532,6 @@ Next steps for this project would include:
 * Explore using React Router as a means of handling navigation and URL management
 * Integrating with APIs to pull in external data
 * Removing console.log status checks and debug messages
+* Explore the use of CSS in JavaScript libraries such as styled-components, react-bootstrap, etc.
 
 Be well. Be safe. And, thank you for reading.
