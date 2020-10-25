@@ -500,6 +500,23 @@ Of much more interest, is how we manage updates in through the Controller:
 
 **Figure 17: Stage 4 - The Controller's `handleUpdate` Method**
 
+---
+# Credits
+
+The pedagogical design of this tutorial was inspired by [Thinking in React](https://reactjs.org/docs/thinking-in-react.html).  
+
+The application's UX was inspired by [Amazon's/Wholefoods mobile app](https://www.amazon.com/alm/storefront??tag=7475725-20)
+
+The CSS used for the [action buttons](https://github.com/codesport/admin-panel/blob/main-final-public/src/index.css) is from [Adventures In Techland](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
+
+As shown in Figure 18 below, the comments throughout this application's codebase reference specific Stackoverflow posts as well as other sources that were useful in building this application.
+
+![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
+
+**Figure 18: Stage 4 - Comments explaining the `buildEditArray` Method in the Controller Component**
+
+Special thanks to Hal Helms (Uncle Hal) who, through an online tutorial he authored a long time ago, showed me how to build my first CRUD application! Never did I expect to make tutorial for one of the most powerful companies in the world.
+
 
 ---
 # Conclusions and Next Steps
@@ -517,21 +534,3 @@ Next steps of this project would include:
 * Using Jest to run automated test and to incorporate test driven development best practices
 * Explore using React Router as a means of handling navigation and URL management
 * Integrating with APIs to pull in external data
-
----
-# Credits
-
-The pedagogical design of this tutorial was inspired by [Thinking in React](https://reactjs.org/docs/thinking-in-react.html).  
-
-The application's UX was inspired by [Amazon's/Wholefoods mobile app](https://www.amazon.com/alm/storefront??tag=7475725-20)
-
-The CSS used for the [action buttons](https://github.com/codesport/admin-panel/blob/main-final-public/src/index.css) is from [Adventures In Techland](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
-
-As shown in Figure 18 below, the comments throughout this application's codebase reference specific Stackoverflow posts as well as other sources that were useful in building this application.
-
-![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
-
-**Figure 18: Stage 4 - Comments explaining he buildEditArray Method in the Controller Component**
-
-Special thanks to Hal Helms (Uncle Hal) who, through an online tutorial he authored a long time ago, showed me how to build my first CRUD application! Never did I expect to make tutorial for one of the most powerful companies in the world.
-s
