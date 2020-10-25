@@ -199,21 +199,22 @@ admin-panel/
   ├── package.json
   └── README.md
 ```
-**Figure 1: A Proposed Folder Structure for React
----
+**Figure 1: A Proposed Folder Structure for React**
 
+---
 # Stage 1: Planning and Static Application Build Out
 
 Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagraming an application's layout is an expedient and tactical methodlogy for planning and strategizing React applications.
 
 You may use a pencil and paper, Photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
 
-![Stage 1 - Application Layout and Files Mirroring Application Layout ](src/images/color-block-simple-v2-and-folder-layout.png "Stage 1 Application Layout and Folder Layout Mirroring Layout Diagram") 
+![Stage 1 - Application Layout and Files Mirroring Application Layout ](src/images/color-block-simple-v2-and-folder-layout.png "Stage 1 Application Layout and Folder Layout Mirroring Layout Diagram")
+
   **Figure 2: Stage 1 - Application Layout Diagram with Corresponding File Structure**
 
-**Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering view a should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game paln for development of our application.
+**Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering view a should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game plan for development of our application.
 
-**Take Away:** Each section of the wireframe will will respresent a React Component. Each Component may be further subdivided into additonal ones, if needed.
+**Take Away:** Each section of the wireframe will will represent a React Component. Each Component may be further subdivided into aadditionalones, if needed.
 
 
 ## Coding the Static Website: App.js, Controller.js, Header.js, and Master.js
@@ -243,6 +244,7 @@ Given the simplicity of the current iteration of our application, it may be argu
 ### Resulting Website
 
 ![Static Version of Admin App](src/images/static-version.png "Static Website Produced by the 3 Component Files")
+
 **Figure 4: Stage 1: The Static Application Produced by Our 3 Files**
 
 ---
@@ -263,6 +265,7 @@ As mentioned earlier, state is complex and it's easier to have one file as a nex
 Here is our updated application layout:
 
 ![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout") 
+
 **Figure 5: Layout Diagram for Master Detail**
 
 Now, by clicking an item on the master page, we are transported to a detail page.
