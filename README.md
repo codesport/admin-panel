@@ -179,14 +179,14 @@ We'll add our component files in the next section. However, your folder structur
 
 ```text
 admin-panel/
-  ├──📁 node_modules/
-  ├──📁 public/
+  ├──📁node_modules/
+  ├──📁public/
   │ ├── index.html
   | |     ...
   | |── favicon.ico  
   | └── robots.txt
-  ├──📁 src/
-  │ ├──📁 components/
+  ├──📁src/
+  │ ├──📁components/
   | | ├── App.js 
   │ | |── ComponentNum_1.js
   | | |     ...
