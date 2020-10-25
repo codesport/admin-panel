@@ -504,16 +504,19 @@ Of much more interest, is how we manage updates in through the Controller:
 ---
 # Conclusion and Next Steps
 
-This admin-panel application can be used as a template to build more advanced applications such as a shopping cart, todo list, 
+This tutorial and its resulting code may be used as a template to build more advanced applications.  Expansion options include building an online store, a booking/reservations app, an address book, a todo-list, etc. 
+
+As a React developer we have the opportunity to become better JavaScript developers and truly understand its power.  `create-react-app`'s use of ESLint provides numerous benefits that teach us to write more secure and stable code.
 
 Next steps of this project would include:
 
-* Integration with a NoSQL database such as Firebase or Mongo
+* Integration with a NoSQL database such as Mongo or Firebase
 * Adding Authentication and Access Control for security
 * Hosting on a live sever running node and NGINX
-* Potentially using Redux to manage state as our application continues to grow and state management becomes more complex.
+* Potentially using Redux to manage state as our application continues to grow and state management becomes more complex
 * Using Jest to run automated test and to incorporate test driven development best practices
 * Explore using React Router as a means of handling navigation and URL management
+* Integrating with APIs to pull in external data
 
 ---
 # Credits
@@ -522,6 +525,8 @@ The pedagogical design of this tutorial was inspired by [Thinking in React](http
 
 The application's UX was inspired by [Amazon's/Wholefoods mobile app](https://www.amazon.com/alm/storefront??tag=7475725-20)
 
+The CSS used for the [action buttons] is from [Adventures In Tech Land](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
+
 As shown in Figure 18 below, the comments throughout this application's codebase reference specific Stackoverflow posts as well as other sources that were useful in building this application.
 
 ![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
@@ -529,3 +534,4 @@ As shown in Figure 18 below, the comments throughout this application's codebase
 **Figure 18: Stage 4 - Comments explaining he buildEditArray Method in the Controller Component**
 
 Special thanks to Hal Helms (Uncle Hal) who, through an online tutorial he authored a long time ago, showed me how to build my first CRUD application! Never did I expect to make tutorial for one of the most powerful companies in the world.
+s
