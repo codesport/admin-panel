@@ -82,13 +82,13 @@ const MyOtherComponent = () => {
 ```
 
 
-> PRO TIP 1: A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class components. 
+   * **PRO TIP 1:** A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class components. 
 
 If arrow functions are not used to create a method, the method must be "manually" binded the class in the constructor like so: `this.myMethodName = this.myMethodName.bind(this);`
 
 If you choose to use arrow functions to define functional components, declare them as constants via `const`.
 
-> PRO TIP 2: If your event handler (e.g., onClick, onMouseOver, etc) requires arguments to be passed, you must use arrow functions to prevent the function from automatically executing when the page is rendered
+   * **PRO TIP 2:** If your event handler (e.g., onClick, onMouseOver, etc) requires arguments to be passed, you must use arrow functions to prevent the function from automatically executing when the page is rendered
 
 
 ### Import and Export Statements
