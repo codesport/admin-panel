@@ -493,7 +493,7 @@ Of much more interest, is how we manage updates in through the Controller:
 
 The pedagogical design of this tutorial was inspired by [Thinking in React](https://reactjs.org/docs/thinking-in-react.html).  
 
-The application's UX was inspired by [Amazon's/Wholefoods mobile app](https://www.amazon.com/alm/storefront??tag=7475725-20)
+The application's UX was inspired by [Amazon's Wholefoods mobile app](https://www.amazon.com/alm/storefront??tag=7475725-20)
 
 The CSS used for the [action buttons](https://github.com/codesport/admin-panel/blob/main-final-public/src/index.css) is from [Adventures In Techland](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
 
@@ -514,8 +514,8 @@ As a React developer we have the opportunity to become better JavaScript develop
 
 Next steps of this project would include:
 
-* Integration with a NoSQL database such as Mongo or Firebase
-* Adding Authentication and Access Control for security
+* Integration with a NoSQL database such as MongoDB or Firebase
+* Adding authentication and access control for security
 * Hosting on a live sever running node and NGINX
 * Potentially using Redux to manage state as our application continues to grow and state management becomes more complex
 * Using Jest to run automated test and to incorporate test driven development best practices
