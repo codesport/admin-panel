@@ -1,15 +1,15 @@
 # Navigation
 
 * [Project Overview](#project-overview)
-* [Authorship Credits](authorship-credits)
+* [Authorship Credits](#authorship-credits)
 * [About React](#about-react)
-* [Getting Started: Setting Up a React Local Development Environment](#authorship-and-credits)
-* [Stage 1: Application Planning and Building a Static Website](#php-application-development-excercise-overview)
-* [Stage 2: Adding State and Build-out Master-Detail Functionality](#php-application-development-excercise-task-description)
-* [Stage 3: Expanding State by Adding Create and Delete Functionality]
-* [Stage 4: Adding Update Functionality]
-* [Credits]
-* [Conclusions and Next Steps]
+* [Getting Started: Setting Up a React Local Development Environment](#getting-started-setting-up-a-react-local-development-environment)
+* [Stage 1: Application Planning and Building a Static Website](#stage-1-planning-and-static-application-build-out)
+* [Stage 2: Adding State and Build-out Master-Detail Functionality](#stage-2-add-state-and-build-out-master-detail-functionality)
+* [Stage 3: Expanding State by Adding Create and Delete Functionality](#stage-3-expand-state-by-adding-create-and-delete-functionality)
+* [Stage 4: Adding Update Functionality](#stage-4-completing-the-application-by-adding-update-functionality)
+* [Credits](#credits)
+* [Conclusions and Next Steps](#conclusions-and-next-steps)
 
 # Project Overview
 
@@ -19,11 +19,14 @@ The goal of this tutorial is to provide a strong foundation in React. To this en
 
 The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. This application may be readily adapted to create variety of applications (e.g., online store, an addressbok, and a todo-list).
 
+Given the comprehensiveness of this tutorial, it is strongly recommended that you use the navigation menu to focus on sections most relevant to your learning needs. 
+
+Finally, the code is fairly well documented, so you are also encouraged to read through the comments within the codebase.
+
 ## License
 
 Additionally this project is being made available to the public under an MIT open source license.
 
-Given the comprehensiveness of this tutorial, it is strongly recommended that you use the navigation menu to focus on sections most relevant to your learning needs.
 
 # Authorship Credits
 
@@ -104,76 +107,73 @@ Ideally, each component represents a portion of our view. Within react there are
 Functional components in React are composed of pure functions which are [first class objects (functions)](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) in JavaScript. As functions, a given set of inputs will always provide a predicatble and guaranteed output. As first class objects, JavaScript functions may be treated as variables.
 
 
-   **PRO TIP 3:** Generally speaking, child components should be functional components and not manage state. In fact, their state must be lifted into and therefore managed by its parent
+   * **PRO TIP 3:** Generally speaking, child components should be functional components and not manage state. In fact, their state must be lifted into and therefore managed by its parent
 
-   **PRO TIP 4:** If you find yourself repeating the same lines of code throughout a given parent or child component, combine that code into a method or function. Then call when needed
+   * **PRO TIP 4:** If you find yourself repeating the same lines of code throughout a given parent or child component, combine that code into a method or function. Then call when needed
 
-   **PRO TIP 5:** If you find yourself needing the same function in more than 2 component's, separate that function into an additional file and import it where needed!
+   * **PRO TIP 5:** If you find yourself needing the same function in more than 2 component's, separate that function into an additional file and import it where needed!
 
 
 ### Class Components
 Class components are OO constructs that  are used to manage state in React applications. Every class component in React must have a `render()` method with a `return` statement.
 
-  **PRO TIP 6:** Create a single parent component that will control application state. This parent component will be a class component
+   * **PRO TIP 6:** Create a single parent component that will control application state. This parent component will be a class component
 
 
 ---
 # Getting Started: Setting-up a React Local Development Environment 
 
-## 1. VSCode Setup
+## A. VSCode Setup
 
 [VS Code](https://code.visualstudio.com/) is our editor of choice. The below suggestions will optimize it for React development
 
-    a. Install [Babel Javascript](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel).  Created by Michael McDermont, it provides VSCode syntax highlighting for JavaScript ES6, React JSX, Flow, and GraphQL.
+1. Install [Babel Javascript](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel).  Created by Michael McDermont, it provides VSCode syntax highlighting for JavaScript ES6, React JSX, Flow, and GraphQL.
 
-    b. Install Sergii Naumov's [Oceanic Theme](https://marketplace.visualstudio.com/items?itemName=naumovs.theme-oceanicnext). It supports a more granular level of syntax highlighting for nested properties.
 
-## 2. React Environment Setup
+2. Install Sergii Naumov's [Oceanic Theme](https://marketplace.visualstudio.com/items?itemName=naumovs.theme-oceanicnext). It supports a more granular level of syntax highlighting for nested properties.
 
-    a. Install the LTS of version of [node.js](https://nodejs.org/en/). 
+## B. React Environment Setup
 
-    b. Using your terminal (i.e., CLI), navigate to the project folder where you will save the project.  
-    
-    c. Within your terminal type `npx create-react-app  admin-panel`  
-        i. NB: `admin-panel` is the name of the application in this tutorial.
-        ii. Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directves  
+1. Install the LTS of version of [node.js](https://nodejs.org/en/). 
 
-    d. Finally, type `npm start` to run the default react application. The app will render on your local machine at http://localhost:3000
 
-## 3. `create-react-app`: Understanding Default Files and Directory Structure
+2. Using your terminal (i.e., CLI), navigate to the project folder where you will save the project.  
 
-**node_modules/:** Standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React).
+  
+3. Within your terminal type `npx create-react-app  admin-panel`  
 
-  **package.json:** Standard configuration and script setup file for node projects. You may specify dependencies and embed [custom scripts](https://css-tricks.com/why-npm-scripts/) to automate your development workflow
+   ->i. NB: `admin-panel` is the name of the application in this tutorial.
+  
+   ->ii. Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directves  
 
-  **public/:** Folder with global read privileges (i.e., public , web accesible).  Only store public content here such as images and html files.
-        
-        Optional TODO: You're welcomed to change or delete the favicon, manifest, and logo files to suit your project's needs. But, be sure `index.html` also reflects those changes. `logo512.png` will not be used in our project so you're welomed to delete it.
+4. Finally, type `npm start` to run the default react application. The app will render on your local machine at http://localhost:3000
 
-  **public/index.html:** Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`
+## C. `create-react-app`: Understanding Default Files and Directory Structure
 
-  **index.css:** Global stylesheet for the react project. Within the React developer community it is considered a best practice to opt for component-specific CSS.  Such CSS is written directly into the component.  It's accomplished via CSS objects or [CSS in JavaScript libraries](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap] such as styled-components, react-bootstrap, etc.
+1. **node_modules/:** Standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React).
 
-  **App.css:** external style sheet for App.js. It is minified and aggretated into a 'global' style sheet on application build and compile.
-        
-        TODO: Delete this file
+1.  **package.json:** Standard configuration and script setup file for node projects. You may specify dependencies and embed [custom scripts](https://css-tricks.com/why-npm-scripts/) to automate your development workflow
+
+1.  **public/:** Folder with global read privileges (i.e., public , web accessible).  Only store public content here such as images and html files. **Optional TODO:** You're welcomed to change or delete the favicon, manifest, and logo files to suit your project's needs. But, be sure `index.html` also reflects those changes. `logo512.png` will not be used in our project so you're welcomed to delete it.
+
+1.  **public/index.html:** Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`
+
+1.  **index.css:** Global stylesheet for the react project. Within the React developer community it is considered a best practice to opt for component-specific CSS.  Such CSS is written directly into the component.  It's accomplished via CSS objects or [CSS in JavaScript libraries](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap] such as styled-components, react-bootstrap, etc.
+
+1.  **App.css:** external style sheet for App.js. It is minified and aggregated into a 'global' style sheet on application build and compile. **TODO:** Delete this file
  
-  **index.js:**  Renders App.js component to an arbitrary id (default is id 'root') in `public/index.html`. NB: A file which injects code (i.e., component) directly to the HTML DOM is often referred as an application entry point.
-        
-        TODO: Open this file and update to `import App from './components/App'`
+1.  **index.js:**  Renders App.js component to an arbitrary id (default is id 'root') in `public/index.html`. NB: A file which injects code (i.e., component) directly to the HTML DOM is often referred as an application entry point. **TODO:** Open this file and update to `import App from './components/App'`
 
-  **App.js:** A container component and parent for react react applications.     
-        
-        TODO: Delete its contents and move to `src/components` 
+1. **App.js:** A container component and parent for react react applications.   **TODO:** Delete its contents and move to `src/components` 
  
 
  ### Updating the Directory Structure
 
-    1. Create `components/` and `images/` folders under the `src/` directory.
+1. Create `components/` and `images/` folders under the `src/` directory.
 
-    2. Delete `App.css` and `App-test.js` from `src/.`  Move `App.js` into  `components/`
+2. Delete `App.css` and `App-test.js` from `src/.`  Move `App.js` into  `components/`
 
-    3. Follow the *TODOs* mentioned above.
+3. If you haven't done so already, follow the *TODOs* mentioned above, in Part C.
 
 We'll add our component files in the next section. However, your folder structure should resemble this:
 
@@ -204,7 +204,7 @@ admin-panel/
 
 # Stage 1: Planning and Static Application Build Out
 
-Our first step is to create a static, non-interactve website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagraming an application's layout is an expedient and tactical methodlogy for planning and strategizing React applications.
+Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagraming an application's layout is an expedient and tactical methodlogy for planning and strategizing React applications.
 
 You may use a pencil and paper, Photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
 
@@ -456,7 +456,7 @@ Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L
 
 
 ---
-# Stage 4: Update 
+# Stage 4: Completing the Application by Adding Update Functionality 
 
 To provide an optimal user experience, the update form was tightly integrated into what appears to be a the Detail view.  However, it is in fact separate component that overlays and HTML5 form into the code used to generate teh Detail component.
 
