@@ -2,8 +2,8 @@
 
 # Navigation
 
-* [Project Overview](#project-overview)
 * [Authorship Credits](#authorship-credits)
+* [Project Overview](#project-overview)
 * [About React](#about-react)
 * [Getting Started: Setting Up a React Local Development Environment](#getting-started-setting-up-a-react-local-development-environment)
 * [Stage 1: Application Planning and Building a Static Website](#stage-1-planning-and-static-application-build-out)
@@ -11,28 +11,31 @@
 * [Stage 3: Expanding State by Adding Create and Delete Functionality](#stage-3-expand-state-by-adding-create-and-delete-functionality)
 * [Stage 4: Adding Update Functionality](#stage-4-completing-the-application-by-adding-update-functionality)
 * [Credits](#credits)
-* [Conclusions and Next Steps](#conclusions-and-next-steps)
+* [Conclusions and Next Steps](#closing-remarks-conclusions-and-next-steps)
+
+# Authorship Credits
+
+This tutorial and its resulting application were created by **Marcus "Arroyo" B.**  
 
 # Project Overview
 
 This is a comprehensive React tutorial. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
 
-The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6 (ES6)** additions to JavaScript concepts required to develop proficiency as a React development developer.  
-
 The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. This application may be readily adapted to create variety of applications (e.g., online store, an address book, and a todo-list).
 
+## ESCM Script version 6 (ES6)
+The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6 (ES6)** additions to JavaScript. Understanding ES6 enhancements is helpful in developing proficiency as a React development developer.  
+
+
+## How to Use This Tutorial
 Given the comprehensiveness of this tutorial, it is strongly recommended that you use the navigation menu to focus on sections most relevant to your learning needs. 
 
 Finally, the code is fairly well documented, so you are also encouraged to read through the comments within the codebase.
 
 ## License
 
-Additionally this project is being made available to the public under an MIT open source license.
+This project (codebase and tutorial) has been made available to the public under an MIT open source license.
 
-
-# Authorship Credits
-
-This tutorial and its resulting application were created by **Marcus "Arroyo" B.**   
 
 
 
@@ -226,7 +229,7 @@ The code for the App, Controller, Header, and Master components is shown in Figu
 
 1. **Controller.js:** Will manage the ensuing complexity of our application. Controller dictates the layout of each component. In future iterations it will manage application state. 
 
-2.  **Master.js:** Does the heavy lifting.  [Lines 4 through 38](main-basic-static-public/src/components/Master.js#L2-L38) show that we store our inventory in a JSON array. In the real-world we would store our inventory in a database. In Lines 40 through of Master.js (see Figure 3 below) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](main-basic-static-public/src/components/Master.js)
+2.  **Master.js:** Does the heavy lifting.  [Lines 4 through 38](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L4-L38) show that we store our inventory in a JSON array. In the real-world we would store our inventory in a database. In [Lines 53 through 60](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L53-L60) of Master.js (see Figure 3 below) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js)
 
 3. **Header.js:** Displays the title of the application. Also uses JavaScript's length property to count the total inventory.
 
@@ -239,9 +242,7 @@ The code for the App, Controller, Header, and Master components is shown in Figu
 ![Header.js](src/images/stage-1-header.png "Header.js Functional Component for Static App") ![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App")
 **Figure 3: App.js, Controller.js, Header.js, and Master.js**
 
-Given the simplicity of the current iteration of our application, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true, however, as developers we alway want to code with modularity, ease of maintenance, and amenability to refactoring in mind. As we build-out our application and add state, the logic of this design pattern will become clearer.
-
-
+Given the simplicity of the current iteration of our application, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true!  However, as developers we always want to code with modularity, ease of maintenance, and amenability to refactoring in mind. As we build-out our application and add state, the logic of this design ethos will become clearer.
 
 
 ### Resulting Website
@@ -271,44 +272,48 @@ Here is our updated application layout:
 ![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout")                   
 **Figure 5: Layout Diagram for Stage 2's Master-Detail Build-out**
 
-Now, by clicking an item on the master page, we are transported to a detail page.
+Now, by clicking an item on the master page, we are transported to a detail page. 
+
+**Please Note:** In Stages 2 - Stage 4 of this tutorial, you may refer to the comments in the screenshots for supplemental explanations of the code's functionality. 
 
 Let's analyze the key pieces of code added:
 
 ## 1. Controller.js Analysis
 
-We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data or a layout/representation in the DOM. Explanations to code section are embedded in the images via code comments.  Our code in the controller may be divided into 3 methods
+We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data and/or layout in the DOM. 
 
-### `constructor()`
+Our code in the Controller may be divided into 3 methods: 
+
+### a.  `constructor()`
 First, the required constructor method is added to initialize state as described in Figure 6: 
 
 ![Stage 2 - Analysis of Controller's Constructor Method](src/images/stage-2-controller-constructor.png "Stage 2: Analysis of Controller's Constructor")
 **Figure 6: Analysis of Controller's Constructor Method**
 
-Second, we have our event handler that determines which item's detail to render. Figure 7, Analysis of Controller's handleSelectedDetail Method, explains the code:
+Second, we have our event handler that determines which item's detail to render. Figure 7, Analysis of Controller's `handleSelectedDetail` Method, explains the code:
 
-### `handleSelectedDetail()`
-Of note in Figure 6 is JavaScript's built-in [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method and is the use of [`setState()`](https://www.google.com/search?q=setState()) to a assign new value to the `SelectedDetail` state variable. In React, [`setState()`](https://www.google.com/search?q=setState()) is always called to update state variables.
+### b. `handleSelectedDetail()`
+Of note in Figure 7 is JavaScript's built-in [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method and is the use of [`setState()`](https://www.google.com/search?q=setState()) to a assign new value to the `SelectedDetail` state variable. In React, [`setState()`](https://www.google.com/search?q=setState()) is always called to update state variables.
 
 
 ![Stage 2 - Analysis of Controller's handleSelectedDetail Method](src/images/stage-2-controller-handleSelectedDetail.png "Stage 2: Analysis of Controller's handleSelectedDetail()")
-**Figure 7: Analysis of Controller's handleSelectedDetail Method**
+**Figure 7: Analysis of Controller's `handleSelectedDetail` Method**
 
 
-### `render()`
+### c. `render()`
 
 Finally, in Figure 8  we have the updated render method. It sends its view presentation to `App.js` for rendering to the DOM:
 
 
 ![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
-**Figure 8: Analysis of Controller's Render Method with Emphasis on Callback Sent to the Master Componennt**
+**Figure 8: Analysis of Controller's Render Method with Emphasis on Callback Sent to the Master Component**
 
  
 ## 2. Master.js Analysis
 
 Master.js and its callback are already discussed in detail within Figure 8's comments.  
 
-However, it is worth mentionin that when passing arguments to other components, they are sent as objects. These objects are accessed with the "props" paramenter combined with dot notation. 
+However, it is worth mentioning that when passing arguments to other components, they are sent as objects. These objects are accessed with the "props" parameter combined with dot notation. 
 
 
 ![Stage 2 - Analysis of the Master Functional Component](src/images/stage-2-master.png "Stage 2: The Master Functional Component")
@@ -317,6 +322,7 @@ However, it is worth mentionin that when passing arguments to other components, 
 
 ## 3. Detail.js Analysis
 
+The detail component is rather uninspiring. It receives props from the Controller and lays them out in an HTML table. Of note however, is line 11 which uses object destructuring to simplify access to object properties
 
 
 ![Stage 2 - The Detail Component](src/images/stage-2-detail.png "Stage 2: Detail Component")
@@ -325,13 +331,12 @@ However, it is worth mentionin that when passing arguments to other components, 
 ---
 # Stage 3: Expand State by Adding Create and Delete Functionality
 
-As our Controller becomes mre complex it is prudent to identify ways to refactor and simplify our code.  In Stage 3,our controller uses conditionals to decide what to render to the user.  To manage the viw more eleganfly, we will create a custom method called renderView that will automate this process.
-
+As our Controller becomes more complex it is prudent to identify ways to refactor and simplify our code.  In Figure 8 above, our Controller used [conditionals](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components/Controller.js#L77-L81) to decide what to render to the user.  To manage the view rendering more elegantly, we will create a custom method called `renderView` that will simplify our code.
 
 
 ## Controller's `renderView()` Method
 
-Render view is a helper method within Controller.  It which manages `this.state.view` and processes what gets displayed to the user. 
+`renderView` is a helper method within Controller.  It manages `this.state.view` by managing what gets shown to the user.  It also dramatically reduces needless code repetition.
 
 
 ![Stage 3 - renderView() Helper Method](src/images/stage-3-controller-renderview.png "Stage 3 - renderView() Helper Method")
@@ -346,7 +351,7 @@ Here is an analysis of the handleDelete method:
 
 2. Makes a copy of the existing inventory array this.state.masterList
 
-3. Applies [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to the copy to return everything **_except_** the element contianing the ID we wish to delete
+3. Applies [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to the copy to return everything **_except_** the element containing the ID we wish to delete
 
 
 ```JSX
@@ -451,11 +456,11 @@ Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L
 ---
 # Stage 4: Completing the Application by Adding Update Functionality 
 
-To provide an optimal user experience, the update form was tightly integrated into what appears to be a the Detail view.  However, it is in fact separate component that overlays and HTML5 form into the code used to generate teh Detail component.
+To provide an optimal user experience, the Update component was designed to be a close visual simile of [Detail component](src/components/Detail.js).  This was accomplished by overlaying an [HTML5 form](src/components/Update.js#L49-L61) onto the code used to generate the Detail component.
 
-The React form property [`defaultValue`](https://reactjs.org/docs/uncontrolled-components.html#default-values) is used to pre-populate the form with the item's information.
+Worthy of mentioning is that the React form property [`defaultValue`](https://reactjs.org/docs/uncontrolled-components.html#default-values) is used to pre-populate the Update component with the item's information.
 
-Similar to Create.js, Update.js also receives a callback function from Controller.js. In turn, it sends teh form data back to parent via handleUpdate(). The code in Update.js is quite mundane, but feel free to [examine it]((src/components/Update.js#L231)).  Figure 16 is an excerpt.
+Finally, akin Create.js, Update.js also receives a callback function from Controller.js. In turn, the Update component sends the form data back to the Controller via 'handleUpdate()' callback. The code in Update.js is quite mundane, but feel free to [examine it](src/components/Update.js).  Figure 16 is an excerpt.
 
 
 
@@ -505,15 +510,17 @@ As shown in Figure 18 below, the comments throughout this application's codebase
 ![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
 **Figure 18: Stage 4 - Comments explaining the `buildEditArray` Method in the Controller Component**
 
-Special thanks to Hal Helms (Uncle Hal) who, through an online tutorial he authored a long time ago, showed me how to build my first CRUD application! Never did I expect to make tutorial for one of the most powerful companies in the world.
+Special thanks to Hal Helms ("Uncle Hal") who, through an online tutorial he authored a long time ago, showed me and many others how to build our first CRUD application! 
+
+Never did I expect that in 2020 I would make tutorial for one of the world's most powerful and influential companies.
 
 
 ---
-# Conclusions and Next Steps
+# Closing Remarks, Conclusions, and Next Steps
 
 This tutorial and its resulting code may be used as a template to build more advanced applications.  Expansion options include building an online store, a booking/reservations system, an address book, a todo-list, etc. 
 
-As a React developer we have the opportunity to become better JavaScript developers and truly understand its power.  `create-react-app`'s use of ESLint provides numerous benefits that teach us to write more secure and stable code.
+Learning React makes us better JavasScript developers.  Indeed, as a React developer we have the opportunity to truly understand and appreciate JavaScript's power and extensibility.  Furthermore, `create-react-app`'s use of ESLint provides numerous benefits that teach us to write more secure and stable code.
 
 Next steps for this project would include:
 
@@ -525,3 +532,5 @@ Next steps for this project would include:
 * Explore using React Router as a means of handling navigation and URL management
 * Integrating with APIs to pull in external data
 * Removing console.log status checks and debug messages
+
+Be well. Be safe. And, thank you for reading.
