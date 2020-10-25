@@ -251,10 +251,11 @@ Given the simplicity of the current iteration of our application, it may be argu
 # Stage 2: Add State and Build-out Master-Detail Functionality
 
 **PRO TIP 7**
-     > Figure out the absolute minimal representation of the state your 
-     > application needs and compute everything else you need on-demand." 
-     > 
-     >  *- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)*
+
+> Figure out the absolute minimal representation of the state your 
+> application needs and compute everything else you need on-demand." 
+> 
+>  *- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)*
 
 Stage 2 involves converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
 
