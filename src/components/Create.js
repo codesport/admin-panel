@@ -11,6 +11,7 @@ Create.propTypes = {
     onCallbackSubmit: PropTypes.func
   };
 
+
 /**
  * Displays form to collect data from user. 
  * 
@@ -54,14 +55,18 @@ function Create(props){
                     type='text'
                     name='thumbnail'
                     placeholder='Thumbnail location (url or file path)'
-                    size='55' />
+                    size='55'
+                    
+                />
             </div>
             <label>Category</label>
             <div>
                 <input
                     type='text'
                     name='category'
-                    placeholder='product category (e.g., fruits)'  />
+                    placeholder='product category (e.g., fruits)'
+    
+                />
             </div>
             <label>Item Name*</label>
             <div>    
@@ -69,15 +74,18 @@ function Create(props){
                     type='text'
                     name='name'
                     placeholder='(e.g., apples)'
-                    required  />
+                    required 
+                />
             </div>
             <label>Description</label>
+
             <div>
                 <textarea
                     rows='5'
                     cols='40'
                     name='description'
-                    placeholder='product description' />
+                    placeholder='product description'
+                />
             </div>                                 
             <label>Unit Price*</label>
             <div>
@@ -88,7 +96,8 @@ function Create(props){
                     min='0.25'
                     step='0.01'
                     size='5'
-                    required />
+                    required 
+                />
             </div>
             <label>Quantity Available*</label>
             <div>    
@@ -97,7 +106,8 @@ function Create(props){
                     name='quantity_available'
                     placeholder='3'
                     size='4'
-                    required  /> 
+                    required
+                /> 
             </div>
             <label>Quantity Units*</label>
             <div>
@@ -111,7 +121,9 @@ function Create(props){
                 <button id="add=new-detail" type="submit" >Create</button>
             </form>
         </React.Fragment>
+
     )
+
 }
 
 export default Create;
