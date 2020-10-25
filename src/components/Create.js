@@ -111,9 +111,7 @@ function Create(props){
                 <button id="add=new-detail" type="submit" >Create</button>
             </form>
         </React.Fragment>
-
     )
-
 }
 
 export default Create;
