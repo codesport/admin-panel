@@ -15,7 +15,12 @@
 
 # Authorship Credits
 
-This tutorial and its resulting application were created by **Marcus "Arroyo" B.**  
+This tutorial and its resulting application were created by **Marcus "Arroyo" B.** His github username is codesport  
+
+### License
+
+This project (codebase and tutorial) has been made available to the public under an [MIT License](LICENSE.md). 
+
 
 # Project Overview
 
@@ -31,10 +36,6 @@ The goal of this tutorial is to provide a strong foundation in React. To this en
 Given the comprehensiveness of this tutorial, it is strongly recommended that you use the navigation menu to focus on sections most relevant to your learning needs. 
 
 Finally, the code is fairly well documented, so you are also encouraged to read through the comments within the codebase.
-
-## License
-
-This project (codebase and tutorial) has been made available to the public under an MIT open source license.
 
 
 
