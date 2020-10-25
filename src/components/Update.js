@@ -46,7 +46,7 @@ function Update(props){
             <div className="divTableBody">
                 <div className="divTableRow">
                     <div className="divTableCell"><img className="border" src={ checkImagePath( props.detail.thumbnail ) } alt={props.detail.name} /><br />
-                        <input type='text' name='thumbnail' placeholder='Thumbnail location (url or file path)' defaultValue={props.detail.thumbnail} size="50" form="update-form"/>
+                        <input type='text' name='thumbnail' placeholder='Thumbnail location (url or file path)' defaultValue={props.detail.thumbnail} size="55" form="update-form"/>
                     </div>
                     <div id="align-metadata" className="update-detail">
                         <p><strong style={descriptionTextCSS}>Description:</strong><textarea style={descriptionBoxCSS} rows='5' cols='30' name='description' placeholder='product description' defaultValue={props.detail.description} form="update-form" /></p>

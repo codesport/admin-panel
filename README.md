@@ -508,11 +508,11 @@ Special thanks to Hal Helms (Uncle Hal) who, through an online tutorial he autho
 ---
 # Conclusions and Next Steps
 
-This tutorial and its resulting code may be used as a template to build more advanced applications.  Expansion options include building an online store, a booking/reservations app, an address book, a todo-list, etc. 
+This tutorial and its resulting code may be used as a template to build more advanced applications.  Expansion options include building an online store, a booking/reservations system, an address book, a todo-list, etc. 
 
 As a React developer we have the opportunity to become better JavaScript developers and truly understand its power.  `create-react-app`'s use of ESLint provides numerous benefits that teach us to write more secure and stable code.
 
-Next steps of this project would include:
+Next steps for this project would include:
 
 * Integration with a NoSQL database such as MongoDB or Firebase
 * Adding authentication and access control for security
@@ -521,3 +521,4 @@ Next steps of this project would include:
 * Using Jest to run automated test and to incorporate test driven development best practices
 * Explore using React Router as a means of handling navigation and URL management
 * Integrating with APIs to pull in external data
+* Removing console.log status checks and debug messages

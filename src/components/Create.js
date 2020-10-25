@@ -55,7 +55,7 @@ function Create(props){
                     type='text'
                     name='thumbnail'
                     placeholder='Thumbnail location (url or file path)'
-                    size='50'
+                    size='55'
                     
                 />
             </div>
@@ -64,7 +64,7 @@ function Create(props){
                 <input
                     type='text'
                     name='category'
-                    placeholder='prouct category (e.g., fruits)'
+                    placeholder='product category (e.g., fruits)'
     
                 />
             </div>
