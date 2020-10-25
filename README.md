@@ -1,5 +1,3 @@
-[![BCH compliance](https://bettercodehub.com/edge/badge/codesport/admin-panel?branch=main-final-public)](https://bettercodehub.com/)
-
 # Navigation
 
 * [Authorship Credits](#authorship-credits)
