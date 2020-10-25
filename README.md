@@ -30,7 +30,7 @@ Additionally this project is being made available to the public under an MIT ope
 
 # Authorship Credits
 
-This tutorial its resulting application were created by **Marcus B.**   
+This tutorial and its resulting application were created by **Marcus "Arroyo" B.**   
 
 
 
@@ -39,12 +39,12 @@ This tutorial its resulting application were created by **Marcus B.**
 # About React
 React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). 
 
-React uses JavascScript ES6 and its apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
+React uses JavasScript ES6 and its apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
 
 ## React Coding Conventions
-In React, functional and class compoennts are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components, variables, and constants are declared using `camelCase` (i.e., first letter is lowercase).
+In React, functional and class components are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components, variables, and constants are declared using `camelCase` (i.e., first letter is lowercase).
 
-Technically you can have all your  components in 1 file, however, for manageabilty, React developers prefer to have one component per file and use import and export statements to assemble an application. 
+Technically you can have all your  components in 1 file, however, for manageability, React developers prefer to have one component per file and use import and export statements to assemble an application. 
 
 Refer to the Reacts documentation for more info on [conventions and use](https://reactjs.org/docs/components-and-props.html).
 
