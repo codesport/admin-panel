@@ -247,7 +247,12 @@ class Controller extends React.Component{
         
         this.setState({
             masterList: newMasterList,
-            }, function(){this.renderView( <h3>Successfully Created {creation.name}!</h3> )}
+            }, function(){
+                
+                this.renderHeaderView( 'Header',  'onDoubleClick' )
+                this.renderView( <h3>Successfully Created {creation.name}!</h3> )
+            
+            }
         )
 
     }
