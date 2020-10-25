@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/codesport/admin-panel?branch=main-final-public)](https://bettercodehub.com/)
+
 # Navigation
 
 * [Project Overview](#project-overview)
@@ -13,11 +15,11 @@
 
 # Project Overview
 
-This tutorial was created for Facebook's 2020 Developer's challenge. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
+This is a comprehensive React tutorial. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
 
-The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6 (ES6)** additions to Javascript. concepts required to develop proficiency as a React development developer.  
+The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6 (ES6)** additions to JavaScript concepts required to develop proficiency as a React development developer.  
 
-The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. This application may be readily adapted to create variety of applications (e.g., online store, an addressbok, and a todo-list).
+The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. This application may be readily adapted to create variety of applications (e.g., online store, an address book, and a todo-list).
 
 Given the comprehensiveness of this tutorial, it is strongly recommended that you use the navigation menu to focus on sections most relevant to your learning needs. 
 
@@ -37,9 +39,9 @@ This tutorial and its resulting application were created by **Marcus "Arroyo" B.
 
 ---
 # About React
-React is a Javascript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). 
+React is a JavaScript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). 
 
-React uses JavasScript ES6 and its apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
+React uses JavaScript ES6 and its apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
 
 ## React Coding Conventions
 In React, functional and class components are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components, variables, and constants are declared using `camelCase` (i.e., first letter is lowercase).
@@ -51,15 +53,16 @@ Refer to the Reacts documentation for more info on [conventions and use](https:/
 
 ## Updates to JavaScript Via ES6
 
-React uses Javascript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses the [Babel](https://www.google.com/search?q=what+is+babel) transcompiler which allows ES6 to be backward compatible with older and non-chromium based browsers.
+React uses JavaScript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses the [Babel](https://www.google.com/search?q=what+is+babel) transcompiler which allows ES6 to be backward compatible with older and non-chromium based browsers.
 
 *[`let`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
 
-*[`const`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps. Method names are written as first letter c
+
+*[`const`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps. 
 
 ### Arrow Functions: `() =>`
 
-Like `let` and `const`, arrow functions are "hyper-localized". This means they are only "aware of" and execute in the scope where they were created. On the otherhand, traditional JavaScript functions bubble up to the window scope.
+Like `let` and `const`, arrow functions are "hyper-localized". This means they are only "aware of" and execute in the scope where they were created. On the other hand, traditional JavaScript functions bubble up to the window scope.
 
  Because of scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  Arrow functions negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent:
 
@@ -93,18 +96,18 @@ If you choose to use arrow functions to define functional components, declare th
 
 ### Import and Export Statements
 
-React leverages ES6 import and export statements for modularity.  React modules (i.e, components) must be exported in order to be imported.  Exports may either be named or "default".   We'll use both types in this project. Refer to [Mozilla](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) for documentation.
+React leverages ES6 import and export statements for modularity.  React modules (i.e., components) must be exported in order to be imported.  Exports may either be named or "default".   We'll use both types in this project. Refer to [Mozilla](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) for documentation.
 
 
 ## React Components
 
-A React application is composed of *modular pieces of code* which compute and/or display a portion of application's UI. These modular pieces are called are encapsulated *components*.  According to the [React documentation](https://reactjs.org/docs/thinking-in-react.html), as a best-practice, components should follow the single-use principle of SOLID Obect Oriented (OO) design.   If you are not familiar with SOLID principles, [Hash Bang Code](https://www.hashbangcode.com/article/solid-principles-php) has a excellent tutorial.
+A React application is composed of *modular pieces of code* which compute and/or display a portion of application's UI. These modular pieces are called are encapsulated *components*.  According to the [React documentation](https://reactjs.org/docs/thinking-in-react.html), as a best-practice, components should follow the single-use principle of SOLID Object Oriented (OO) design.   If you are not familiar with SOLID principles, [Hash Bang Code](https://www.hashbangcode.com/article/solid-principles-php) has a excellent tutorial.
 
 Ideally, each component represents a portion of our view. Within react there are two kinds of components: functional and class. This means that React applications may be either created using OO Classes or pure functions.
 
 
 ### Functional Components
-Functional components in React are composed of pure functions which are [first class objects (functions)](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) in JavaScript. As functions, a given set of inputs will always provide a predicatble and guaranteed output. As first class objects, JavaScript functions may be treated as variables.
+Functional components in React are composed of pure functions which are [first class objects (functions)](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) in JavaScript. As functions, a given set of inputs will always provide a predictable and guaranteed output. As first class objects, JavaScript functions may be treated as variables.
 
 
    * **PRO TIP 3:** Generally speaking, child components should be functional components and not manage state. In fact, their state must be lifted into and therefore managed by its parent
@@ -144,7 +147,7 @@ Class components are OO constructs that  are used to manage state in React appli
 
    ->i. NB: `admin-panel` is the name of the application in this tutorial.
   
-   ->ii. Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directves  
+   ->ii. Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directives  
 
 4. Finally, type `npm start` to run the default react application. The app will render on your local machine at http://localhost:3000
 
@@ -164,7 +167,7 @@ Class components are OO constructs that  are used to manage state in React appli
  
 1.  **index.js:**  Renders App.js component to an arbitrary id (default is id 'root') in `public/index.html`. NB: A file which injects code (i.e., component) directly to the HTML DOM is often referred as an application entry point. **TODO:** Open this file and update to `import App from './components/App'`
 
-1. **App.js:** A container component and parent for react react applications.   **TODO:** Delete its contents and move to `src/components` 
+1. **App.js:** A container component and parent for React applications.   **TODO:** Delete its contents and move to `src/components` 
  
 
  ### Updating the Directory Structure
@@ -204,7 +207,7 @@ admin-panel/
 ---
 # Stage 1: Planning and Static Application Build Out
 
-Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagraming an application's layout is an expedient and tactical methodlogy for planning and strategizing React applications.
+Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagramming an application's layout is an expedient and tactical methodology for planning and strategizing React applications.
 
 You may use a pencil and paper, Photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
 
@@ -212,9 +215,9 @@ You may use a pencil and paper, Photoshop, or free online alternatives such as [
 
   **Figure 2: Stage 1 - Application Layout Diagram with Corresponding File Structure**
 
-**Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering view a should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game plan for development of our application.
+**Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering a view should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game plan for development of our application.
 
-**Take Away:** Each section of the wireframe will will represent a React Component. Each Component may be further subdivided into aadditionalones, if needed.
+**Take Away:** Each section of the wireframe will represent a React Component. Each Component may be further subdivided into additional ones, if needed.
 
 
 ## Coding the Static Website: App.js, Controller.js, Header.js, and Master.js
@@ -223,7 +226,7 @@ The code for the App, Controller, Header, and Master components is shown in Figu
 
 1. **Controller.js:** Will manage the ensuing complexity of our application. Controller dictates the layout of each component. In future iterations it will manage application state. 
 
-2.  **Master.js:** Does the heavy lifting.  Lines Lines 4 through 38 show that we store our inventory in a JSON array. In the real-world we would store ur inventory in a database. In lines 40 through of Master.js (see Figure 3 below) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](GITHUB LINK HERE)
+2.  **Master.js:** Does the heavy lifting.  [Lines 4 through 38](main-basic-static-public/src/components/Master.js#L2-L38) show that we store our inventory in a JSON array. In the real-world we would store our inventory in a database. In Lines 40 through of Master.js (see Figure 3 below) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](main-basic-static-public/src/components/Master.js)
 
 3. **Header.js:** Displays the title of the application. Also uses JavaScript's length property to count the total inventory.
 
@@ -231,9 +234,9 @@ The code for the App, Controller, Header, and Master components is shown in Figu
 
 
 
-![App.js](src/images/stage-1-app.png "App.js for Static App")) ![Controller.js](src/images/stage-1-controller.png "Controller.js for Static App")
+![App.js](src/images/stage-1-app.png "App.js for Static App") ![Controller.js](src/images/stage-1-controller.png "Controller.js for Static App")
 
-![Header.js](src/images/stage-1-header.png "Header.js Functional Component for Static App")) ![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App")
+![Header.js](src/images/stage-1-header.png "Header.js Functional Component for Static App") ![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App")
 **Figure 3: App.js, Controller.js, Header.js, and Master.js**
 
 Given the simplicity of the current iteration of our application, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true, however, as developers we alway want to code with modularity, ease of maintenance, and amenability to refactoring in mind. As we build-out our application and add state, the logic of this design pattern will become clearer.
