@@ -1,7 +1,7 @@
-# Navigation
+# React Tutorial Navigation
 
 * [Authorship Credits](#authorship-credits)
-* [Project Overview](#project-overview)
+* [React Project Overview](#react-project-overview)
 * [About React](#about-react)
 * [Getting Started: Setting Up a React Local Development Environment](#getting-started-setting-up-a-react-local-development-environment)
 * [Stage 1: Application Planning and Building a Static Website](#stage-1-planning-and-static-application-build-out)
@@ -20,7 +20,7 @@ This tutorial and its resulting application were created by **Marcus "Arroyo" B.
 This project (codebase and tutorial) has been made available to the public under an [MIT License](LICENSE.md). 
 
 
-# Project Overview
+# React Project Overview
 
 This is a comprehensive React tutorial. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
 
