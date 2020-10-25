@@ -233,11 +233,10 @@ The code for the App, Controller, Header, and Master components is shown in Figu
 
 ![App.js](src/images/stage-1-app.png "App.js for Static App")) ![Controller.js](src/images/stage-1-controller.png "Controller.js for Static App")
 
-![Header.js](src/images/stage-1-header.png "Header.js Functional Component for Static App")) ![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App"))
+![Header.js](src/images/stage-1-header.png "Header.js Functional Component for Static App")) ![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App")
+**Figure 3: App.js, Controller.js, Header.js, and Master.js**
 
-**Figure 3: App.js, Controller.js, and Master.js**
-
-Given the simplicity of the current iteration of our appication, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true, however, as developers we alway want to code with modularity, ease of maintancne, and amenabilty to refactoring in mind. As we build-out our application and add state, the logic of this design pattern will become clearer.
+Given the simplicity of the current iteration of our application, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true, however, as developers we alway want to code with modularity, ease of maintenance, and amenability to refactoring in mind. As we build-out our application and add state, the logic of this design pattern will become clearer.
 
 
 
