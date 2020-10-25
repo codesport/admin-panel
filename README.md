@@ -13,7 +13,7 @@
 
 # Authorship Credits
 
-This tutorial and its resulting application were created by **Marcus "Arroyo" B.** His github username is [codesport](https://github.com/codesport)  
+This tutorial and its resulting application were created by **Marcus "Arroyo" B.** His GitHub username is [codesport](https://github.com/codesport)  
 
 ### License
 
@@ -57,7 +57,7 @@ Refer to the Reacts documentation for more info on its coding [conventions and u
 
 React uses JavaScript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses the [Babel](https://www.google.com/search?q=what+is+babel) transcompiler which allows ES6 to be backward compatible with older and non-chromium based browsers.
 
-*[`let`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like var, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
+*[`let`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like `var`, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
 
 
 *[`const`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps. 
@@ -89,7 +89,7 @@ const MyOtherComponent = () => {
 
    * **PRO TIP 1:** A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class components. 
 
-If arrow functions are not used to create a method, the method must be "manually" binded the class in the constructor like so: `this.myMethodName = this.myMethodName.bind(this);`
+If arrow functions are not used to create a method, the method must be "manually" bounded within the class' constructor like so: `this.myMethodName = this.myMethodName.bind(this);`
 
 If you choose to use arrow functions to define functional components, declare them as constants via `const`.
 
@@ -209,7 +209,7 @@ admin-panel/
 ---
 # Stage 1: Planning and Static Application Build Out
 
-Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagramming an application's layout is an expedient and tactical methodology for planning and strategizing React applications.
+The Stage 1 branch of our tutorial is available for [download](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components).  Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagramming an application's layout is an expedient and tactical methodology for planning and strategizing React applications.
 
 You may use a pencil and paper, Photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
 
@@ -217,7 +217,7 @@ You may use a pencil and paper, Photoshop, or free online alternatives such as [
 
   **Figure 2: Stage 1 - Application Layout Diagram with Corresponding File Structure**
 
-**Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering a view should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game plan for development of our application.
+**Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering a view should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides us a pre-development game plan for developing our application.
 
 **Take Away:** Each section of the wireframe will represent a React Component. Each Component may be further subdivided into additional ones, if needed.
 
@@ -260,7 +260,7 @@ Given the simplicity of the current iteration of our application, it may be argu
 > 
 >  *- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)*
 
-Stage 2 involves converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
+Stage 2 of our tutorial is the branch named `main-basic-state-public`, and its codebase is available for [download](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components). Stage 2 involves converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
 
 Although each React component may generate and contain data, it is a best practice to *lift state up* to the parent component. *Lifting up state* is a core React design principle. It brings organization and simplicity to what can potentially be a quite complex and unwieldy codebase.
 
@@ -335,7 +335,7 @@ As our Controller becomes more complex it is prudent to identify ways to refacto
 
 ## Controller's `renderView()` Method
 
-`renderView` is a helper method within Controller.  It manages `this.state.view` by managing what gets shown to the user.  It also dramatically reduces needless code repetition.
+[`renderView`](src/components/Controller.js#L71-L88) is a helper method within Controller.  It manages [`this.state.view`](src/components/Controller.js#L57) by managing what is displayed to the user.  It also dramatically reduces needless code repetition.
 
 
 ![Stage 3 - renderView() Helper Method](src/images/stage-3-controller-renderview.png "Stage 3 - renderView() Helper Method")
@@ -343,14 +343,14 @@ As our Controller becomes more complex it is prudent to identify ways to refacto
 
 ## Controller's handleDelete() Method
 
-Here is an analysis of the handleDelete method:
+Here is an analysis of the `handleDelete` method:
 
 
 1. Retrieves a list of inventory items we wish to delete. This is stored in this.state.arrayToEdit
 
 2. Makes a copy of the existing inventory array this.state.masterList
 
-3. Applies [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to the copy to return everything **_except_** the element containing the ID we wish to delete
+3. Applies [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to the copy. The filter returns everything **_except_** the element [containing the ID]((src/components/Controller.js#L314)) we wish to delete
 
 
 ```JSX
@@ -365,6 +365,7 @@ Here is an analysis of the handleDelete method:
             if (confirmDelete === true) {
 
                 let newMasterList = this.state.masterList 
+
                 this.state.arrayToEdit.map( ( id, index) =>     
                     newMasterList = newMasterList.filter( detail => detail.id !== id)    
                 )
@@ -459,7 +460,7 @@ To provide an optimal user experience, the Update component was designed to be a
 
 Worthy of mentioning is that the React form property [`defaultValue`](https://reactjs.org/docs/uncontrolled-components.html#default-values) is used to pre-populate the Update component with the item's information.
 
-Finally, akin Create.js, Update.js also receives a callback function from Controller.js. In turn, the Update component sends the form data back to the Controller via 'handleUpdate()' callback. The code in Update.js is quite mundane, but feel free to [examine it](src/components/Update.js).  Figure 16 is an excerpt.
+Finally, akin Create.js, Update.js also receives a callback function from Controller.js. In turn, the Update component sends the form data back to the Controller via `handleUpdate()` callback. The code in Update.js is quite mundane, but feel free to [examine it](src/components/Update.js).  Figure 16 is an excerpt:
 
 
 
@@ -475,7 +476,9 @@ Of much more interest, is how we manage updates in through the Controller:
 
 2. handleUpdate()
 
-    Updates the list by first removing the property being edited from a copy existing list. Afterwards, it concatenates the updated item the the copy. FInally, it uses setState() to actually update the masterList.  Do note these are array manipulation operations. If we were storing in a database. This functionality would be different.
+    Updates the list by first removing the property being edited from a copy of the existing list. Next, it concatenates the updated item onto the truncated copy. Finally, it uses setState() to update the original and authoritative list called `masterList`.  
+    
+    **NB:** Please note that these are array manipulation operations. If we were storing in a database, our update functionality would be quite different.
 
 ```JSX
     handleUpdate = (updates) =>{
@@ -508,10 +511,6 @@ As shown in Figure 18 below, the comments throughout this application's codebase
 
 ![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
 **Figure 18: Stage 4 - Comments explaining the `buildEditArray` Method in the Controller Component**
-
-Special thanks to Hal Helms ("Uncle Hal") who, through an online tutorial he authored a long time ago, showed me and many others how to build our first CRUD application! 
-
-Never did I expect that in 2020 I would make tutorial for one of the world's most powerful and influential companies.
 
 
 ---
