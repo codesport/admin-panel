@@ -259,14 +259,13 @@ Given the simplicity of the current iteration of our application, it may be argu
 
 Stage 2 involves converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
 
-Although each React component may generate and contain data, it is a best practice to *lift state up* to the parent component. *Lifting up state* is a core React design principle. It brings organization and simplicity to what can potentially be quite complex and unwieldy codebase.
+Although each React component may generate and contain data, it is a best practice to *lift state up* to the parent component. *Lifting up state* is a core React design principle. It brings organization and simplicity to what can potentially be a quite complex and unwieldy codebase.
 
 As mentioned earlier, state is complex and it's easier to have one file as a nexus and controller of all things state.
 
 Here is our updated application layout:
 
 ![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout") 
-
 **Figure 5: Layout Diagram for Master Detail**
 
 Now, by clicking an item on the master page, we are transported to a detail page.
