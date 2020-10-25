@@ -199,7 +199,7 @@ admin-panel/
   ├── package.json
   └── README.md
 ```
-
+**Figure 1: A Proposed Folder Structure for React
 ---
 
 # Stage 1: Planning and Static Application Build Out
@@ -209,7 +209,6 @@ Our first step is to create a static, non-interactive website. Often the abode o
 You may use a pencil and paper, Photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
 
 ![Stage 1 - Application Layout and Files Mirroring Application Layout ](src/images/color-block-simple-v2-and-folder-layout.png "Stage 1 Application Layout and Folder Layout Mirroring Layout Diagram") 
-
   **Figure 2: Stage 1 - Application Layout Diagram with Corresponding File Structure**
 
 **Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering view a should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides a provides a pre-development game paln for development of our application.
@@ -219,11 +218,11 @@ You may use a pencil and paper, Photoshop, or free online alternatives such as [
 
 ## Coding the Static Website: App.js, Controller.js, Header.js, and Master.js
 
-The code for the App, Controller, Header, and Master components is shown in Figure 2 with comments.  Here is a summary:
+The code for the App, Controller, Header, and Master components is shown in Figure 2, above, with comments.  Here is a summary:
 
 1. **Controller.js:** Will manage the ensuing complexity of our application. Controller dictates the layout of each component. In future iterations it will manage application state. 
 
-2.  **Master.js:** Does the heavy lifting.  Lines Lines 4 through 38 show that we store our inventory in a JSON array. In the real-world we would store ur inventory in a database. In lines 40 through of Master.js (see figure 3 below) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](GITHUB LINK HERE)
+2.  **Master.js:** Does the heavy lifting.  Lines Lines 4 through 38 show that we store our inventory in a JSON array. In the real-world we would store ur inventory in a database. In lines 40 through of Master.js (see Figure 3 below) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](GITHUB LINK HERE)
 
 3. **Header.js:** Displays the title of the application. Also uses JavaScript's length property to count the total inventory.
 
@@ -244,7 +243,6 @@ Given the simplicity of the current iteration of our application, it may be argu
 ### Resulting Website
 
 ![Static Version of Admin App](src/images/static-version.png "Static Website Produced by the 3 Component Files")
-
 **Figure 4: Stage 1: The Static Application Produced by Our 3 Files**
 
 ---
@@ -265,7 +263,6 @@ As mentioned earlier, state is complex and it's easier to have one file as a nex
 Here is our updated application layout:
 
 ![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout") 
-
 **Figure 5: Layout Diagram for Master Detail**
 
 Now, by clicking an item on the master page, we are transported to a detail page.
@@ -280,7 +277,6 @@ We've converted the controller to a class component to manage state. An applicat
 First, the required constructor method is added to initialize state as described in Figure 6: 
 
 ![Stage 2 - Analysis of Controller's Constructor Method](src/images/stage-2-controller-constructor.png "Stage 2: Analysis of Controller's Constructor")
-
 **Figure 6: Analysis of Controller's Constructor Method**
 
 Second, we have our event handler that determines which item's detail to render. Figure 7, Analysis of Controller's handleSelectedDetail Method, explains the code:
@@ -290,7 +286,6 @@ Of note in Figure 6 is JavaScript's built-in [`Array.filter()`](https://develope
 
 
 ![Stage 2 - Analysis of Controller's handleSelectedDetail Method](src/images/stage-2-controller-handleSelectedDetail.png "Stage 2: Analysis of Controller's handleSelectedDetail()")
-
 **Figure 7: Analysis of Controller's handleSelectedDetail Method**
 
 
@@ -300,7 +295,6 @@ Finally, in Figure 8  we have the updated render method. It sends its view prese
 
 
 ![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
-
 **Figure 8: Analysis of Controller's Render Method with Emphasis on Callback Sent to the Master Componennt**
 
  
@@ -312,7 +306,6 @@ However, it is worth mentionin that when passing arguments to other components, 
 
 
 ![Stage 2 - Analysis of the Master Functional Component](src/images/stage-2-master.png "Stage 2: The Master Functional Component")
-
 **Figure 9: The Master Component**
 
 
@@ -321,7 +314,6 @@ However, it is worth mentionin that when passing arguments to other components, 
 
 
 ![Stage 2 - The Detail Component](src/images/stage-2-detail.png "Stage 2: Detail Component")
-
 **Figure 10: The Detail Component**
 
 ---
@@ -337,7 +329,6 @@ Render view is a helper method within Controller.  It which manages `this.state.
 
 
 ![Stage 3 - renderView() Helper Method](src/images/stage-3-controller-renderview.png "Stage 3 - renderView() Helper Method")
-
 **Figure 11: The renderView() Helper Method for Stage 3 Manages Our Application's Increased Complexity**
 
 ## Controller's handleDelete() Method
@@ -414,8 +405,6 @@ In Figure 13, we invoke the UUID in line 44 of [Create.js](src/components/Create
 Please refer to the comments in Figure 13 for a additional analysis of Create.js
 
 ![Stage 3 - Create Component](src/images/stage-3-create.png "Stage 3 - Create Component")
-
-
 **Figure 13: Stage 3 - The Comments Explain the Create Component's Functionality**
 
 
@@ -431,7 +420,6 @@ Please refer to the comments in Figure 13 for a additional analysis of Create.js
         this.hideButton('delete-button')
     }
 ```
-
 **Figure 14: Stage 3 - The Controller's handleCreateFormView Method**
 
 ## Controller's `handleCreate()` Method
@@ -466,7 +454,6 @@ Similar to Create.js, Update.js also receives a callback function from Controlle
 
 
 ![Stage 4 - Update Component](src/images/stage-4-update.png "Stage 4 - Update Component")
-
 **Figure 16: Stage 4 - Excerpt of the Update Component**
 
 
@@ -496,7 +483,6 @@ Of much more interest, is how we manage updates in through the Controller:
             )
     }
 ```
-
 **Figure 17: Stage 4 - The Controller's `handleUpdate` Method**
 
 ---
@@ -511,7 +497,6 @@ The CSS used for the [action buttons](https://github.com/codesport/admin-panel/b
 As shown in Figure 18 below, the comments throughout this application's codebase reference specific Stackoverflow posts as well as other sources that were useful in building this application.
 
 ![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
-
 **Figure 18: Stage 4 - Comments explaining the `buildEditArray` Method in the Controller Component**
 
 Special thanks to Hal Helms (Uncle Hal) who, through an online tutorial he authored a long time ago, showed me how to build my first CRUD application! Never did I expect to make tutorial for one of the most powerful companies in the world.
