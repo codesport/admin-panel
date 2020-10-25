@@ -15,7 +15,7 @@
 
 # Authorship Credits
 
-This tutorial and its resulting application were created by **Marcus "Arroyo" B.** His github username is codesport  
+This tutorial and its resulting application were created by **Marcus "Arroyo" B.** His github username is [codesport](https://github.com/codesport)  
 
 ### License
 
