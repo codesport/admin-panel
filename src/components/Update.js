@@ -41,7 +41,7 @@ function Update(props){
       <React.Fragment>
         <form onSubmit={handleFormSubmit} id="update-form" />
 
-        <h1>Update Form for <input type='text' name='name' defaultValue={props.detail.name} required form="update-form" /> Category: <input type='text' name='category'  defaultValue={props.detail.category} form="update-form"/> <button class="btn btn-primary btn-sm" type="submit" form="update-form" >Update</button>  </h1>
+        <h1>Update Form for <input type='text' name='name' defaultValue={props.detail.name} required form="update-form" /> Category: <input type='text' name='category'  defaultValue={props.detail.category} form="update-form"/> <button className="btn btn-primary btn-sm" type="submit" form="update-form" >Update</button>  </h1>
         <div className="divTable">
             <div className="divTableBody">
                 <div className="divTableRow">
