@@ -1,31 +1,36 @@
 # Navigation
 
-* [Project Overview and Authorship Credits](#introduction-and-project-overview)
-* [About React](#aout-react)
+* [Project Overview](#project-overview)
+* [Authorship Credits](authorship-credits)
+* [About React](#about-react)
 * [Getting Started: Setting Up a React Local Development Environment](#authorship-and-credits)
 * [Stage 1: Application Planning and Building a Static Website](#php-application-development-excercise-overview)
 * [Stage 2: Adding State and Build-out Master-Detail Functionality](#php-application-development-excercise-task-description)
 * [Stage 3: Expanding State by Adding Create and Delete Functionality]
 * [Stage 4: Adding Update Functionality]
+* [Credits]
 * [Conclusions and Next Steps]
 
-# Project Overview and Authorship Credits
+# Project Overview
 
 This tutorial was created for Facebook's 2020 Developer's challenge. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
 
 The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6 (ES6)** additions to Javascript. concepts required to develop proficiency as a React development developer.  
 
-The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. This application may be readily adpated to create variety of applications (e.g., online store, an addressbok, and a todo-list).
-
-## Authorship Credits
-
-This tutorial its resulting application were created by **Marcus "Arroyo" B.**. Arroyo is a Software Engineer In Residence (SEIR) with Code Sport Labs. 
+The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. This application may be readily adapted to create variety of applications (e.g., online store, an addressbok, and a todo-list).
 
 ## License
 
-Additionally this project is being made available to the public under 
+Additionally this project is being made available to the public under an MIT open source license.
 
-Given the comprehensiveness of this tutorial, it is recommeded that the learner use the navigation menu to focus on sections most relevant to your learning needs
+Given the comprehensiveness of this tutorial, it is strongly recommended that you use the navigation menu to focus on sections most relevant to your learning needs.
+
+# Authorship Credits
+
+This tutorial its resulting application were created by **Marcus B.**   
+
+
+
 
 ---
 # About React
@@ -76,11 +81,11 @@ const MyOtherComponent = () => {
 
 > PRO TIP 1: A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class components. 
 
-If arrow functions are not used to create a method, the method must be "manually" binded the class in the constructor likeso: `this.myMethodName = this.myMethodName.bind(this);`
+If arrow functions are not used to create a method, the method must be "manually" binded the class in the constructor like so: `this.myMethodName = this.myMethodName.bind(this);`
 
 If you choose to use arrow functions to define functional components, declare them as constants via `const`.
 
-> PRO TIP 2: If your event handler (e.g., onClick, onMouseOver, etc) requires arguments to be passed, you must use arrow functions to prevent the function from automattically executng when the page is rendered
+> PRO TIP 2: If your event handler (e.g., onClick, onMouseOver, etc) requires arguments to be passed, you must use arrow functions to prevent the function from automatically executing when the page is rendered
 
 
 ### Import and Export Statements
@@ -99,11 +104,11 @@ Ideally, each component represents a portion of our view. Within react there are
 Functional components in React are composed of pure functions which are [first class objects (functions)](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) in JavaScript. As functions, a given set of inputs will always provide a predicatble and guaranteed output. As first class objects, JavaScript functions may be treated as variables.
 
 
-    **PRO TIP 3:** Generally speaking, child components should be functional components and not manage state. In fact, their state must be lifted into and therefore managed by its parent
+   **PRO TIP 3:** Generally speaking, child components should be functional components and not manage state. In fact, their state must be lifted into and therefore managed by its parent
 
-    **PRO TIP 4:** If you find yourself repeating the same lines of code thtoughout a given parent or child component, combine that code into a method or function. Then call when needed
+   **PRO TIP 4:** If you find yourself repeating the same lines of code throughout a given parent or child component, combine that code into a method or function. Then call when needed
 
-    **PRO TIP 5:** If you find yourself needing the same function in more than 2 component's, seperate that function into an additional child or sibling component and import it where needed!
+   **PRO TIP 5:** If you find yourself needing the same function in more than 2 component's, separate that function into an additional file and import it where needed!
 
 
 ### Class Components
@@ -113,7 +118,7 @@ Class components are OO constructs that  are used to manage state in React appli
 
 
 ---
-# Getting Started: Setting-up a React Local Development Enviornment 
+# Getting Started: Setting-up a React Local Development Environment 
 
 ## 1. VSCode Setup
 
@@ -135,31 +140,29 @@ Class components are OO constructs that  are used to manage state in React appli
 
     d. Finally, type `npm start` to run the default react application. The app will render on your local machine at http://localhost:3000
 
-
-
 ## 3. `create-react-app`: Understanding Default Files and Directory Structure
 
-    **node_modules/:** Standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React).
+**node_modules/:** Standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React).
 
-    *package.json:** Standard configuration and script setup file for node projects. You may specify dependencies and embed [custom scripts](https://css-tricks.com/why-npm-scripts/) to automate your development workflow
+  **package.json:** Standard configuration and script setup file for node projects. You may specify dependencies and embed [custom scripts](https://css-tricks.com/why-npm-scripts/) to automate your development workflow
 
-    **public/:** Folder with global read privileges (i.e., public , web accesible).  Only store public content here such as images and html files.
+  **public/:** Folder with global read privileges (i.e., public , web accesible).  Only store public content here such as images and html files.
         
         Optional TODO: You're welcomed to change or delete the favicon, manifest, and logo files to suit your project's needs. But, be sure `index.html` also reflects those changes. `logo512.png` will not be used in our project so you're welomed to delete it.
 
-    **public/index.html:** Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`
+  **public/index.html:** Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`
 
-    **index.css:** Global stylesheet for the react project. Within the React developer community it is considered a best practice to opt for component-specific CSS.  Such CSS is written directly into the component.  It's accomplished via CSS objects or [CSS in JavaScript libraries](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap] such as styled-components, react-bootstrap, etc.
+  **index.css:** Global stylesheet for the react project. Within the React developer community it is considered a best practice to opt for component-specific CSS.  Such CSS is written directly into the component.  It's accomplished via CSS objects or [CSS in JavaScript libraries](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap] such as styled-components, react-bootstrap, etc.
 
-    **App.css:** external style sheet for App.js. It is minified and aggretated into a 'global' style sheet on application build and compile.
+  **App.css:** external style sheet for App.js. It is minified and aggretated into a 'global' style sheet on application build and compile.
         
         TODO: Delete this file
  
-    **index.js:**  Renders App.js component to an arbitrary id (default is id 'root') in `public/index.html`. NB: A file which injects code (i.e., component) directly to the HTML DOM is often referred as an application entry point.
+  **index.js:**  Renders App.js component to an arbitrary id (default is id 'root') in `public/index.html`. NB: A file which injects code (i.e., component) directly to the HTML DOM is often referred as an application entry point.
         
         TODO: Open this file and update to `import App from './components/App'`
 
-    **App.js:** A container component and parent for react react applications.     
+  **App.js:** A container component and parent for react react applications.     
         
         TODO: Delete its contents and move to `src/components` 
  
@@ -347,7 +350,7 @@ Here is an analysis of the handleDelete method:
 
 2. Makes a copy of the existing inventory array this.state.masterList
 
-3. Applies [`Array.filter()`] to the copy to return everything **_except_** the element contianing the ID we wish to delete
+3. Applies [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to the copy to return everything **_except_** the element contianing the ID we wish to delete
 
 
 ```JSX
@@ -400,18 +403,21 @@ Here is an analysis of the handleDelete method:
 
 
 
-
-
 ## Create.js
 
-The Create component displays the form to create a new item. However, controller processes the form through a callback function sent to the Create component.  Please refer to the comments in Figure 10 for a additional analysis of Create.js
+The Create component displays the form to create a new item. However, controller processes the form through a callback function sent to the Create component. 
+
+Of note: React requires that each item in a list that is rendered to DOM have a UUID.  In line 2 of [Create.js](src/components/Create.js#L2) we import the JavaScript's UUID library: `import { v4 } from 'uuid'`
+
+In Figure 13, we invoke the UUID in line 44 of [Create.js](src/components/Create.js#L44) via `{ v4 }`
+
+
+Please refer to the comments in Figure 13 for a additional analysis of Create.js
 
 ![Stage 3 - Create Component](src/images/stage-3-create.png "Stage 3 - Create Component")
 
 
-**Figure 13: Comments on Create Component's Functionality**
-
-
+**Figure 13: Stage 3 - The Comments Explain the Create Component's Functionality**
 
 
 ## Controller's `handleCreateFormView()` Method
@@ -427,11 +433,11 @@ The Create component displays the form to create a new item. However, controller
     }
 ```
 
-**Figure 14: The Controller's handleCreateFormView Method **
+**Figure 14: Stage 3 - The Controller's handleCreateFormView Method**
 
 ## Controller's `handleCreate()` Method
 
-*`handleCreate()`* concatenates the newly created inventory object to a copy of our inventory list (masterList). It then updates the masterList by means of [`setState()`](https://www.google.com/search?q=setState())
+Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L231) concatenates the newly created inventory object to a copy of our inventory list (masterList). It then updates the masterList by means of [`setState()`](https://www.google.com/search?q=setState())
 
 
 ```JSX
@@ -445,29 +451,35 @@ The Create component displays the form to create a new item. However, controller
 
     }
 ```
-**Figure 15: The Controller's handleCreateFormView Method**
+**Figure 15: Stage 3 - The Controller's handleCreateFormView Method**
 
 
 
 ---
-
 # Stage 4: Update 
 
 To provide an optimal user experience, the update form was tightly integrated into what appears to be a the Detail view.  However, it is in fact separate component that overlays and HTML5 form into the code used to generate teh Detail component.
 
 The React form property [`defaultValue`](https://reactjs.org/docs/uncontrolled-components.html#default-values) is used to pre-populate the form with the item's information.
 
-Similiar to Create.js, Update.js receives a callback function fro the color and populates it with form information. The code is quite trivial, so you may reveiew thet code here.
+Similar to Create.js, Update.js also receives a callback function from Controller.js. In turn, it sends teh form data back to parent via handleUpdate(). The code in Update.js is quite mundane, but feel free to [examine it]((src/components/Update.js#L231)).  Figure 16 is an excerpt.
 
-Of note however, is how we update in controller.  
+
+
+![Stage 4 - Update Component](src/images/stage-4-update.png "Stage 4 - Update Component")
+
+**Figure 16: Stage 4 - Excerpt of the Update Component**
+
+
+Of much more interest, is how we manage updates in through the Controller:  
 
 1. handleSelectedDetail()
 
-    A housekeeping and helper method called handleSelectedDetail mehtod. It uses a series of conditionals to dertermin if the detail or update view shoudl be displayed.
+    A housekeeping and helper method called handleSelectedDetail method. It uses a series of conditionals to determine if the detail or update view should be displayed.
 
 2. handleUpdate()
 
-    Updates the list by first removing the property being edited from a copy existing list. Afterwards, it concatenates the updated item the the copy. FInally, it uses setState() to actually update the masterList.  Do note these are array maaipulation operations. If we were storing in a database. This functionality would be diferrent.
+    Updates the list by first removing the property being edited from a copy existing list. Afterwards, it concatenates the updated item the the copy. FInally, it uses setState() to actually update the masterList.  Do note these are array manipulation operations. If we were storing in a database. This functionality would be different.
 
 ```JSX
     handleUpdate = (updates) =>{
@@ -486,15 +498,13 @@ Of note however, is how we update in controller.
     }
 ```
 
-
-**Figure 15: The Controller's `handleUpdate` Method **
-
+**Figure 17: Stage 4 - The Controller's `handleUpdate` Method**
 
 
+---
 # Conclusion
 
 Next steps of this project would include:
-
 
 * Integration with a NoSQL database such as Firebase or Mongo
 * Adding Authentication and Access Control for security
@@ -503,22 +513,17 @@ Next steps of this project would include:
 * Using Jest to run automated test and to incorporate test driven development best practices
 * Explore using React Router as a means of handling navigation and URL management
 
+---
+# Credits
 
+The pedagogical design of this tutorial was inspired by [Thinking in React](https://reactjs.org/docs/thinking-in-react.html).  
 
+The application's UX was inspired by [Amazon's/Wholefoods mobile app](https://www.amazon.com/alm/storefront??tag=7475725-20)
 
+As shown in Figure 18 below, the comments throughout this application's codebase reference specific Stackoverflow posts as well as other sources that were useful in building this application.
 
+![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
 
+**Figure 18: Stage 4 - Comments explaining he buildEditArray Method in the Controller Component**
 
-
-# Trash
-
-## Inspiration
-
-The code used in this tutorial was inspired by a bevy of tutorials on Reactjs.org, expecially Thinking In React.
-
-
-
-## Part 1 Beginner's Tutorial - Arroyo Family Farms' Inventory App
-
-Part 1 serves as a beginner's tutorial and guides the learner in creating a static, stateless, and non-interactive application using React functional components. 
-
+Special thanks to Hal Helms (Uncle Hal) who, through an online tutorial he authored a long time ago, showed me how to build my first CRUD application! Never did I expect to make tutorial for one of the most powerful companies in the world.

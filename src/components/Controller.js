@@ -59,15 +59,13 @@ class Controller extends React.Component{
         }
     }
 
-
-    //start housekeeping methods
+// --- housekeeping methods
     
     emptyArrayToEdit = () =>{
         this.setState({
             arrayToEdit:[]
         })
     }
-
 
     /**
      * Simplifies rendering of the page view stored in state
@@ -96,7 +94,7 @@ class Controller extends React.Component{
      * this.state.headerView is called for Create, Delete, and Header Update - 3 times.
      * 
      * @param {string} componentName - name of the component to render in 
-     * @param {string} event - (optional) unused
+     * @param {string} event - (optional) unused for now. To be expanded upon after code refactoring
      * 
      * Using spread operator to pass and deconstruct props:
      *  {@link https://stackoverflow.com/questions/28452358/what-is-the-meaning-of-this-props-in-reactjs|Props and Spread Operator}
@@ -104,7 +102,7 @@ class Controller extends React.Component{
      * Sending component names as parameters to functions: 
      *  {@link https://www.google.com/search?q=send+a+component+name+as+a+variable+in+react|Google Search}
      *
-     * Sending Components as parameters to functions: 
+     * Stackoverflow on sending Components as parameters to functions: 
      *  {@link https://stackoverflow.com/questions/29875869/react-jsx-dynamic-component-name| Authoritative Solution}
      *  {@link https://stackoverflow.com/a/38823404| Dynamic Loading for index.js}
      *  {@link https://stackoverflow.com/questions/28842459/react-jsx-dynamic-component-names| Other Solution on stackoverflow}
@@ -120,7 +118,7 @@ class Controller extends React.Component{
 
             headerView = <Header masterList={this.state.masterList} header={this.state.appHeader} onDoubleClick={this.handleShowHeaderUpdateForm} />
 
-        } else{
+        } else {
 
             headerView  = <UpdateHeader masterList={this.state.masterList} header={this.state.appHeader} onCallbackSubmit={this.updateHeader} />
 
@@ -131,8 +129,6 @@ class Controller extends React.Component{
         })
 
     }
-
-
 
     //https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
     hideButton = (id) =>{
@@ -147,8 +143,7 @@ class Controller extends React.Component{
             button.style.display = 'inline';
         }
     } 
-    
-    //end housekeeping methods
+ // ---   
 
     handleSelectedDetail = (id, selectOrUpdate) => {
 /*
@@ -212,6 +207,26 @@ class Controller extends React.Component{
 
     }
 
+    /**
+     * @summary Function to be sent to the Master component as a callback
+     * 
+     * Uses the built-in JavaScript filter method to first remove the previous version of the 
+     * updated item, and than concatenates the new version. Manipulation is done on a copy
+     * 
+     * NB: Array.filter() returns an array with elements that satisfy the test criteria. Because 
+     *     our array is in fact a JSON object, we explicity extract the object by identifying 
+     *     its position with "[0]"
+     * 
+     * Here is how the filter method is used: 
+     * array.filter( arbitrary_variable_name_for_single_array_item_to_test =>  
+     *               test_expression_on_variable_name_for_single_array_item_to_test )
+     *         
+     * See {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter|Filter}
+     * for more information
+     * 
+     * @param { string, number} id 
+     */
+
     handleUpdate = (updates) =>{
         const updatedDetail = this.state.masterList.filter( detail => detail.id !== updates.id).concat(updates)
         console.log('Contents of Updated Detail:')
@@ -247,10 +262,11 @@ class Controller extends React.Component{
      * 
      * Resources used to research and build this functionality:
      * 
-     * {@link https://stackoverflow.com/a/31113246/946957|Stackoverflow} and https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes
+     * {@link https://stackoverflow.com/a/31113246/946957|Stackoverflow} 
+     * {@link https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes|Selecting All Check Boxes}
      * {@link https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll|QuerySelectAll}
      * {@link https://developer.mozilla.org/en-US/docs/Web/API/NodeList|NodeList}  
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from||Arrayfrom}
+     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from|Arrayfrom}
      * 
      * Examples of how to select elements with JavaScript
      * 
