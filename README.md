@@ -444,7 +444,7 @@ Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L
         
         this.setState({
             masterList: newMasterList,
-            }, function(){this.renderView( <h3>Successfuly Created {creation.name}!</h3> )}
+            }, function(){this.renderView( <h3>Successfully Created {creation.name}!</h3> )}
         )
 
     }
@@ -455,6 +455,8 @@ Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L
 
 ---
 # Stage 4: Completing the Application by Adding Update Functionality 
+
+The codebase for Stages 3 and 4 are available for download under the [`main-final-public`](https://github.com/codesport/admin-panel/blob/main-final-public/src/components/) branch
 
 To provide an optimal user experience, the Update component was designed to be a close visual simile of [Detail component](src/components/Detail.js).  This was accomplished by overlaying an [HTML5 form](src/components/Update.js#L49-L61) onto the code used to generate the Detail component.
 
