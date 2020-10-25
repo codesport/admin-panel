@@ -44,8 +44,8 @@ function Master(props){
  */
 
     const enter = (event) => {
-        event.target.style.backgroundColor = "skyblue";
-        //console.log('on mouse enter activated')
+        event.target.style.backgroundColor = "#fbf9f9"; //#f8f8ff
+        //console.log('on mouse enter activated') 
     };
       
       const exit = event => {
