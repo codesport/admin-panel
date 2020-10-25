@@ -209,7 +209,7 @@ admin-panel/
 ---
 # Stage 1: Planning and Static Application Build Out
 
-The Stage 1 branch of our tutorial is available for [download](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components).  Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagramming an application's layout is an expedient and tactical methodology for planning and strategizing React applications.
+The Stage 1 branch of our tutorial is **available for [download](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components)**.  Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagramming an application's layout is an expedient and tactical methodology for planning and strategizing React applications.
 
 You may use a pencil and paper, Photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
 
@@ -260,7 +260,7 @@ Given the simplicity of the current iteration of our application, it may be argu
 > 
 >  *- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)*
 
-Stage 2 of our tutorial is the branch named `main-basic-state-public`, and its codebase is available for [download](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components). Stage 2 involves converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
+Stage 2 of our tutorial is the branch named `main-basic-state-public`, and **its codebase is available for [download](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components)**. Stage 2 involves converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
 
 Although each React component may generate and contain data, it is a best practice to *lift state up* to the parent component. *Lifting up state* is a core React design principle. It brings organization and simplicity to what can potentially be a quite complex and unwieldy codebase.
 
@@ -456,7 +456,7 @@ Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L
 ---
 # Stage 4: Completing the Application by Adding Update Functionality 
 
-The codebase for Stages 3 and 4 are available for download under the [`main-final-public`](https://github.com/codesport/admin-panel/blob/main-final-public/src/components/) branch
+The codebase for Stages 3 and 4 **are available for download** under the [`main-final-public`](https://github.com/codesport/admin-panel/blob/main-final-public/src/components/) branch
 
 To provide an optimal user experience, the Update component was designed to be a close visual simile of [Detail component](src/components/Detail.js).  This was accomplished by overlaying an [HTML5 form](src/components/Update.js#L49-L61) onto the code used to generate the Detail component.
 
