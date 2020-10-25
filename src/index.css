@@ -405,13 +405,21 @@ body{
 }
 
 /* 
-* Allow Detail page to work on smaller Devices 
+* 1. Allow Detail page to work on smaller Devices 
+*
+* 2. Fix overlow my reducing with of parent dive
+*
+* 3. Also eperiment ith Use overflow-wrap:  
+* https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-wrap
+*
 */
 @media screen and (min-width: 1100px){
   #align-metadata{
     float: right;
     margin-top: -13em;
-    margin-right: -1em;
+   /* margin-right: -1em;
+    overflow-wrap: break-word;*/
+    max-width: 30em;
   }
 
   #align-metadata.update-detail{
