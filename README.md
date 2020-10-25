@@ -502,7 +502,9 @@ Of much more interest, is how we manage updates in through the Controller:
 
 
 ---
-# Conclusion
+# Conclusion and Next Steps
+
+This admin-panel application can be used as a template to build more advanced applications such as a shopping cart, todo list, 
 
 Next steps of this project would include:
 
