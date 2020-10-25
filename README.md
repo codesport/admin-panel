@@ -502,7 +502,7 @@ Of much more interest, is how we manage updates in through the Controller:
 
 
 ---
-# Conclusion and Next Steps
+# Conclusions and Next Steps
 
 This tutorial and its resulting code may be used as a template to build more advanced applications.  Expansion options include building an online store, a booking/reservations app, an address book, a todo-list, etc. 
 
