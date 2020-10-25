@@ -411,7 +411,7 @@ body{
   #align-metadata{
     float: right;
     margin-top: -13em;
-    margin-right: 3em;
+    margin-right: -1em;
   }
 
   #align-metadata.update-detail{
