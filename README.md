@@ -265,8 +265,8 @@ As mentioned earlier, state is complex and it's easier to have one file as a nex
 
 Here is our updated application layout:
 
-![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout")                            
-**Figure 5: Layout Diagram for Master Detail**
+![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout")                   
+**Figure 5: Layout Diagram for Stage 2's Master-Detail Build-out**
 
 Now, by clicking an item on the master page, we are transported to a detail page.
 
