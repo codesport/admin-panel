@@ -57,16 +57,18 @@ Refer to the Reacts documentation for more info on its coding [conventions and u
 
 React uses JavaScript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses the [Babel](https://www.google.com/search?q=what+is+babel) transcompiler which allows ES6 to be backward compatible with older and non-chromium based browsers.
 
-*[`let`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description)* is a variable declaration like `var`, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
+*[`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description):* is a variable declaration like `var`, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
 
 
-*[`const`:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description)* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps. 
+*[`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description):* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps. 
 
 ### Arrow Functions: `() =>`
 
 Like `let` and `const`, arrow functions are "hyper-localized". This means they are only "aware of" and execute in the scope where they were created. On the other hand, traditional JavaScript functions bubble up to the window scope.
 
- Because of scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  Arrow functions negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent:
+ Because of scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  Arrow functions negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent.  
+ 
+ **NB:** this example only demonstrates syntax usage, not scope localization or binding
 
 ```javascript
 const OUTER = 10;
@@ -74,14 +76,14 @@ const OUTER = 10;
 //Traditional Function
 function MyComponent(){
   let number = 3;
-  number = number*OUTER; //expect 3*10 = 3-
+  number = number*OUTER; //expect 3*10 = 30
   return number;
 }
 
 //Arrow Function
 const MyOtherComponent = () => {
   let number = 3;
-  number = number*OUTER; //expect 3*10 = 3-
+  number = number*OUTER; //expect 3*10 = 30
   return number;  
 }
 ```
@@ -93,7 +95,7 @@ If arrow functions are not used to create a method, the method must be "manually
 
 If you choose to use arrow functions to define functional components, declare them as constants via `const`.
 
-   * **PRO TIP 2:** If your event handler (e.g., onClick, onMouseOver, etc) requires arguments to be passed, you must use arrow functions to prevent the function from automatically executing when the page is rendered
+   * **PRO TIP 2:** If your event handler requires arguments to be passed, you must use arrow functions to prevent the function from automatically executing when the page is rendered
 
 
 ### Import and Export Statements
