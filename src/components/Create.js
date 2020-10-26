@@ -118,7 +118,7 @@ function Create(props){
                     <option value="each">units</option>                        
                 </select>                                   
             </div>    
-                <button id="add=new-detail" type="submit" >Create</button>
+                <button id="add=new-detail" type="submit" className="btn btn-primary btn-sm">Create</button>
             </form>
         </React.Fragment>
 
