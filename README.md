@@ -1,74 +1,56 @@
-# React Tutorial Navigation
+[Navegación de Menú]
+[Panorama Breve del Proyecto]
+[Créditos al Autor]
+[Los Primeros Pasos: El Establecer de un Entorno de Desarrollo Para React] 
+[Etapa 1: Planear La Aplicación y Crear un Sitio Estático sin Estado]
+[Etapa 2: Integrar El Estado y Diseñar la Funcionalidad de Maestro-Detalle]
 
-* [Authorship Credits](#authorship-credits)
-* [React Project Overview](#react-project-overview)
-* [About React](#about-react)
-* [Getting Started: Setting Up a React Local Development Environment](#getting-started-setting-up-a-react-local-development-environment)
-* [Stage 1: Application Planning and Building a Static Website](#stage-1-planning-and-static-application-build-out)
-* [Stage 2: Adding State and Build-out Master-Detail Functionality](#stage-2-add-state-and-build-out-master-detail-functionality)
-* [Stage 3: Expanding State by Adding Create and Delete Functionality](#stage-3-expand-state-by-adding-create-and-delete-functionality)
-* [Stage 4: Adding Update Functionality](#stage-4-completing-the-application-by-adding-update-functionality)
-* [Credits](#credits)
-* [Conclusions and Next Steps](#closing-remarks-conclusions-and-next-steps)
+# Créditos del Autor
+Esta tutoría y el código del proyecto fueron creados por Marcus “Arroyo” B.   Su usuario y apodo de GitHub es el [codesport](https://github.com/codesport)
 
-# Authorship Credits
-
-This tutorial and its resulting application were created by **Marcus "Arroyo" B.** His GitHub username is [codesport](https://github.com/codesport)  
-
-### License
-
-This project (codebase and tutorial) has been made available to the public under an [MIT License](LICENSE.md). 
+## Licencia
+Este proyecto (es decir, el código así como también esta tutoría) está presentado con [licencia de MIT] (LICENSE.md).
 
 
-# React Project Overview
+# Panorama Breve del Proyecto
 
-This is a comprehensive React tutorial. It guides the learner in the creation of a harvest inventory app for a family-owned organic farm in North Carolina called *Arroyo Family Farms*.
+Esta es una tutoría comprehensiva. Se dirige al aprendedor por la creación de una aplicación de software para manejar el inventario de la cosecha de una granja.
+Al aprendedor se le guía en crear un programa interactivo y de estado. Este programa será una aplicación completa con las funciones de Crear, Actualizar, Borrar, y Leer. Encima de eso,  se realiza la aplicación como un base y fundación para ser adaptada para otras aplicaciones así como una tienda de comercio electrónico, un sistema de reservaras para un hotel o restaurante así como también una lista de tareas pendientes 
 
-The learner is guided in creating stateful and interactive [master-detail interface](https://www.google.com/search?q=what+is+a+master-detail+list%3F) with Create, Update, and Delete (CRUD) functionality. Furthermore, this application may be readily adapted to create variety of applications (e.g., online store, an address book, and a todo-list).
+## Versión 6 de JavaScript / ESCM Script Versión 6 (ES6)
+Una meta adicional de esta tutoría es proporcionar al aprendedor una fundación firme de los conceptos de primordiales de React. Así, una parte importante de tal fundación es un entendimiento de las actualizaciones a JavaScript realizado por ES6.
 
-## ESCM Script version 6 (ES6)
-The goal of this tutorial is to provide a strong foundation in React. To this end, a discussion of basic and intermediate React development concepts is undertaken. Additional emphasis is placed on understanding **ESCM Script version 6's (ES6)** enhancements to JavaScript. Many developers would agree that such an understanding is helpful in developing proficiency as a React developer.  
+## Como Obtener el Beneficio Máximo de E@ste Tutorial
 
+Dado el tratamiento del tema al fundo, se recomienda que el estudiante se dirija a las secciones más relevantes a su etapa de aprendizaje. Por ejemplo, una persona que tenga cero conocimientos de React deber enfocarse en las secciones “Sobre React” y  “Para Comenzar”. En cambio un aprendedor que ya tiene un ambiente de desarrollo de node.js instalado en su portátil puede comenzar con la Etapa 1. 
+En resumen, el aprendedor debería sentirse cómodo con navegar a las etapas y secciones que le sierva mejor.
 
-## How to Use This Tutorial
-Given the comprehensiveness of this tutorial, it is strongly recommended that you use the navigation menu to focus on sections most relevant to your learning needs. 
+# Sobre React
 
-Finally, the code is fairly well documented, so you are also encouraged to read through the comments within the codebase.
+React es una biblioteca  del lado cliente (es, decir, “front end”) creado por Facebook.  Se enfoca en la interfaz de usuario renderizado. Es decir, la “Vista” del  Vista Modelo y Control  paradigma  de arquitectura de diseño de desarrollo de software. Adicionalmente, fue lanzado al público por Facebook  el [29 de mayo de 2013](https://www.google.com.mx/search?q=cuando+fue+creado+React?).
 
+React se aprovecha de JavaScript ES6.  Y programas de React son escritos en una sintaxis llamado [JSX](https://www.google.com.mx/search?q=Que%20es%20el%20JSX). JSX es innovador por la razón que permite el desarrollador combinar HTML y JavaScript en una manera natural. Tan natural que efectivamente se escribe y combine HTML y JavaScript en la misma línea de código.
 
+## Convencionales de Codificación en React
+Código en React se trata de elementos básicos  o “bloques de construcción”  que se llaman componentes, en lo cual hay dos tipos: componentes de clase y  funcionales.  Y  escribimos los nombres de tales componentes en Caso Pascal.  Es decir, con la primera letra en de cada palabra en escrita en mayúsculas. En cambio, los nombres de métodos de clases, variables, y funciones dentro de componentes se escribe con la primera letra en minúscula. Es, decir caso Camello.
+Para aprender más sobre la sintaxis de React, refiérete a este artículo sobre [Componentes y Props](https://es.reactjs.org/docs/components-and-props.html). 
 
+## Actualizaciones a JavaScript por ES6
+React se aprovecha del JavaScript ES6. ES6 se lleva nuevos caracterices (e.g., como el uso de clases) a JavaScript que ya fueron comunes en lenguajes de programaciones tradicionales y Orientados a Objetos (OO) como C, Java, y Python.  Para el propósito de este tutorial, nos enfocaremos en los 3 siguientes características y adiciones a JavaScript:   funciones de flecha `() =>`  y las palabras claves de `let` y `const`.  React utiliza el transcompilador [Babel](https://www.google.com.mx/search?q=cual+es+babel+para+ES6) que permite que el ES6 sea compatible con navegadores antiguos asi como también aquellos que no sean basados en el Chromium de Google.
 
+**[`let`](https://www.google.com/search?el+uso+de+let+en+JavaScript+ES6):** es una declaración de variable como `var`, pero es "hiperlocalizada" y se limita a un bloque de código determinado en el que está asignada. Conclusión: `let` es preferible a `var` debido a su localización granular y ser limitada y confinado por bloques.  Estas características, a su vez, aseguran que nuestros programas y código son más predecibles y estables.
 
----
-# About React
-React is a JavaScript library created by Facebook. It is focused on User Interface (UI) rendering (i.e., the view component of the Model View Controller \[MVC\] design pattern). It was open-sourced to the developer community on [May 29, 2013](https://blog.risingstack.com/the-history-of-react-js-on-a-timeline#2013theyearofthebiglaunch). 
+**[`const`](https://www.google.com/search?el+uso+de+la+declaracion+const+en+JavaScript+ES6):** es la declaración constante. También es *hiperlocalizada* y se limita a un bloque de código determinado en lo que está asignada. Conclusión:  Las funciones pueden ser asignadas a constantes y se usan a menudo en React. Funciones de constantes son utilizados para las declaraciones de función usando funciones de flecha. También, vale la pena mencionar que, en React, normalmente no escribimos nuestras constantes en mayúsculas.
 
-React uses JavaScript ES6 and its apps are often coded in [JSX](https://www.google.com/search?what+is+JSX?). JSX allows the developer to combine HTML and JavaScript in the same line of code.  
+### Las Funciones de Flecha: `()=>`
 
-## React Coding Conventions
-In React, functional and class components are declared using `PascalCase` (i.e., **must** have a capital letter).  Methods, functions within functional components, variables, and constants are declared using `camelCase` (i.e., first letter is lowercase).
+Como `let` y `const`, las funciones de las flechas son "hiperlocalizadas". Esto significa que sólo son "conscientes de" y se ejecutan en el alcance y ámbito donde fueron creadas. Por otro lado, las funciones tradicionales de JavaScript suben al alcance de la ventana (es decir, suben al window scope de JavaScript).
 
-Technically you can have all your  components in 1 file, however, for manageability, React developers prefer to have one component per file and use import and export statements to assemble an application. 
+ Debido a esta localización del scope, las funciones de flecha son de particular interés a los desarrolladores de React usando funciones de clase y haciendo referencia a instancias de `this`.  De hecho, las funciones de flecha anulan la necesidad de enlazar "manualmente" las funciones a una clase dada dentro de su constructor. [Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions) tiene un tutorial excelente acerca de las funciones de flecha. 
 
-Refer to the Reacts documentation for more info on its coding [conventions and use syntax](https://reactjs.org/docs/components-and-props.html).
+El siguiente ejemplo muestra la función tradicional y su equivalente función de flecha. 
 
-
-## Updates to JavaScript Via ES6
-
-React uses JavaScript ES6. ES6 brings new features (e.g., the support of classes) to JavaScript that are common in traditional objected oriented languages such as C, Java, and Python. For the purpose of this tutorial, we will focus on the newly added `const` and `let` keywords as well as support for arrow functions `() =>`. React uses the [Babel](https://www.google.com/search?q=what+is+babel) transcompiler which allows ES6 to be backward compatible with older and non-chromium based browsers.
-
-*[`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let#Description):* is a variable declaration like `var`, but it is "hyper-localized" and is limited to a given code block in which it is assigned.  Conclusion: let is preferred to `var` due its granular, block-constrained localization which helps create more predictable code outcomes.
-
-
-*[`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/statements/const#Description):* is the constant declaration. It is also *hyper-localized* and is limited to a given code block in which it is assigned. Conclusion:  Functions can be assigned to constants and are often used in react for function declarations using arrow functions. In React, we typically don't write our constants in all-caps. 
-
-### Arrow Functions: `() =>`
-
-Like `let` and `const`, arrow functions are "hyper-localized". This means they are only "aware of" and execute in the scope where they were created. On the other hand, traditional JavaScript functions bubble up to the window scope.
-
- Because of scope localization, arrow functions are of particular interest to react developers using class functions and referencing instances of `this`.  Arrow functions negate the need to "manually" bind functions to a given class within its constructor. [Mozilla](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) has a great tutorial on arrow functions. The below example shows a traditional function and its arrow function equivalent.  
- 
- **NB:** this example only demonstrates syntax usage, not scope localization or binding
+**Favor de Notar:** Observa que la muestra abajo **solo demuestra el uso del sintaxis**, no el limite al nivel de bloque ni el enlace de la declaraciones al "scope" local
 
 ```javascript
 const OUTER = 10;
@@ -88,101 +70,80 @@ const MyOtherComponent = () => {
 }
 ```
 
+   * **Consejo Pro 1:** Una buena regla general para los novatos es **siempre usar las funciones de flecha** al definir los métodos dentro de los componentes de la clase. 
 
-   * **PRO TIP 1:** A good rule of thumb for beginners is to **always use arrow functions** when defining methods within class components. 
+Si no se usan funciones de flecha para declarar un método, tal método debe ser apegado y enlazado dentro del constructor de su clase asi: `this.miMetodoEspcial = this.miMetodoEspecial.bind(this);` 
 
-If arrow functions are not used to create a method, the method must be "manually" bounded within the class' constructor like so: `this.myMethodName = this.myMethodName.bind(this);`
+Si te decides utilizar las funciones de flechas para definir componentes funcionales, hay que declararlas como constantes por medio de la palabra clave de `const`
 
-If you choose to use arrow functions to define functional components, declare them as constants via `const`.
-
-   * **PRO TIP 2:** If your event handler requires arguments to be passed, you must use arrow functions to prevent the function from automatically executing when the page is rendered
-
-
-### Import and Export Statements
-
-React leverages ES6 import and export statements for modularity.  React modules (i.e., components) must be exported in order to be imported.  Exports may either be named or "default".   We'll use both types in this project. Refer to [Mozilla](https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export) for documentation.
+   * **Consejo Pro 2:** Si tu controlador de eventos requiere parámetros, hay que usar funciones de flechas para prevenir la función de ejecutar automáticamente cuando la pagina sea cargada y renderizada en el navegador. 
 
 
-## React Components
+   * **Consejo Pro 3:** hablando francamente, componentes hijos deberían ser componentes funcionales y no manejar el estado. De hecho, el estado que tendrían naturalmente un hijo, deber ser levantado y por consiguiente controlado por su padre
 
-A React application is composed of *modular pieces of code* which compute and/or display a portion of application's UI. These modular pieces are called are encapsulated *components*.  According to the [React documentation](https://reactjs.org/docs/thinking-in-react.html), as a best-practice, components should follow the single-use principle of SOLID Object Oriented (OO) design.   If you are not familiar with SOLID principles, [Hash Bang Code](https://www.hashbangcode.com/article/solid-principles-php) has a excellent tutorial.
+   * **Consejo Pro 4:** Si se encuentra repitiendo las mismas lines de código a lo largo y ancho de un componente padre o hijo, es avisado que estas lineas de código sean combinadas en un método de clase on un función. Después, llamarlo (es decir, la función o método de clase) cuando sea necesario.
+  
+   * **Consejo Pro 5:** Semejante al numero 4, si se encuentra usando la misma función en ms de 2 componentes, es mejor poner tal función en su propio archivo y importarlo cuando se lo necesite
 
-Ideally, each component represents a portion of our view. Within react there are two kinds of components: functional and class. This means that React applications may be either created using OO Classes or pure functions.
+### Los Componentes de Clase
 
+Componentes de clase son estructuras de lenguajes de OO. Se usan para manejar el estado en aplicaciones de React. Adicionalmente, cada componente de clase deber tener un método de `render()` con una declaración `return`.
 
-### Functional Components
-Functional components in React are composed of pure functions which are [first class objects (functions)](https://developer.mozilla.org/en-US/docs/Glossary/First-class_Function) in JavaScript. As functions, a given set of inputs will always provide a predictable and guaranteed output. As first class objects, JavaScript functions may be treated as variables.
-
-
-   * **PRO TIP 3:** Generally speaking, child components should be functional components and not manage state. In fact, their state must be lifted into and therefore managed by its parent
-
-   * **PRO TIP 4:** If you find yourself repeating the same lines of code throughout a given parent or child component, combine that code into a method or function. Then call when needed
-
-   * **PRO TIP 5:** If you find yourself needing the same function in more than 2 component's, separate that function into an additional file and import it where needed!
-
-
-### Class Components
-Class components are OO constructs that  are used to manage state in React applications. Every class component in React must have a `render()` method with a `return` statement.
-
-   * **PRO TIP 6:** Create a single parent component that will control application state. This parent component will be a class component
-
+   * **Consejo TIP 6:** Crea un componente de padre que controlar el estado de la aplicación. Tal clase de padre será la *única fuente de verdad*
 
 ---
-# Getting Started: Setting-up a React Local Development Environment 
+# Los Primeros Pasos: El Establecer de un Entorno de Desarrollo Para React
 
-## A. VSCode Setup
+## A. Configuración de VSCode
 
-[VS Code](https://code.visualstudio.com/) is our editor of choice. The below suggestions will optimize it for React development
+VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán para el desarrollo con React
 
-1. Install [Babel Javascript](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel).  Created by Michael McDermont, it provides VSCode syntax highlighting for JavaScript ES6, React JSX, Flow, and GraphQL.
+1. Instale [Babel Javascript](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel). Creado por Michael McDermont, provee resaltado de sintaxis  para JavaScript ES6, React JSX, Flow y GraphQL.
+
+2. Instale [Oceanic Theme](https://marketplace.visualstudio.com/items?itemName=naumovs.theme-oceanicnext) de Sergii Naumov. Funciona con Babel JavaScript. Y, soporta un nivel más granular de resaltado de sintaxis para propiedades de JSX.
+
+## B. Configuración del Entorno de React
+
+1. Instale el LTS de la versión de [node.js](https://nodejs.org/es/)
+
+2. Usando el terminal (es decir, linea de comandos), navegue hasta la carpeta de proyectos donde guardará el proyecto
+
+3. Dentro de su terminal teclee `npx create‐react‐app admin‐panel`
+
+    -> i. NB: `admin-panel` es el nombre de la aplicación en este tutorial.
+
+    ->ii. Consulte los [tutorías oficiales de React](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) para aprender más sobre las directivas `npx` y `create‐react‐app`
+
+4. Por último, teclee `npm start` en su terminal para ejecutar React. La aplicación se renderizará en su máquina local en http://localhost:3000
 
 
-2. Install Sergii Naumov's [Oceanic Theme](https://marketplace.visualstudio.com/items?itemName=naumovs.theme-oceanicnext). It supports a more granular level of syntax highlighting for nested properties.
+## C. 'create-react-app`: Comprensión de los Archivos Predeterminados y La Estructura de los Directorios
 
-## B. React Environment Setup
+1. **node_modules/:** Carpeta de node estándar para almacenar dependencias, paquetes (por ejemplo, Babel) y bibliotecas (por ejemplo, React).
 
-1. Install the LTS of version of [node.js](https://nodejs.org/en/). 
+2. **paquete.json:** Configuración estándar y archivo de configuración del guión para proyectos de node. Se puede especificar dependencias e incrustar [scripts personalizados](https://css-tricks.com/why-npm-scripts/) para automatizar su flujo de trabajo de desarrollo
+
+3. **público/:** Carpeta con privilegios de lectura global (es decir, pública, accesible por la web). Sólo almacena contenido público aquí, como imágenes y archivos de html. **TODO Opcional:** Se puede cambiar o borrar el favicon, el manifiesto y los archivos de logotipos para adaptarse a las necesidades de su proyecto. Pero, asegúrese de que index.html también refleje esos cambios. `logo512.png` no será usado en nuestro proyecto así que es bienvenido a borrarlo.
+
+4. **public/index.html:** Usado por index.js para hacer la aplicación de reacción. La aplicación se renderiza a un DOM arbitrario (por defecto es 'root') en este archivo mediante este código `<div id="root"></div>`
+
+5. **index.css:** Hoja de estilo global para el proyecto de React. Dentro de la comunidad de desarrolladores de React se considera una buena práctica el optar
+por el CSS de componentes específicos. Es decir, dicho CSS se escribe directamente en el componente. Se realiza a través de objetos CSS o [Bibliotecas de CSS adentro de JavaScript](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap) como *styled-Components*, *react-bootstrap*, etc.
+
+6. **App.css:** hoja de estilo externa para App.js. Como l index.css, App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. **TODO:** Borrar este archivo
+
+7. **index.js:** Punto de entrada de la aplicación.  Renderiza App.js a una `id` arbitrario (por defecto la id es 'root') en public/index.html.  **TODO:** Abra este archivo y actualice para importar la aplicación desde './componentes/App'.
+
+8. **App.js:** Un componente de contenedor y padre para las aplicaciones de React. **TODO:** Borre su contenido y muévalo a l `src/componentes`
 
 
-2. Using your terminal (i.e., CLI), navigate to the project folder where you will save the project.  
+Actualización de la Estructura del Directorio
 
-  
-3. Within your terminal type `npx create-react-app  admin-panel`  
+1. Crear ls carpetas de `componentes/` e `imágenes/` bajo del directorio `src/`
+2. Eliminar `App.css` y `App‐test.js` del directorio de `src/`. Mueva el `App.js` a `componentes/`
+3. Si Ud. aún no lo ha hecho, siga los "TODOs" mencionados anteriormente, en la Parte C.
 
-   ->i. NB: `admin-panel` is the name of the application in this tutorial.
-  
-   ->ii. Refer to the [official React tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directives  
-
-4. Finally, type `npm start` to run the default react application. The app will render on your local machine at http://localhost:3000
-
-## C. `create-react-app`: Understanding Default Files and Directory Structure
-
-1. **node_modules/:** Standard node folder to store dependencies, packages (e.g., Babel) and libraries (e.g., React).
-
-1.  **package.json:** Standard configuration and script setup file for node projects. You may specify dependencies and embed [custom scripts](https://css-tricks.com/why-npm-scripts/) to automate your development workflow
-
-1.  **public/:** Folder with global read privileges (i.e., public , web accessible).  Only store public content here such as images and html files. **Optional TODO:** You're welcomed to change or delete the favicon, manifest, and logo files to suit your project's needs. But, be sure `index.html` also reflects those changes. `logo512.png` will not be used in our project so you're welcomed to delete it.
-
-1.  **public/index.html:** Used by index.js to render the react app.  The app gets rendered to an arbitrary id's (default is 'root') DOM in this file  via this code `<div id="root"></div>`
-
-1.  **index.css:** Global stylesheet for the react project. Within the React developer community it is considered a best practice to opt for component-specific CSS.  Such CSS is written directly into the component.  It's accomplished via CSS objects or [CSS in JavaScript libraries](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap) such as styled-components, react-bootstrap, etc.
-
-1.  **App.css:** external style sheet for App.js. It is minified and aggregated into a 'global' style sheet on application build and compile. **TODO:** Delete this file
- 
-1.  **index.js:**  Renders App.js component to an arbitrary id (default is id 'root') in `public/index.html`. NB: A file which injects code (i.e., component) directly to the HTML DOM is often referred as an application entry point. **TODO:** Open this file and update to `import App from './components/App'`
-
-1. **App.js:** A container component and parent for React applications.   **TODO:** Delete its contents and move to `src/components` 
- 
-
- ### Updating the Directory Structure
-
-1. Create `components/` and `images/` folders under the `src/` directory.
-
-2. Delete `App.css` and `App-test.js` from `src/.`  Move `App.js` into  `components/`
-
-3. If you haven't done so already, follow the *TODOs* mentioned above, in Part C.
-
-We'll add our component files in the next section. However, your folder structure should resemble this:
+Añadiremos nuestros archivos de componentes en la siguiente sección. Sin embargo, su estructura de carpetas debería parecerse a esto:
 
 ```text
 admin-panel/
@@ -206,153 +167,169 @@ admin-panel/
   ├── package.json
   └── README.md
 ```
-**Figure 1: A Proposed Folder Structure for React**
+
+**Figura 1: Una estructura de carpetas propuesta para React**
+
+
 
 ---
-# Stage 1: Planning and Static Application Build Out
-
-The Stage 1 branch of our tutorial is **available for [download](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components)**.  Our first step is to create a static, non-interactive website. Often the abode of UX/UI specialists, wireframing is a common way to plan an application's design and development.  As a developer, you will find that diagramming an application's layout is an expedient and tactical methodology for planning and strategizing React applications.
-
-You may use a pencil and paper, Photoshop, or free online alternatives such as [Diagrams.net](https://www.diagrams.net/index.html).  However, in this tutorial a color-block diagram is used to depict the layout.
-
-![Stage 1 - Application Layout and Files Mirroring Application Layout ](src/images/color-block-simple-v2-and-folder-layout.png "Stage 1 Application Layout and Folder Layout Mirroring Layout Diagram")
-
-  **Figure 2: Stage 1 - Application Layout Diagram with Corresponding File Structure**
-
-**Note:** As shown in the folder in Figure 2, each part of the application which is responsible for rendering a view should be its own component. Clearly, we need to use our judgement in deciding to what level we 'componentize' our App.  However, the wireframe provides us a pre-development game plan for developing our application.
-
-**Take Away:** Each section of the wireframe will represent a React Component. Each Component may be further subdivided into additional ones, if needed.
+# Etapa 1: Planear La Aplicación y Crear un Sitio Estático sin Estado
 
 
-## Coding the Static Website: App.js, Controller.js, Header.js, and Master.js
+La rama de la Etapa 1 de nuestro tutorial está disponible para su **[descarga](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components)**. 
 
-The code for the App, Controller, Header, and Master components is shown in Figure 2, above, with comments.  Here is a summary:
+Nuestro primer paso es crear un sitio web estático y no interactivo. A menudo la morada de los especialistas en UX/UI, el wireframing es una forma común de planificar el diseño y desarrollo de una aplicación. Como desarrollador, encontrará que diagramar el diseño de una aplicación es una metodología conveniente y táctica para planificar y crear estrategias para las aplicaciones de React. Puedes usar lápiz y papel, Photoshop, o alternativas gratuitas en línea como
+[Diagrams.net](https://www.diagrams.net/index.html). Sin embargo, en este tutorial se utiliza un diagrama de bloques de color para representar el diseño.
 
-1. **Controller.js:** Will manage the ensuing complexity of our application. Controller dictates the layout of each component. In future iterations it will manage application state. 
 
-2.  **Master.js:** Does the heavy lifting.  [Lines 4 through 38](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L4-L38) show that we store our inventory in a JSON array. In the real-world we would store our inventory in a database. In [Lines 53 through 60](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L53-L60) of Master.js (see Figure 3 below) we use the [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) method to iterate over a JSON array of items.  A copy of the Stage 1 Master.js file is [available for download](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js)
+![Etapa 1 - Diagrama de distribución de la aplicación con la correspondiente estructura de archivos](src/images/color-block-simple-v2-and-folder-layout.png "Etapa 1 - Diagrama de distribución de la aplicación con la correspondiente estructura de archivos")
 
-3. **Header.js:** Displays the title of the application. Also uses JavaScript's length property to count the total inventory.
+**Figura 2: Etapa 1 - Diagrama de distribución de la aplicación con la correspondiente estructura de archivos**
 
-4.  **App.js:** Many developers prefer to keep App.js simple. For this project, it will maintain its utility as a single point of entry called by index.js for rendering into index.html. Controller is imported into App.js
+**Favor de Notar:** Como se muestra en la carpeta de la Figura 2, cada parte de la aplicación que se encarga de renderizar una vista debe ser su propio componente. Claramente, necesitamos usar nuestro juicio para decidir a qué nivel "componemos" nuestra aplicación. Sin embargo, la estructura nos proporciona un plan de juego previo al desarrollo de nuestra aplicación.
 
+**La Observación Destacada:** Cada sección de la estructura de alambre representará un Componente de Reacción. Cada componente puede ser subdividido en otros adicionales, si es necesario.
+
+## Codificar La Aplicacion Estátic: App.js, Controller.js, Header.js, y Master.js
+
+El código de los componentes de App, Controller, Header, y Master se muestra en la figura 2, arriba, con comentarios. Aquí hay un resumen:
+
+1. **Controller.js:** Gestionará la complejidad resultante de nuestra aplicación. Controller dicta la disposición de cada componente. En futuras iteraciones
+gestionará el estado de la aplicación.
+
+2. **Master.js:** Hace el trabajo pesado. Las [líneas 4 hasta 38](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L4-L38) muestran que almacenamos nuestro inventario en una matriz JSON. En el mundo real almacenaríamos nuestro inventario en una base de datos. En las [líneas 53 a 60](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L53-L60) del Master.js (ver Figura abajo) usamos el método [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) para iterar sobre un array JSON de
+artículos. Una copia del archivo Master.js de la Etapa 1 está disponible [para su descarga](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js)
+
+3. **Header.js:** Muestra el título de la aplicación. También usa la propiedad de longitud de JavaScript para contar el inventario total.
+
+4. **App.js:** Muchos desarrolladores prefieren mantener el App.js simple. Para este proyecto, mantendrá su utilidad como un único punto de entrada llamado por
+index.js para convertirlo en index.html. El Controller es importado en App.js
 
 
 ![App.js](src/images/stage-1-app.png "App.js for Static App") ![Controller.js](src/images/stage-1-controller.png "Controller.js for Static App")
 
 ![Header.js](src/images/stage-1-header.png "Header.js Functional Component for Static App") ![Master.js](src/images/stage-1-master.png "Master.js Functional Component for Static App")
-**Figure 3: App.js, Controller.js, Header.js, and Master.js**
 
-Given the simplicity of the current iteration of our application, it may be argued that the above is overkill.  That perhaps all of this code could be placed in one file.  All true!  However, as developers we always want to code with modularity, ease of maintenance, and amenability to refactoring in mind. As we build-out our application and add state, the logic of this design ethos will become clearer.
+**Figura 3: App.js, Controller.js, Header.js, y Master.js**
 
 
-### Resulting Screenshot of the Static Version of the Application
+Dada la simplicidad de la actual iteración de nuestra aplicación, puede argumentarse que lo anterior es exagerado. Que tal vez todo este código podría ser colocado en un solo archivo. ¡Todo es cierto! Sin embargo, como desarrolladores siempre queremos codificar con la modularidad, la facilidad de mantenimiento, y la facilidad de refactorización en mente. A medida que construyamos nuestra aplicación y agreguemos estado, la lógica de este ethos de diseño se hará más clara.
+
+
+## Captura de Pantalla Resultante de la Aplicación Estática
+
 
 ![Static Version of Admin App](src/images/static-version.png "Static Website Produced by the 3 Component Files")
 
-**Figure 4: Stage 1: The Static Application Produced by Our 3 Files**
+**Figura 4: Etapa 1: La Aplicación Estática Producida por Nuestros 3 Archivos**
 
 ---
-# Stage 2: Add State and Build-out Master-Detail Functionality
+# Etapa 2: Integrar El Estado y Diseñar la Funcionalidad de Maestro-Detalle
 
-**PRO TIP 7**
+**Consejo Pro 7**
 
-> Figure out the absolute minimal representation of the state your 
-> application needs and compute everything else you need on-demand." 
-> 
->  *- [Thinking in React](https://reactjs.org/docs/thinking-in-react.html)*
+> Para armar la aplicación en un manera correcta, se necesita pensar sobre la mínima cantidad de 
+> estado mutable que requeriría la aplicación. Se necesita desentrenar la mínima representación 
+> del estado que la aplicación necesitaría y después calcule el resto bajo demanda.
+>  *- [Pensando en React](https://es.reactjs.org/docs/thinking-in-react.html)*
 
-Stage 2 of our tutorial is the branch named `main-basic-state-public`, and **its codebase is available for [download](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components)**. Stage 2 involves converting our Controller to a class component to manage state.  We will also create `Detail.js` which will contain JSX for rendering the detail page.
 
-Although each React component may generate and contain data, it is a best practice to *lift state up* to the parent component. *Lifting up state* is a core React design principle. It brings organization and simplicity to what can potentially be a quite complex and unwieldy codebase.
+La etapa 2 de nuestro tutorial es la rama denominada `main-basic-state-public`, y su base de código **[está disponible para su descargar](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components)**. La etapa 2 implica convertir nuestro Controller en un componente de clase para gestionar el estado. También crearemos Detail.js que contendrá JSX para renderizar la página de detalles.
 
-As mentioned earlier, state is complex and it's easier to have one file as a nexus and controller of all things state.
+Aunque cada componente de React puede generar y contener datos, es una buena práctica elevar el estado al componente padre. El estado de elevación es un principio básico del diseño de React. Aporta organización y simplicidad a lo que potencialmente puede ser una base de código bastante compleja y poco manejable.
 
-Here is our updated application layout:
+Como se mencionó anteriormente, el estado es complejo y es más fácil tener un archivo como nexo y controlador de todas las cosas del estado.
 
-![Stage 2 - Master Detail Application Layout](src/images/color-block-master-detail-v2.png "Stage 2: Master Detail Application Layout")                   
-**Figure 5: Layout Diagram for Stage 2's Master-Detail Build-out**
+Aquí está nuestro diseño de aplicación actualizado:
 
-Now, by clicking an item on the master page, we are transported to a detail page. 
+![Etapa 2 - Diagrama de diseño para la construcción de la Aplicación de Master-Detalle](src/images/color-block-master-detail-v2.png "Etapa 2: Diagrama de diseño para la construcción de la Aplicación de Master-Detalle")                   
 
-**Please Note:** In Stages 2 - Stage 4 of this tutorial, you may refer to the comments in the screenshots for supplemental explanations of the code's functionality. 
+**Figura 5: Etapa 2 - El Diagrama de Diseño para la construcción de la Aplicación de Master-Detalle**
 
-Let's analyze the key pieces of code added:
+Ahora, al hacer clic en un elemento de la página maestra, somos transportados a una página de detalles.
 
-## 1. Controller.js Analysis
+**Favor de Notar:** En las Etapas 2 - 4 de este tutorial, puede consultar los comentarios de las capturas de pantalla para obtener explicaciones adicionales sobre la funcionalidad del código.
 
-We've converted the controller to a class component to manage state. An application having state implies memory as well as storage of volatile data and/or layout in the DOM. 
+Analicemos las piezas clave del código añadido:
 
-Our code in the Controller may be divided into 3 methods: 
+## 1. Análisis de Controller.js
 
-### a.  `constructor()`
-First, the required constructor method is added to initialize state as described in Figure 6: 
+Hemos convertido el Controller en un componente de clase para gestionar el estado. Una aplicación que tenga estado implica la memoria así como el almacenamiento de datos volátiles y/o disposición en el DOM.
+
+Nuestro código en el Controller puede dividirse en 3 métodos:
+
+### a. `constructor()`
+En primer lugar, se añade el método constructor requerido para inicializar el estado como se describe en la Figura 6:
 
 ![Stage 2 - Analysis of Controller's Constructor Method](src/images/stage-2-controller-constructor.png "Stage 2: Analysis of Controller's Constructor")
-**Figure 6: Analysis of Controller's Constructor Method**
 
-Second, we have our event handler that determines which item's detail to render. Figure 7, Analysis of Controller's `handleSelectedDetail` Method, explains the code:
+**Figura 6: Análisis del método de constructor del Controller**
+
+Segundo, tenemos nuestro manejador de eventos que determina los detalles de cada artículo. La figura 7, Análisis del método `handleSelectedDetail` del Controller, explica el código:
 
 ### b. `handleSelectedDetail()`
-Of note in Figure 7 is JavaScript's built-in [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method and is the use of [`setState()`](https://www.google.com/search?q=setState()) to a assign new value to the `SelectedDetail` state variable. In React, [`setState()`](https://www.google.com/search?q=setState()) is always called to update state variables.
 
+En la Figura 7 se muestra el método incorporado de JavaScript [`Array.filter()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter) y es el uso de [`setState()`](https://www.google.com.mx/search?q=como+usamos+setState()+en+Raect) para asignar un nuevo valor a la variable de estado SelectedDetail. En React, [`setState()`](https://www.google.com.mx/search?q=como+usamos+setState()+en+Raect) siempre se llama para actualizar las variables de estado.
 
 ![Stage 2 - Analysis of Controller's handleSelectedDetail Method](src/images/stage-2-controller-handleSelectedDetail.png "Stage 2: Analysis of Controller's handleSelectedDetail()")
-**Figure 7: Analysis of Controller's `handleSelectedDetail` Method**
 
+**Figura 7: Análisis del Método de `handleSelectedDetail`**
 
-### c. `render()`
+### `c. render()`
 
-Finally, in Figure 8  we have the updated render method. It sends its view presentation to `App.js` for rendering to the DOM:
+Por último, en la figura 8 tenemos el método de representación actualizado. Envía la presentación de la vista a App.js para su renderización en el DOM:
 
 
 ![Stage 2 - Analysis of Controller's Render Method](src/images/stage-2-controller-render.png "Stage 2: Analysis of Controller's Render()")
-**Figure 8: Analysis of Controller's Render Method with Emphasis on Callback Sent to the Master Component**
 
- 
-## 2. Master.js Analysis
+Figura 8: Análisis del método de renderización del Controller con énfasis en el callback enviada al componente Master
 
-Master.js and its callback are already discussed in detail within Figure 8's comments above.  
+## 2. Análisis de Master.js
 
-However, it is worth mentioning that when passing arguments to other components, they are sent as objects. These objects are accessed with the "props" parameter combined with dot notation. 
+El Master.js y su callback ya se discute en detalle en los comentarios de la figura 8, arriba.
+
+Sin embargo, vale la pena mencionar que cuando se pasan argumentos a otros componentes, se envían como objetos. Se accede a estos objetos con el parámetro
+"props" combinado con la notación de puntos.
 
 
 ![Stage 2 - Analysis of the Master Functional Component](src/images/stage-2-master.png "Stage 2: The Master Functional Component")
-**Figure 9: The Master Component**
+
+**Figura 9: El Componente Master**
 
 
-## 3. Detail.js Analysis
+## 3. Análisis de Detail.js
 
-The detail component is rather uninspiring. It receives props from the Controller and lays them out in an HTML table. Of note however, is line 11 which uses object destructuring to simplify access to object properties
+El componente de detalle es bastante poco inspirador. Recibe los accesorios del Controller y los coloca en una tabla HTML. Sin embargo, cabe destacar la línea 11 que utiliza la desestructuración de objetos para simplificar el acceso a las propiedades de los objetos
 
 
 ![Stage 2 - The Detail Component](src/images/stage-2-detail.png "Stage 2: Detail Component")
-**Figure 10: The Detail Component**
+**Figura 10: El componente de detalle**
+
+
 
 ---
-# Stage 3: Expand State by Adding Create and Delete Functionality
-
-As our Controller becomes more complex it is prudent to identify ways to refactor and simplify our code.  In Figure 8 above, our Controller used [conditionals](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components/Controller.js#L77-L81) to decide what to render to the user.  To manage the view rendering more elegantly, we will create a custom method called `renderView` that will simplify our code.
+# Etapa 3: Expandir el estado añadiendo la funcionalidad de crear y eliminar
 
 
-## Controller's `renderView()` Method
+A medida que nuestro Controller se vuelve más complejo es prudente identificar formas de refactorizar y simplificar nuestro código. En la figura 8, nuestro Controller utilizó [condicionales](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components/Controller.js#L77-L81) para decidir qué rendirle al usuario. Para manejar el renderizado de la vista de forma más elegante, crearemos un método personalizado llamado renderView
+que simplificará nuestro código.
 
-[`renderView`](src/components/Controller.js#L71-L88) is a helper method within Controller.  It manages [`this.state.view`](src/components/Controller.js#L57) by managing what is displayed to the user.  It also dramatically reduces needless code repetition.
-
+## El método de `renderView()` del Controller
+[`renderView`](src/components/Controller.js#L71-L88) es un método de ayuda dentro de Controller. Gestiona [`this.state.view`](src/components/Controller.js#L57) por administrando lo que se muestra al usuario. También reduce drásticamente la repetición de códigos innecesarios.
 
 ![Stage 3 - renderView() Helper Method](src/images/stage-3-controller-renderview.png "Stage 3 - renderView() Helper Method")
-**Figure 11: The renderView() Helper Method for Stage 3 Manages Our Application's Increased Complexity**
-
-## Controller's handleDelete() Method
-
-Here is an analysis of the `handleDelete` method:
+**Figura 11: El método de ayuda de renderView() para la etapa 3 gestiona la creciente complejidad de nuestra aplicación**
 
 
-1. Retrieves a list of inventory items we wish to delete. This is stored in this.state.arrayToEdit
+## El método de `handleDelete()` del Controller
 
-2. Makes a copy of the existing inventory array this.state.masterList
+Aquí hay un análisis del método de `handleDelete`:
 
-3. Applies [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to the copy. The filter returns everything **_except_** the element [containing the ID](src/components/Controller.js#L314) we wish to delete
+1. Recupera una lista de los artículos del inventario que deseamos eliminar. Esto se almacena en `this.state.arrayToEdit`
+
+2. Hace una copia del inventario existente en esta lista maestra del estado.
+
+3. Aplica el filtro [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) a la copia. El filtro devuelve todo excepto el elemento que [contiene el ID](src/components/Controller.js#L314) que queremos borrar
 
 
 ```JSX
@@ -402,28 +379,32 @@ Here is an analysis of the `handleDelete` method:
         }    
     }
 ```
-**Figure 12: Stage 3 - Delete Functionality Added to Controller**
+
+**Figura 12: Etapa 3 - Borrar la funcionalidad añadida al Controller**
 
 
 
 ## Create.js
 
-The Create component displays the form to create a new item. However, controller processes the form through a callback function sent to the Create component. 
+El componente Crear muestra el formulario para crear un nuevo elemento. Sin embargo, el Controller procesa el formulario a través de una función de callback
+enviada al componente Create.
 
-Of note: React requires that each item in a list that is rendered to DOM have a UUID.  In line 2 of [Create.js](src/components/Create.js#L2) we import the JavaScript's UUID library: `import { v4 } from 'uuid'`
+**Favor de Nota:** Reaccionar requiere que cada elemento de una lista que se presenta a DOM tenga un UUID. En la línea 2 de Create.js importamos la librería UUID de JavaScript: `import { v4 } de 'uuid'`.
 
-In Figure 13, we invoke the UUID in line 44 of [Create.js](src/components/Create.js#L44) via `{ v4 }`
+En la figura 13, invocamos el UUID en la línea 44 de [Create.js](src/components/Create.js#L44) por  uso del `{ v4 }`
 
+Por favor, consulte los comentarios de la Figura 13 para un análisis adicional de Create.js
 
-Please refer to the comments in Figure 13 for a additional analysis of Create.js
 
 ![Stage 3 - Create Component](src/images/stage-3-create.png "Stage 3 - Create Component")
-**Figure 13: Stage 3 - The Comments Explain the Create Component's Functionality**
+**Figura 13: Etapa 3 - Los comentarios explican la funcionalidad del componente de creación**
 
 
-## Controller's `handleCreateFormView()` Method
+## 'handleCreateFormView()` Un Método Dentro de Controller.js
 
-*`handleCreateFormView()`* sends a callback to Create.js and manipulates what's displayed on to the user
+*`handleCreateFormView()`* es un método adentro del archivo llamado Controller.js.  Se envía un callback a Create.js y manipula lo que se muestra al usuario.
+
+Aquí es su código:
 
 ```JSX
     handleCreateFormView = () => {
@@ -433,12 +414,12 @@ Please refer to the comments in Figure 13 for a additional analysis of Create.js
         this.hideButton('delete-button')
     }
 ```
-**Figure 14: Stage 3 - The Controller's handleCreateFormView Method**
+**Figura 14: Etapa 3 - `handleCreateFormView()` es un Método del Componente Llamado `Controller`**
 
-## Controller's `handleCreate()` Method
+## El Método de `handleCreate()`del Componente Controller
 
-Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L231) concatenates the newly created inventory object to a copy of our inventory list (masterList). It then updates the masterList by means of [`setState()`](https://www.google.com/search?q=setState())
 
+Examinando la línea 2 de la figura 15, [`handleCreate()`](src/components/Controller.js#L231) concatena el objeto de inventario recién creado con una copia de nuestra lista de inventario (masterList). Luego actualiza la masterList por medio de [`setState()`](https://www.google.com.mx/search?q=que+es+setState()+en+React)
 
 ```JSX
     handleCreate = ( creation ) =>{
@@ -451,38 +432,39 @@ Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L
 
     }
 ```
-**Figure 15: Stage 3 - The Controller's handleCreateFormView Method**
+
+**Figura 15: Etapa 3 - Método de handleCreateFormView**
 
 
 
 ---
-# Stage 4: Completing the Application by Adding Update Functionality 
+# Etapa 4: Completar la aplicación Y Armar la Funcionalidad de Actualización
 
-The codebase for Stages 3 and 4 **are available for download** under the [`main-final-public`](https://github.com/codesport/admin-panel/blob/main-final-public/src/components/) branch.
-
-To provide an optimal user experience, the Update component was designed to be a close visual simile of [Detail component](src/components/Detail.js).  This was accomplished by overlaying an [HTML5 form](src/components/Update.js#L49-L61) onto the code used to generate the Detail component.
-
-Worthy of mentioning is that the React form property [`defaultValue`](https://reactjs.org/docs/uncontrolled-components.html#default-values) is used to pre-populate the Update component with the item's information.
-
-Finally, akin Create.js, Update.js also receives a callback function from Controller.js. In turn, the Update component sends the form data back to the Controller via `handleUpdate()` callback. The code in Update.js is quite mundane, but feel free to [examine it](src/components/Update.js).  Figure 16 is an excerpt:
+La base de código de las Etapas 3 y 4 se puede descargar en la sección [`main-final-public`](https://github.com/codesport/admin-panel/blob/main-final-public/src/components/)
 
 
+Para proporcionar una experiencia óptima al usuario, el componente de actualización se diseñó para ser un símil visual cercano al componente de detalle. Esto se logró superponiendo un formulario [HTML5](src/components/Update.js#L49-L61) sobre el código utilizado para generar el componente [Detail](src/components/Detail.js). 
+
+Cabe mencionar que la propiedad [`defaultValue`](https://reactjs.org/docs/uncontrolled-components.html#default-values) de la forma React se utiliza para rellenar previamente el componente Update con la información del artículo.
+
+Por último, al igual que Create.js, Update.js también recibe una función callback de Controller.js. A su vez, el componente Update envía los datos del
+formulario de vuelta al Controller a través de el callback de `handleUpdate()`. El código del Update.js es bastante mundano, pero no dude en [examinarlo](src/components/Update.js). La Figura 16 es un extracto:
 
 ![Stage 4 - Update Component](src/images/stage-4-update.png "Stage 4 - Update Component")
-**Figure 16: Stage 4 - Excerpt of the Update Component**
+**Figura 16: Etapa 4 - El Extracto del Componente de Update**
 
 
-Of much more interest, is how we manage updates in through the Controller:  
+Mucho más interesante es cómo manejamos las actualizaciones a través del Controller:
 
 1. **`handleSelectedDetail()`**
-
-    A housekeeping and helper method. It uses a series of conditionals to determine if the detail or update view should be displayed.
+    Un método de limpieza y ayuda. Se utiliza una serie de condicionales para determinar si se debe mostrar la vista de detalle o de actualización.
 
 2. **`handleUpdate()`**
 
-    Updates the list by first removing the property being edited from a copy of the existing list. Next, it concatenates the updated item onto the truncated copy. Finally, it uses setState() to update the original and authoritative list called `masterList`.  
-    
-    **NB:** Please note that these are array manipulation operations. If we were storing in a database, our update functionality would be quite different.
+    Aprovechándonos del método de `Array.filter()`, eliminamos la version original del elemento que actualicemos por uso del `!==`. También nos aprovechamos de un otro método integrado en JavaScript de `Array.concat()`, la cual hace una copia de la matriz que está manipulando.  Luego, concatena el elemento actualizado a la copia truncada. Finalmente, utilizamos el `setState()` para actualizar la lista original y autorizada llamada masterList.
+
+    **Favor de Nota:** Tenga en cuenta que estas son operaciones de manipulación de matrices. Si estuviéramos almacenando en una base de datos, nuestra
+funcionalidad de actualización sería bastante diferente.
 
 ```JSX
     handleUpdate = (updates) =>{
@@ -500,43 +482,44 @@ Of much more interest, is how we manage updates in through the Controller:
             )
     }
 ```
-**Figure 17: Stage 4 - The Controller's `handleUpdate` Method**
+**Figura 17: Etapa 4 - El Método de handleUpdate que Está en el Componente Controller**
 
 ---
-# Credits
+# Créditos
 
-The pedagogical design of this tutorial was inspired by [Thinking in React](https://reactjs.org/docs/thinking-in-react.html).  
+El diseño pedagógico de este tutorial se inspiró en [Pensando en React](https://es.reactjs.org/docs/thinking-in-react.html).
 
-The application's UX was inspired by [Amazon's Wholefoods mobile app](https://www.amazon.com/alm/storefront??tag=7475725-20)
+La interfaz de experiencia usario (es decir, la UX) para esta aplicación se inspiró  en la aplicación móvil de [Amazon y  Wholefoods](https://www.amazon.com/alm/storefront??tag=7475725-20)
 
-The CSS used for the [action buttons](https://github.com/codesport/admin-panel/blob/main-final-public/src/index.css) is from [Adventures In Techland](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
+El CSS usado para los [botones de acción](https://github.com/codesport/admin-panel/blob/main-final-public/src/index.css) es de [Adventures In Techland](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
 
-As shown in Figure 18 below, the comments throughout this application's codebase reference specific Stackoverflow posts as well as other sources that were useful in building this application.
+Como se muestra en la figura 18 infra, los comentarios de toda la base de código de esta aplicación hacen referencia a puestos específicos de Stackoverflow, así como a otras fuentes que fueron útiles para construir esta aplicación.
 
 ![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
-**Figure 18: Stage 4 - Comments explaining the `buildEditArray` Method in the Controller Component**
-
+**Figura 18: Etapa 4 - Comentarios que explican el método buildEditArray en el componente Controller**
 
 ---
-# Closing Remarks, Conclusions, and Next Steps
+# Observaciones Finales, Conclusiones y Próximos Pasos
 
-This tutorial and its resulting code may be used as a template to build more advanced applications.  Expansion options include building an online store, a booking/reservations system, an address book, a todo-list, etc. 
+Este tutorial y su código resultante pueden utilizarse como plantilla para construir aplicaciones más avanzadas. Las opciones de expansión incluyen la construcción de una tienda en línea, un sistema de reservas, una libreta de direcciones, una lista de tareas, etc.
 
-Learning React makes us better JavasScript developers.  Indeed, as a React developer we have the opportunity to truly understand and appreciate JavaScript's power and extensibility.  Furthermore, `create-react-app`'s use of ESLint provides numerous benefits that teach us to write more secure and stable code.
+Learning React nos hace mejores desarrolladores de Javascript. De hecho, como desarrolladores de React tenemos la oportunidad de entender y apreciar realmente el
+poder y la extensibilidad de JavaScript. Además, el uso de ESLint por parte de `create-react‐app` proporciona numerosos beneficios que nos enseñan a escribir un bse de código más seguro y estable.
 
-Some immediate next steps for this project would include:
+Algunos de los próximos pasos inmediatos para este proyecto incluirían:
 
-* Integrating with a NoSQL database such as MongoDB or Firebase
-* Adding authentication and access control for security
-* Hosting on a live server running node and NGINX
-* Using Jest to run automated test and to incorporate test driven development best practices
-* Integrating with APIs to pull in external data
+* Usar Jest para ejecutar pruebas automatizadas e incorporar las mejores prácticas de desarrollo impulsadas por pruebas
+* La integración con una base de datos NoSQL como MongoDB o Firebase
+* Añadiendo autenticación y control de acceso para la seguridad
+* Hospedaje en un servidor en vivo corriendo el nodo y NGINX
+* Integrarse con las API para obtener datos externos
 
-Other potential integrations might entail:
+Otras posibles integraciones podrían implicar:
 
-* Explore using React Router as a means of handling navigation and URL management
-* Potentially using Redux to manage state as our application continues to grow and state management becomes more complex
-* Removing console.log status checks and debug messages
-* Exploring the use of CSS in JavaScript libraries such as styled-components, react-bootstrap, etc.
+* Explorar usando el router React como un medio para manejar la navegación y la administración de URL.
+* Potencialmente usar el Redux para gestionar el estado mientras nuestra aplicación continúa creciendo y la gestión del estado se vuelve más compleja
+* Eliminar los mensajes de verificación y depuración del estado de la consola.log
+* Explorando el uso de CSS en las librerías de JavaScript como Styled-Components, react-bootstrap, etc.
 
-Be well. Be safe. And, thank you for reading.
+
+Que Uds. estén bien. Tengan cuidado. Y, gracias por leer.
