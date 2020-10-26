@@ -13,7 +13,7 @@
 Esta tutoría y el código del proyecto fueron creados por Marcus “Arroyo” B.   Su usuario y apodo de GitHub es el [codesport](https://github.com/codesport)
 
 ## Licencia
-Este proyecto (es decir, el código así como también esta tutoría) está presentado con [licencia de MIT] (LICENSE.md).
+Este proyecto (es decir, el código así como también esta tutoría) está presentado con [licencia de MIT](LICENSE.md).
 
 
 # Panorama Breve del Proyecto
@@ -24,7 +24,7 @@ Al aprendedor se le guía en crear un programa interactivo y de estado. Este pro
 ## Versión 6 de JavaScript / ESCM Script Versión 6 (ES6)
 Una meta adicional de esta tutoría es proporcionar al aprendedor una fundación firme de los conceptos de primordiales de React. Así, una parte importante de tal fundación es un entendimiento de las actualizaciones a JavaScript realizado por ES6.
 
-## Como Obtener el Beneficio Máximo de E@ste Tutorial
+## Como Obtener el Beneficio Máximo de Este Tutorial
 
 Dado el tratamiento del tema al fundo, se recomienda que el estudiante se dirija a las secciones más relevantes a su etapa de aprendizaje. Por ejemplo, una persona que tenga cero conocimientos de React deber enfocarse en las secciones “Sobre React” y  “Para Comenzar”. En cambio un aprendedor que ya tiene un ambiente de desarrollo de node.js instalado en su portátil puede comenzar con la Etapa 1. 
 En resumen, el aprendedor debería sentirse cómodo con navegar a las etapas y secciones que le sierva mejor.
@@ -121,7 +121,7 @@ VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán 
 4. Por último, teclee `npm start` en su terminal para ejecutar React. La aplicación se renderizará en su máquina local en http://localhost:3000
 
 
-## C. 'create-react-app`: Comprensión de los Archivos Predeterminados y La Estructura de los Directorios
+## C. `create-react-app`: Comprensión de los Archivos Predeterminados y La Estructura de los Directorios
 
 1. **node_modules/:** Carpeta de node estándar para almacenar dependencias, paquetes (por ejemplo, Babel) y bibliotecas (por ejemplo, React).
 
@@ -401,7 +401,7 @@ Por favor, consulte los comentarios de la Figura 13 para un análisis adicional 
 
 
 ![Stage 3 - Create Component](src/images/stage-3-create.png "Stage 3 - Create Component")
-**Figura 13: Etapa 3 - Los comentarios explican la funcionalidad del componente de creación**
+**Figura 13: Etapa 3 - Los comentarios explican la funcionalidad del componente de Create**
 
 
 ## `handleCreateFormView()` Un Método Dentro de Controller.js
