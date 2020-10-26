@@ -4,10 +4,10 @@
 * [Los Primeros Pasos: El Establecer de un Entorno de Desarrollo Para React](https://github.com/codesport/admin-panel/tree/main-final-espanol#los-primeros-pasos-el-establecer-de-un-entorno-de-desarrollo-para-react) 
 * [Etapa 1: Planear La Aplicación y Crear un Sitio Estático sin Estado](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-1-planear-la-aplicaci%C3%B3n-y-crear-un-sitio-est%C3%A1tico-sin-estado)
 * [Etapa 2: Integrar El Estado y Diseñar la Funcionalidad de Maestro-Detalle](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-2-integrar-el-estado-y-dise%C3%B1ar-la-funcionalidad-de-maestro-detalle)
-[Etapa 3: Expandir el estado añadiendo la funcionalidad de crear y eliminar](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-3-expandir-el-estado-a%C3%B1adiendo-la-funcionalidad-de-crear-y-eliminar)
-[Etapa 4: Completar la aplicación Y Armar la Funcionalidad de Actualización](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-4-completar-la-aplicaci%C3%B3n-y-armar-la-funcionalidad-de-actualizaci%C3%B3n)
-[Créditos](https://github.com/codesport/admin-panel/tree/main-final-espanol#cr%C3%A9ditos)
-[Observaciones Finales, Conclusiones y Próximos Pasos](https://github.com/codesport/admin-panel/tree/main-final-espanol#observaciones-finales-conclusiones-y-pr%C3%B3ximos-pasos)
+* [Etapa 3: Expandir el estado añadiendo la funcionalidad de crear y eliminar](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-3-expandir-el-estado-a%C3%B1adiendo-la-funcionalidad-de-crear-y-eliminar)
+* [Etapa 4: Completar la aplicación Y Armar la Funcionalidad de Actualización](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-4-completar-la-aplicaci%C3%B3n-y-armar-la-funcionalidad-de-actualizaci%C3%B3n)
+* [Créditos](https://github.com/codesport/admin-panel/tree/main-final-espanol#cr%C3%A9ditos)
+* [Observaciones Finales, Conclusiones y Próximos Pasos](https://github.com/codesport/admin-panel/tree/main-final-espanol#observaciones-finales-conclusiones-y-pr%C3%B3ximos-pasos)
 
 # Créditos del Autor
 Esta tutoría y el código del proyecto fueron creados por Marcus “Arroyo” B.   Su usuario y apodo de GitHub es el [codesport](https://github.com/codesport)
