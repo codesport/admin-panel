@@ -507,8 +507,7 @@ Como se muestra en la figura 18 infra, los comentarios de toda la base de códig
 
 Este tutorial y su código resultante pueden utilizarse como plantilla para construir aplicaciones más avanzadas. Las opciones de expansión incluyen la construcción de una tienda en línea, un sistema de reservas, una libreta de direcciones, una lista de tareas, etc.
 
-Learning React nos hace mejores desarrolladores de Javascript. De hecho, como desarrolladores de React tenemos la oportunidad de entender y apreciar realmente el
-poder y la extensibilidad de JavaScript. Además, el uso de ESLint por parte de `create-react‐app` proporciona numerosos beneficios que nos enseñan a escribir un bse de código más seguro y estable.
+El aprender React nos hace mejores desarrolladores de Javascript. De hecho, como desarrolladores de React tenemos la oportunidad de entender y apreciar realmente el poder y la extensibilidad de JavaScript. Además, el uso de ESLint por parte de `create-react‐app` proporciona numerosos beneficios que nos enseñan a escribir un bse de código más seguro y estable.
 
 Algunos de los próximos pasos inmediatos para este proyecto incluirían:
 
