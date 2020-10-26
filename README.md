@@ -151,7 +151,7 @@ Class components are OO constructs that  are used to manage state in React appli
 
    ->i. NB: `admin-panel` is the name of the application in this tutorial.
   
-   ->ii. Refer to the [official react tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directives  
+   ->ii. Refer to the [official React tutorials](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) to learn more about the `npx` and `create-react-app` directives  
 
 4. Finally, type `npm start` to run the default react application. The app will render on your local machine at http://localhost:3000
 
@@ -312,7 +312,7 @@ Finally, in Figure 8  we have the updated render method. It sends its view prese
  
 ## 2. Master.js Analysis
 
-Master.js and its callback are already discussed in detail within Figure 8's comments.  
+Master.js and its callback are already discussed in detail within Figure 8's comments above.  
 
 However, it is worth mentioning that when passing arguments to other components, they are sent as objects. These objects are accessed with the "props" parameter combined with dot notation. 
 
@@ -352,7 +352,7 @@ Here is an analysis of the `handleDelete` method:
 
 2. Makes a copy of the existing inventory array this.state.masterList
 
-3. Applies [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to the copy. The filter returns everything **_except_** the element [containing the ID]((src/components/Controller.js#L314)) we wish to delete
+3. Applies [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) to the copy. The filter returns everything **_except_** the element [containing the ID](src/components/Controller.js#L314) we wish to delete
 
 
 ```JSX
@@ -458,7 +458,7 @@ Examining line 2 of Figure 15, [`handleCreate()`](src/components/Controller.js#L
 ---
 # Stage 4: Completing the Application by Adding Update Functionality 
 
-The codebase for Stages 3 and 4 **are available for download** under the [`main-final-public`](https://github.com/codesport/admin-panel/blob/main-final-public/src/components/) branch
+The codebase for Stages 3 and 4 **are available for download** under the [`main-final-public`](https://github.com/codesport/admin-panel/blob/main-final-public/src/components/) branch.
 
 To provide an optimal user experience, the Update component was designed to be a close visual simile of [Detail component](src/components/Detail.js).  This was accomplished by overlaying an [HTML5 form](src/components/Update.js#L49-L61) onto the code used to generate the Detail component.
 
@@ -474,11 +474,11 @@ Finally, akin Create.js, Update.js also receives a callback function from Contro
 
 Of much more interest, is how we manage updates in through the Controller:  
 
-1. handleSelectedDetail()
+1. **`handleSelectedDetail()`**
 
-    A housekeeping and helper method called handleSelectedDetail method. It uses a series of conditionals to determine if the detail or update view should be displayed.
+    A housekeeping and helper method. It uses a series of conditionals to determine if the detail or update view should be displayed.
 
-2. handleUpdate()
+2. **`handleUpdate()`**
 
     Updates the list by first removing the property being edited from a copy of the existing list. Next, it concatenates the updated item onto the truncated copy. Finally, it uses setState() to update the original and authoritative list called `masterList`.  
     
