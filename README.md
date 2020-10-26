@@ -522,16 +522,19 @@ This tutorial and its resulting code may be used as a template to build more adv
 
 Learning React makes us better JavasScript developers.  Indeed, as a React developer we have the opportunity to truly understand and appreciate JavaScript's power and extensibility.  Furthermore, `create-react-app`'s use of ESLint provides numerous benefits that teach us to write more secure and stable code.
 
-Next steps for this project would include:
+Some immediate next steps for this project would include:
 
-* Integration with a NoSQL database such as MongoDB or Firebase
+* Integrating with a NoSQL database such as MongoDB or Firebase
 * Adding authentication and access control for security
-* Hosting on a live sever running node and NGINX
-* Potentially using Redux to manage state as our application continues to grow and state management becomes more complex
+* Hosting on a live server running node and NGINX
 * Using Jest to run automated test and to incorporate test driven development best practices
-* Explore using React Router as a means of handling navigation and URL management
 * Integrating with APIs to pull in external data
+
+Other potential integrations might entail:
+
+* Explore using React Router as a means of handling navigation and URL management
+* Potentially using Redux to manage state as our application continues to grow and state management becomes more complex
 * Removing console.log status checks and debug messages
-* Explore the use of CSS in JavaScript libraries such as styled-components, react-bootstrap, etc.
+* Exploring the use of CSS in JavaScript libraries such as styled-components, react-bootstrap, etc.
 
 Be well. Be safe. And, thank you for reading.
