@@ -144,7 +144,7 @@ por el CSS de componentes específicos. Es decir, dicho CSS se escribe directame
 
 7. **index.js:** Punto de entrada de la aplicación.  Renderiza App.js a una `id` arbitrario (por defecto la id es 'root') en public/index.html.  
 
-    **TODO:** Abra este archivo y actualice para importar la aplicación desde './componentes/App'.
+    **TODO:** Abra este archivo y actualice para importar la aplicación desde `./componentes/App`
 
 8. **App.js:** Un componente de contenedor y padre para las aplicaciones de React. 
     
