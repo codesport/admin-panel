@@ -26,7 +26,7 @@ Una meta adicional de esta tutoría es proporcionar al aprendedor una fundación
 
 ## Como Obtener el Beneficio Máximo de Este Tutorial
 
-Dado el tratamiento del tema al fundo, se recomienda que el estudiante se dirija a las secciones más relevantes a su etapa de aprendizaje. Por ejemplo, una persona que tenga cero conocimientos de React deber enfocarse en las secciones “Sobre React” y  “Para Comenzar”. En cambio un aprendedor que ya tiene un ambiente de desarrollo de node.js instalado en su portátil puede comenzar con la Etapa 1. 
+Dado el tratamiento del tema al fondo, se recomienda que el estudiante se dirija a las secciones más relevantes a su etapa de aprendizaje. Por ejemplo, una persona que tenga cero conocimientos de React deber enfocarse en las secciones “Sobre React” y  “Para Comenzar”. En cambio un aprendedor que ya tiene un ambiente de desarrollo de node.js instalado en su portátil puede comenzar con la Etapa 1. 
 En resumen, el aprendedor debería sentirse cómodo con navegar a las etapas y secciones que le sierva mejor.
 
 # Sobre React
@@ -37,14 +37,14 @@ React se aprovecha de JavaScript ES6.  Y programas de React son escritos en una 
 
 ## Convencionales de Codificación en React
 Código en React se trata de elementos básicos  o “bloques de construcción”  que se llaman componentes, en lo cual hay dos tipos: componentes de clase y  funcionales.  Y  escribimos los nombres de tales componentes en Caso Pascal.  Es decir, con la primera letra en de cada palabra en escrita en mayúsculas. En cambio, los nombres de métodos de clases, variables, y funciones dentro de componentes se escribe con la primera letra en minúscula. Es, decir caso Camello.
-Para aprender más sobre la sintaxis de React, refiérete a este artículo sobre [Componentes y Props](https://es.reactjs.org/docs/components-and-props.html). 
+Para aprender más sobre el sintaxis de React, refiérase a este artículo sobre [Componentes y Props](https://es.reactjs.org/docs/components-and-props.html). 
 
 ## Actualizaciones a JavaScript por ES6
 React se aprovecha del JavaScript ES6. ES6 se lleva nuevos caracterices (e.g., como el uso de clases) a JavaScript que ya fueron comunes en lenguajes de programaciones tradicionales y Orientados a Objetos (OO) como C, Java, y Python.  Para el propósito de este tutorial, nos enfocaremos en los 3 siguientes características y adiciones a JavaScript:   funciones de flecha `() =>`  y las palabras claves de `let` y `const`.  React utiliza el transcompilador [Babel](https://www.google.com.mx/search?q=cual+es+babel+para+ES6) que permite que el ES6 sea compatible con navegadores antiguos asi como también aquellos que no sean basados en el Chromium de Google.
 
-**[`let`](https://www.google.com/search?el+uso+de+let+en+JavaScript+ES6):** es una declaración de variable como `var`, pero es "hiperlocalizada" y se limita a un bloque de código determinado en el que está asignada. Conclusión: `let` es preferible a `var` debido a su localización granular y ser limitada y confinado por bloques.  Estas características, a su vez, aseguran que nuestros programas y código son más predecibles y estables.
+**[`let`](https://www.google.com/search?q=el+uso+de+let+en+JavaScript+ES6):** es una declaración de variable como `var`, pero es "hiperlocalizada" y se limita a un bloque de código determinado en el que está asignada. Conclusión: `let` es preferible a `var` debido a su localización granular y ser limitada y confinado por bloques.  Estas características, a su vez, aseguran que nuestros programas y código son más predecibles y estables. !Aprende más en sobre [`let`en Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/let)!
 
-**[`const`](https://www.google.com/search?el+uso+de+la+declaracion+const+en+JavaScript+ES6):** es la declaración constante. También es *hiperlocalizada* y se limita a un bloque de código determinado en lo que está asignada. Conclusión:  Las funciones pueden ser asignadas a constantes y se usan a menudo en React. Funciones de constantes son utilizados para las declaraciones de función usando funciones de flecha. También, vale la pena mencionar que, en React, normalmente no escribimos nuestras constantes en mayúsculas.
+**[`const`](https://www.google.com/search?q=el+uso+de+la+declaracion+const+en+JavaScript+ES6):** es la declaración constante. También es *hiperlocalizada* y se limita a un bloque de código determinado en lo que está asignada. Conclusión:  Las funciones pueden ser asignadas a constantes y se usan a menudo en React. Funciones de constantes son utilizados para las declaraciones de función usando funciones de flecha. También, vale la pena mencionar que, en React, normalmente no escribimos nuestras constantes en mayúsculas. !Aprende más en acerca de [`const`en Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/const)!
 
 ### Las Funciones de Flecha: `()=>`
 
@@ -116,7 +116,7 @@ VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán 
 
     -> i. NB: `admin-panel` es el nombre de la aplicación en este tutorial.
 
-    ->ii. Consulte los [tutorías oficiales de React](https://reactjs.org/docs/create-a-new-react-app.html#create-react-app) para aprender más sobre las directivas `npx` y `create‐react‐app`
+    ->ii. Consulte los [tutorías oficiales de React](https://es.reactjs.org/docs/create-a-new-react-app.html#create-react-app) para aprender más sobre las directivas `npx` y `create‐react‐app`
 
 4. Por último, teclee `npm start` en su terminal para ejecutar React. La aplicación se renderizará en su máquina local en http://localhost:3000
 
@@ -134,7 +134,7 @@ VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán 
 5. **index.css:** Hoja de estilo global para el proyecto de React. Dentro de la comunidad de desarrolladores de React se considera una buena práctica el optar
 por el CSS de componentes específicos. Es decir, dicho CSS se escribe directamente en el componente. Se realiza a través de objetos CSS o [Bibliotecas de CSS adentro de JavaScript](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap) como *styled-Components*, *react-bootstrap*, etc.
 
-6. **App.css:** hoja de estilo externa para App.js. Como l index.css, App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. **TODO:** Borrar este archivo
+6. **App.css:** hoja de estilo externa para el App.js. Como el index.css, el App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. **TODO:** Borrar este archivo
 
 7. **index.js:** Punto de entrada de la aplicación.  Renderiza App.js a una `id` arbitrario (por defecto la id es 'root') en public/index.html.  **TODO:** Abra este archivo y actualice para importar la aplicación desde './componentes/App'.
 
@@ -192,7 +192,7 @@ Nuestro primer paso es crear un sitio web estático y no interactivo. A menudo l
 
 **Favor de Notar:** Como se muestra en la carpeta de la Figura 2, cada parte de la aplicación que se encarga de renderizar una vista debe ser su propio componente. Claramente, necesitamos usar nuestro juicio para decidir a qué nivel "componemos" nuestra aplicación. Sin embargo, la estructura nos proporciona un plan de juego previo al desarrollo de nuestra aplicación.
 
-**La Observación Destacada:** Cada sección de la estructura de alambre representará un Componente de Reacción. Cada componente puede ser subdividido en otros adicionales, si es necesario.
+**La Observación Destacada:** Cada sección de la estructura de alambre representará un Componente de React. Cada componente puede ser subdividido en otros adicionales, si es necesario.
 
 ## Codificar La Aplicacion Estátic: App.js, Controller.js, Header.js, y Master.js
 
@@ -201,10 +201,10 @@ El código de los componentes de App, Controller, Header, y Master se muestra en
 1. **Controller.js:** Gestionará la complejidad resultante de nuestra aplicación. Controller dicta la disposición de cada componente. En futuras iteraciones
 gestionará el estado de la aplicación.
 
-2. **Master.js:** Hace el trabajo pesado. Las [líneas 4 hasta 38](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L4-L38) muestran que almacenamos nuestro inventario en una matriz JSON. En el mundo real almacenaríamos nuestro inventario en una base de datos. En las [líneas 53 a 60](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L53-L60) del Master.js (ver Figura abajo) usamos el método [`Array.map()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map) para iterar sobre un array JSON de
+2. **Master.js:** Hace el trabajo pesado. Las [líneas 4 hasta 38](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L4-L38) muestran que almacenamos nuestro inventario en una matriz JSON. En el mundo real almacenaríamos nuestro inventario en una base de datos. En las [líneas 53 a 60](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js#L53-L60) del Master.js (ver Figura abajo) usamos el método [`Array.map()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/map) para iterar sobre un array JSON de
 artículos. Una copia del archivo Master.js de la Etapa 1 está disponible [para su descarga](https://github.com/codesport/admin-panel/blob/main-basic-static-public/src/components/Master.js)
 
-3. **Header.js:** Muestra el título de la aplicación. También usa la propiedad de longitud de JavaScript para contar el inventario total.
+3. **Header.js:** Muestra el título de la aplicación. También usa la propiedad de [`length`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/length) de JavaScript para contar el inventario total.
 
 4. **App.js:** Muchos desarrolladores prefieren mantener el App.js simple. Para este proyecto, mantendrá su utilidad como un único punto de entrada llamado por
 index.js para convertirlo en index.html. El Controller es importado en App.js
@@ -273,7 +273,7 @@ Segundo, tenemos nuestro manejador de eventos que determina los detalles de cada
 
 ### b. `handleSelectedDetail()`
 
-En la Figura 7 se muestra el método incorporado de JavaScript [`Array.filter()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter) y es el uso de [`setState()`](https://www.google.com.mx/search?q=como+usamos+setState()+en+Raect) para asignar un nuevo valor a la variable de estado SelectedDetail. En React, [`setState()`](https://www.google.com.mx/search?q=como+usamos+setState()+en+Raect) siempre se llama para actualizar las variables de estado.
+En la Figura 7 se muestra el método incorporado de JavaScript [`Array.filter()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter) y es el uso de [`setState()`](https://www.google.com.mx/search?q=como+usamos+setState()+en+React) para asignar un nuevo valor a la variable de estado SelectedDetail. En React, [`setState()`](https://www.google.com.mx/search?q=como+usamos+setState()+en+React) siempre se llama para actualizar las variables de estado.
 
 ![Stage 2 - Analysis of Controller's handleSelectedDetail Method](src/images/stage-2-controller-handleSelectedDetail.png "Stage 2: Analysis of Controller's handleSelectedDetail()")
 
@@ -315,14 +315,13 @@ El componente de detalle es bastante poco inspirador. Recibe los accesorios del 
 # Etapa 3: Expandir el estado añadiendo la funcionalidad de crear y eliminar
 
 
-A medida que nuestro Controller se vuelve más complejo es prudente identificar formas de refactorizar y simplificar nuestro código. En la figura 8, nuestro Controller utilizó [condicionales](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components/Controller.js#L77-L81) para decidir qué rendirle al usuario. Para manejar el renderizado de la vista de forma más elegante, crearemos un método personalizado llamado renderView
-que simplificará nuestro código.
+A medida que nuestro Controller se vuelve más complejo es prudente identificar formas de refactorizar y simplificar nuestro código. En la figura 8, nuestro Controller utilizó [condicionales](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components/Controller.js#L77-L81) para decidir qué rendirle al usuario. Para manejar el renderizado de la vista de forma más elegante, crearemos un método personalizado llamado `renderView` que simplificará nuestro código de base.
 
 ## El método de `renderView()` del Controller
 [`renderView`](src/components/Controller.js#L71-L88) es un método de ayuda dentro de Controller. Gestiona [`this.state.view`](src/components/Controller.js#L57) por administrando lo que se muestra al usuario. También reduce drásticamente la repetición de códigos innecesarios.
 
 ![Stage 3 - renderView() Helper Method](src/images/stage-3-controller-renderview.png "Stage 3 - renderView() Helper Method")
-**Figura 11: El método de ayuda de renderView() para la etapa 3 gestiona la creciente complejidad de nuestra aplicación**
+**Figura 11: Etapa 3 - El Método de Ayuda de renderView() para la Gestiona la Creciente Complejidad de Nuestra Aplicación**
 
 
 ## El método de `handleDelete()` del Controller
@@ -333,7 +332,7 @@ Aquí hay un análisis del método de `handleDelete`:
 
 2. Hace una copia del inventario existente en esta lista maestra del estado.
 
-3. Aplica el filtro [`Array.filter()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) a la copia. El filtro devuelve todo excepto el elemento que [contiene el ID](src/components/Controller.js#L314) que queremos borrar
+3. Aplica el filtro [`Array.filter()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter) a la copia. El filtro devuelve todo excepto el elemento que [contiene el ID](src/components/Controller.js#L314) que queremos borrar
 
 
 ```JSX
@@ -393,7 +392,7 @@ Aquí hay un análisis del método de `handleDelete`:
 El componente Crear muestra el formulario para crear un nuevo elemento. Sin embargo, el Controller procesa el formulario a través de una función de callback
 enviada al componente Create.
 
-**Favor de Nota:** Reaccionar requiere que cada elemento de una lista que se presenta a DOM tenga un UUID. En la línea 2 de Create.js importamos la librería UUID de JavaScript: `import { v4 } de 'uuid'`.
+**Favor de Nota:** React requiere que cada elemento de una lista que se presenta a DOM tenga un UUID. En la línea 2 de Create.js importamos la librería UUID de JavaScript: `import { v4 } de 'uuid'`.
 
 En la figura 13, invocamos el UUID en la línea 44 de [Create.js](src/components/Create.js#L44) por  uso del `{ v4 }`
 
@@ -449,7 +448,7 @@ La base de código de las Etapas 3 y 4 se puede descargar en la sección [`main-
 
 Para proporcionar una experiencia óptima al usuario, el componente de actualización se diseñó para ser un símil visual cercano al componente de detalle. Esto se logró superponiendo un formulario [HTML5](src/components/Update.js#L49-L61) sobre el código utilizado para generar el componente [Detail](src/components/Detail.js). 
 
-Cabe mencionar que la propiedad [`defaultValue`](https://reactjs.org/docs/uncontrolled-components.html#default-values) de la forma React se utiliza para rellenar previamente el componente Update con la información del artículo.
+Cabe mencionar que la propiedad [`defaultValue`](https://es.reactjs.org/docs/uncontrolled-components.html#default-values) de la forma React se utiliza para rellenar previamente el componente Update con la información del artículo.
 
 Por último, al igual que Create.js, Update.js también recibe una función callback de Controller.js. A su vez, el componente Update envía los datos del
 formulario de vuelta al Controller a través de el callback de `handleUpdate()`. El código del Update.js es bastante mundano, pero no dude en [examinarlo](src/components/Update.js). La Figura 16 es un extracto:
@@ -507,7 +506,7 @@ Como se muestra en la figura 18 infra, los comentarios de toda la base de códig
 
 Este tutorial y su código resultante pueden utilizarse como plantilla para construir aplicaciones más avanzadas. Las opciones de expansión incluyen la construcción de una tienda en línea, un sistema de reservas, una libreta de direcciones, una lista de tareas, etc.
 
-El aprender React nos hace mejores desarrolladores de Javascript. De hecho, como desarrolladores de React tenemos la oportunidad de entender y apreciar realmente el poder y la extensibilidad de JavaScript. Además, el uso de ESLint por parte de `create-react‐app` proporciona numerosos beneficios que nos enseñan a escribir un bse de código más seguro y estable.
+El aprender React nos hace mejores desarrolladores de Javascript. De hecho, como desarrolladores de React tenemos la oportunidad de entender y apreciar realmente el poder y la extensibilidad de JavaScript. Además, el uso de ESLint por parte de `create-react‐app` proporciona numerosos beneficios que nos enseñan a escribir un base de código más seguro y estable.
 
 Algunos de los próximos pasos inmediatos para este proyecto incluirían:
 
