@@ -129,18 +129,26 @@ VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán 
 
 2. **paquete.json:** Configuración estándar y archivo de configuración del guión para proyectos de node. Se puede especificar dependencias e incrustar [scripts personalizados](https://css-tricks.com/why-npm-scripts/) para automatizar su flujo de trabajo de desarrollo
 
-3. **público/:** Carpeta con privilegios de lectura global (es decir, pública, accesible por la web). Sólo almacena contenido público aquí, como imágenes y archivos de html. **TODO Opcional:** Se puede cambiar o eliminar el favicon, el manifiesto y los archivos de logotipos para adaptarse a las necesidades de su proyecto. Pero, asegúrese de que index.html también refleje esos cambios. `logo512.png` no será usado en nuestro proyecto así que es bienvenido a eliminarlo.
+3. **público/:** Carpeta con privilegios de lectura global (es decir, pública, accesible por la web). Sólo almacena contenido público aquí, como imágenes y archivos de html. 
+
+    **TODO Opcional:** Se puede cambiar o eliminar el favicon, el manifiesto y los archivos de logotipos para adaptarse a las necesidades de su proyecto. Pero, asegúrese de que index.html también refleje esos cambios. `logo512.png` no será usado en nuestro proyecto así que es bienvenido a eliminarlo.
 
 4. **public/index.html:** Usado por index.js para hacer la aplicación de reacción. La aplicación se renderiza a un DOM arbitrario (por defecto es 'root') en este archivo mediante este código `<div id="root"></div>`
 
 5. **index.css:** Hoja de estilo global para el proyecto de React. Dentro de la comunidad de desarrolladores de React se considera una buena práctica el optar
 por el CSS de componentes específicos. Es decir, dicho CSS se escribe directamente en el componente. Se realiza a través de objetos CSS o [Bibliotecas de CSS adentro de JavaScript](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap) como *styled-Components*, *react-bootstrap*, etc.
 
-6. **App.css:** Hoja de estilo externa para el App.js. Como el index.css, el App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. **TODO:** eliminar este archivo
+6. **App.css:** Hoja de estilo externa para el App.js. Como el index.css, el App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. 
 
-7. **index.js:** Punto de entrada de la aplicación.  Renderiza App.js a una `id` arbitrario (por defecto la id es 'root') en public/index.html.  **TODO:** Abra este archivo y actualice para importar la aplicación desde './componentes/App'.
+    **TODO:** eliminar este archivo
 
-8. **App.js:** Un componente de contenedor y padre para las aplicaciones de React. **TODO:** Borre su contenido y muévalo a l `src/componentes`
+7. **index.js:** Punto de entrada de la aplicación.  Renderiza App.js a una `id` arbitrario (por defecto la id es 'root') en public/index.html.  
+
+    **TODO:** Abra este archivo y actualice para importar la aplicación desde './componentes/App'.
+
+8. **App.js:** Un componente de contenedor y padre para las aplicaciones de React. 
+    
+    **TODO:** Borre su contenido y muévalo a l `src/componentes`
 
 
 ### Actualización de la Estructura del Directorio
