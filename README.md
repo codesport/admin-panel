@@ -48,7 +48,7 @@ React se aprovecha del JavaScript ES6. ES6 se lleva nuevos caracterices (e.g., c
 
 **[`const`](https://www.google.com/search?q=el+uso+de+la+declaracion+const+en+JavaScript+ES6):** es la declaración constante. También es *hiperlocalizada* y se limita a un bloque de código determinado en lo que está asignada. Conclusión:  Las funciones pueden ser asignadas a constantes y se usan a menudo en React. Funciones de constantes son utilizados para las declaraciones de función usando funciones de flecha. También, vale la pena mencionar que, en React, normalmente no escribimos nuestras constantes en mayúsculas. !Aprende más en acerca de [`const`en Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/const)!
 
-### [Las Funciones de Flecha: `()=>`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions)
+### Las Funciones de Flecha: [`()=>`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions)
 
 Como `let` y `const`, las funciones de las flechas son "hiperlocalizadas". Esto significa que sólo son "conscientes de" y se ejecutan en el alcance y ámbito donde fueron creadas. Por otro lado, las funciones tradicionales de JavaScript suben al alcance de la ventana (es decir, suben al window scope de JavaScript).
 
