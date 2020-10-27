@@ -402,7 +402,7 @@ Aquí hay un análisis del método de `handleDelete`:
 El componente Crear muestra el formulario para crear un nuevo elemento. Sin embargo, el Controller procesa el formulario a través de una función de callback
 enviada al componente Create.
 
-**Favor de Nota:** React requiere que cada elemento de una lista que se presenta a DOM tenga un UUID. En la línea 2 de Create.js importamos la librería UUID de JavaScript: `import { v4 } de 'uuid'`.
+**Favor de Nota:** React requiere que cada elemento de una lista que se presenta al DOM tenga un UUID. En la línea 2 de Create.js importamos la biblioteca UUID de JavaScript: `import { v4 } from 'uuid'`.
 
 En la figura 13, invocamos el UUID en la línea 44 de [Create.js](src/components/Create.js#L44) por  uso del `{ v4 }`
 
