@@ -89,7 +89,7 @@ Si te decides utilizar las funciones de flechas para definir componentes funcion
 
    * **Consejo Pro 4:** Si se encuentra repitiendo las mismas líneas de código a lo largo y ancho de un componente padre o hijo, es avisado que estas líneas sean combinadas en un método de clase o en una función. Después, llámelo (es decir, la función o método de clase) cuando Ud. lo necesite.
    
-   * **Consejo Pro 5:** Semejante al numero 4, si se encuentra usando la misma función en ms de 2 componentes, es mejor poner tal función en su propio archivo y importarlo cuando se lo necesite
+   * **Consejo Pro 5:** Semejante al numero 4, si se encuentra usando la misma función en más de 2 componentes, es mejor poner tal función en su propio archivo y importarlo cuando se lo necesite
 
 ### Los Componentes de Clase
 
