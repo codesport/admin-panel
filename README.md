@@ -498,7 +498,7 @@ La interfaz de experiencia usario (es decir, la UX) para esta aplicación se ins
 
 El CSS usado para los [botones de acción](https://github.com/codesport/admin-panel/blob/main-final-public/src/index.css) es de [Adventures In Techland](https://www.adventuresintechland.com/bootstrap-css-buttons-only/)
 
-Como se muestra en la Figura 18 abajo, los comentarios de toda la base de código de esta aplicación hacen referencia a puestos específicos de Stackoverflow, así como a otras fuentes que fueron útiles para construir esta aplicación.
+Como se muestra en la Figura 18 abajo, los comentarios de toda la base de código de esta aplicación hacen referencia a entradas y discusiones de Stackoverflow, así como a otras fuentes que fueron útiles para construir esta aplicación.
 
 ![Stage 4 - buildEditArray Method](src/images/stage-4-controller-build-edit-array.png "Stage 4 - buildEditArray Method")
 **Figura 18: Etapa 4 - Comentarios que explican el método buildEditArray en el componente Controller**
