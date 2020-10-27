@@ -77,10 +77,10 @@ const MyOtherComponent = () => {
 ```
 
    * **Consejo Pro 1:** Una buena regla general para los novatos es **siempre usar las funciones de flecha** al definir los métodos dentro de los componentes de la clase. 
-
-    Si no se usan funciones de flecha para declarar un método, tal método debe ser apegado y enlazado dentro del constructor de su clase asi: `this.miMetodoEspecial = this.miMetodoEspecial.bind(this);` 
-
-    Si te decides utilizar las funciones de flechas para definir componentes funcionales, hay que declararlas como constantes por medio de la palabra clave de `const`
+   
+   Si no se usan funciones de flecha para declarar un método, tal método debe ser apegado y enlazado dentro del constructor de su clase asi: `this.miMetodoEspecial = this.miMetodoEspecial.bind(this);` 
+   
+   Si te decides utilizar las funciones de flechas para definir componentes funcionales, hay que declararlas como constantes por medio de la palabra clave de `const`
 
    * **Consejo Pro 2:** Si tu controlador de eventos requiere parámetros, hay que usar funciones de flechas para prevenir la función de ejecutar automáticamente cuando la pagina sea cargada y renderizada en el navegador. 
 
