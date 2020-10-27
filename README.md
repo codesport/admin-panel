@@ -227,7 +227,7 @@ Dada la simplicidad de la actual iteración de nuestra aplicación, puede argume
 
 ![Static Version of Admin App](src/images/static-version.png "Static Website Produced by the 3 Component Files")
 
-**Figura 4: Etapa 1: La Aplicación Estática Producida por Nuestros 3 Archivos**
+**Figura 4: Etapa 1 - La Aplicación Estática Producida por Nuestros 3 Archivos**
 
 ---
 # Etapa 2: Integrar El Estado y Diseñar la Funcionalidad de Maestro-Detalle
