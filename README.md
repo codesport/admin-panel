@@ -145,7 +145,7 @@ por el CSS de componentes específicos. Es decir, dicho CSS se escribe directame
 
 ### Actualización de la Estructura del Directorio
 
-1. Crear ls carpetas de `componentes/` e `imágenes/` bajo del directorio `src/`
+1. Crear las carpetas de `componentes/` e `imágenes/` bajo del directorio `src/`
 2. Eliminar `App.css` y `App‐test.js` del directorio de `src/`. Mueva el `App.js` a `componentes/`
 3. Si Ud. aún no lo ha hecho, siga los "TODOs" mencionados anteriormente, en la Parte C.
 
