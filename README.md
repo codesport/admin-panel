@@ -87,7 +87,7 @@ Si te decides utilizar las funciones de flechas para definir componentes funcion
 
    * **Consejo Pro 3:** hablando francamente, componentes hijos deberían ser componentes funcionales y no manejar el estado. De hecho, el estado que tendrían naturalmente un hijo, deber ser levantado y por consiguiente controlado por su padre
 
-   * **Consejo Pro 4:** Si se encuentra repitiendo las mismas lines de código a lo largo y ancho de un componente padre o hijo, es avisado que estas lineas de código sean combinadas en un método de clase on un función. Después, llamarlo (es decir, la función o método de clase) cuando sea necesario.
+   * **Consejo Pro 4:** Si se encuentra repitiendo las mismas lineas de código a lo largo y ancho de un componente padre o hijo, es avisado que estas lineas de código sean combinadas en un método de clase en una función. Después, llamarlo (es decir, la función o método de clase) cuando sea necesario.
   
    * **Consejo Pro 5:** Semejante al numero 4, si se encuentra usando la misma función en ms de 2 componentes, es mejor poner tal función en su propio archivo y importarlo cuando se lo necesite
 
