@@ -198,7 +198,7 @@ Nuestro primer paso es crear un sitio web estático y no interactivo. A menudo l
 
 ## Codificar La Aplicacion Estátic: App.js, Controller.js, Header.js, y Master.js
 
-El código de los componentes de App, Controller, Header, y Master se muestra en la figura 2, arriba, con comentarios. Aquí hay un resumen:
+El código de los componentes de App, Controller, Header, y Master se muestra en la Figura 3, abajo, con comentarios. Aquí hay un resumen:
 
 1. **Controller.js:** Gestionará la complejidad resultante de nuestra aplicación. Controller dicta la disposición de cada componente. En futuras iteraciones
 gestionará el estado de la aplicación.
