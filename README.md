@@ -116,7 +116,7 @@ VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán 
 
     -> i. NB: `admin-panel` es el nombre de la aplicación en este tutorial.
 
-    ->ii. Consulte los [tutorías oficiales de React](https://es.reactjs.org/docs/create-a-new-react-app.html#create-react-app) para aprender más sobre las directivas `npx` y `create‐react‐app`
+    -> ii. Consulte los [tutorías oficiales de React](https://es.reactjs.org/docs/create-a-new-react-app.html#create-react-app) para aprender más sobre las directivas `npx` y `create‐react‐app`
 
 4. Por último, teclee `npm start` en su terminal para ejecutar React. La aplicación se renderizará en su máquina local en http://localhost:3000
 
