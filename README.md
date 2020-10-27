@@ -209,7 +209,7 @@ artículos. Una copia del archivo Master.js de la Etapa 1 está disponible [para
 3. **Header.js:** Muestra el título de la aplicación. También usa la propiedad de [`length`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/length) de JavaScript para contar el inventario total.
 
 4. **App.js:** Muchos desarrolladores prefieren mantener el App.js simple. Para este proyecto, mantendrá su utilidad como un único punto de entrada llamado por
-index.js para convertirlo en index.html. El Controller es importado en App.js
+index.js para colocarlo en index.html. El Controller es importado en App.js
 
 
 ![App.js](src/images/stage-1-app.png "App.js for Static App") ![Controller.js](src/images/stage-1-controller.png "Controller.js for Static App")
