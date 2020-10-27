@@ -148,7 +148,7 @@ por el CSS de componentes específicos. Es decir, dicho CSS se escribe directame
 
 8. **App.js:** Un componente de contenedor y padre para las aplicaciones de React. 
     
-    **TODO:** Borre su contenido y muévalo a l `src/componentes`
+    **TODO:** Borre su contenido y muévalo al `src/componentes`
 
 
 ### Actualización de la Estructura del Directorio
