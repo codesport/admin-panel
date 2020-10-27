@@ -4,8 +4,8 @@
 * [Los Primeros Pasos: El Establecer de un Entorno de Desarrollo Para React](#los-primeros-pasos-el-establecer-de-un-entorno-de-desarrollo-para-react) 
 * [Etapa 1: Planear La Aplicación y Crear un Sitio Estático sin Estado](#etapa-1-planear-la-aplicaci%C3%B3n-y-crear-un-sitio-est%C3%A1tico-sin-estado)
 * [Etapa 2: Integrar El Estado y Diseñar la Funcionalidad de Maestro-Detalle](#etapa-2-integrar-el-estado-y-dise%C3%B1ar-la-funcionalidad-de-maestro-detalle)
-* [Etapa 3: Expandir el estado añadiendo la funcionalidad de crear y eliminar](#etapa-3-expandir-el-estado-a%C3%B1adiendo-la-funcionalidad-de-crear-y-eliminar)
-* [Etapa 4: Completar la aplicación Y Armar la Funcionalidad de Actualización](#etapa-4-completar-la-aplicaci%C3%B3n-y-armar-la-funcionalidad-de-actualizaci%C3%B3n)
+* [Etapa 3: Expandir el Estado por Añadir la Funcionalidad de Crear y Eliminar](#etapa-3-expandir-el-estado-por-a%C3%B1adir-la-funcionalidad-de-crear-y-eliminar)
+* [Etapa 4: Completar la Aplicación Y Armar la Funcionalidad de Actualización](#etapa-4-completar-la-aplicaci%C3%B3n-y-armar-la-funcionalidad-de-actualizaci%C3%B3n)
 * [Créditos](#cr%C3%A9ditos)
 * [Observaciones Finales, Conclusiones y Próximos Pasos](#observaciones-finales-conclusiones-y-pr%C3%B3ximos-pasos)
 
@@ -19,7 +19,7 @@ Este proyecto (es decir, el código así como también esta tutoría) está pres
 # Panorama Breve del Proyecto
 
 Esta es una tutoría comprehensiva. Se dirige al aprendedor por la creación de una aplicación de software para manejar el inventario de la cosecha de una granja.
-Al aprendedor se le guía en crear un programa interactivo y de estado. Este programa será una aplicación completa con las funciones de Crear, Actualizar, Borrar, y Leer. Encima de eso,  se realiza la aplicación como un base y fundación para ser adaptada para otras aplicaciones así como una tienda de comercio electrónico, un sistema de reservaras para un hotel o restaurante así como también una lista de tareas pendientes 
+Al aprendedor se le guía en crear un programa interactivo y de estado. Este programa será una aplicación completa con las funciones de Crear, Leer, Actualizar, y Eliminar. Encima de eso,  se realiza la aplicación como un base y fundación para ser adaptada para otras aplicaciones así como una tienda de comercio electrónico, un sistema de reservaras para un hotel o restaurante así como también una lista de tareas pendientes 
 
 ## Versión 6 de JavaScript / ESCM Script Versión 6 (ES6)
 
@@ -129,14 +129,14 @@ VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán 
 
 2. **paquete.json:** Configuración estándar y archivo de configuración del guión para proyectos de node. Se puede especificar dependencias e incrustar [scripts personalizados](https://css-tricks.com/why-npm-scripts/) para automatizar su flujo de trabajo de desarrollo
 
-3. **público/:** Carpeta con privilegios de lectura global (es decir, pública, accesible por la web). Sólo almacena contenido público aquí, como imágenes y archivos de html. **TODO Opcional:** Se puede cambiar o borrar el favicon, el manifiesto y los archivos de logotipos para adaptarse a las necesidades de su proyecto. Pero, asegúrese de que index.html también refleje esos cambios. `logo512.png` no será usado en nuestro proyecto así que es bienvenido a borrarlo.
+3. **público/:** Carpeta con privilegios de lectura global (es decir, pública, accesible por la web). Sólo almacena contenido público aquí, como imágenes y archivos de html. **TODO Opcional:** Se puede cambiar o eliminar el favicon, el manifiesto y los archivos de logotipos para adaptarse a las necesidades de su proyecto. Pero, asegúrese de que index.html también refleje esos cambios. `logo512.png` no será usado en nuestro proyecto así que es bienvenido a eliminarlo.
 
 4. **public/index.html:** Usado por index.js para hacer la aplicación de reacción. La aplicación se renderiza a un DOM arbitrario (por defecto es 'root') en este archivo mediante este código `<div id="root"></div>`
 
 5. **index.css:** Hoja de estilo global para el proyecto de React. Dentro de la comunidad de desarrolladores de React se considera una buena práctica el optar
 por el CSS de componentes específicos. Es decir, dicho CSS se escribe directamente en el componente. Se realiza a través de objetos CSS o [Bibliotecas de CSS adentro de JavaScript](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap) como *styled-Components*, *react-bootstrap*, etc.
 
-6. **App.css:** Hoja de estilo externa para el App.js. Como el index.css, el App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. **TODO:** Borrar este archivo
+6. **App.css:** Hoja de estilo externa para el App.js. Como el index.css, el App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. **TODO:** eliminar este archivo
 
 7. **index.js:** Punto de entrada de la aplicación.  Renderiza App.js a una `id` arbitrario (por defecto la id es 'root') en public/index.html.  **TODO:** Abra este archivo y actualice para importar la aplicación desde './componentes/App'.
 
@@ -314,7 +314,7 @@ El componente de detalle es bastante poco inspirador. Recibe los accesorios del 
 
 
 ---
-# Etapa 3: Expandir el estado añadiendo la funcionalidad de crear y eliminar
+# Etapa 3: Expandir el Estado por Añadir la Funcionalidad de Crear y Eliminar
 
 
 A medida que nuestro Controller se vuelve más complejo es prudente identificar formas de refactorizar y simplificar nuestro código. En la figura 8, nuestro Controller utilizó [condicionales](https://github.com/codesport/admin-panel/blob/main-basic-state-public/src/components/Controller.js#L77-L81) para decidir qué rendirle al usuario. Para manejar el renderizado de la vista de forma más elegante, crearemos un método personalizado llamado `renderView` que simplificará nuestro código de base.
@@ -334,7 +334,7 @@ Aquí hay un análisis del método de `handleDelete`:
 
 2. Hace una copia del inventario existente en esta lista maestra del estado.
 
-3. Aplica el filtro [`Array.filter()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter) a la copia. El filtro devuelve todo excepto el elemento que [contiene el ID](src/components/Controller.js#L314) que queremos borrar
+3. Aplica el filtro [`Array.filter()`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Array/filter) a la copia. El filtro devuelve todo excepto el elemento que [contiene el ID](src/components/Controller.js#L314) que queremos eliminar
 
 
 ```JSX
@@ -385,7 +385,7 @@ Aquí hay un análisis del método de `handleDelete`:
     }
 ```
 
-**Figura 12: Etapa 3 - Borrar la funcionalidad añadida al Controller**
+**Figura 12: Etapa 3 - La Funcionalidad de Eliminar Está Añadida al Controller**
 
 
 
