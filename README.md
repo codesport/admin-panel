@@ -140,7 +140,7 @@ por el CSS de componentes específicos. Es decir, dicho CSS se escribe directame
 
 6. **App.css:** Hoja de estilo externa para el App.js. Como el index.css, el App.css es minificada y agregada en una hoja de estilo "global" durante la construcción y compilación de la aplicación. 
 
-    **TODO:** eliminar este archivo
+    **TODO:** Eliminar este archivo
 
 7. **index.js:** Punto de entrada de la aplicación.  Renderiza App.js a una `id` arbitrario (por defecto la id es 'root') en public/index.html.  
 
