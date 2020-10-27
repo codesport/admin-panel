@@ -1,16 +1,16 @@
 # Navegación de Menú
-* [Créditos al Autor](https://github.com/codesport/admin-panel/tree/main-final-espanol#cr%C3%A9ditos-del-autor)
-* [Panorama Breve del Proyecto](https://github.com/codesport/admin-panel/tree/main-final-espanol#panorama-breve-del-proyecto)
-* [Los Primeros Pasos: El Establecer de un Entorno de Desarrollo Para React](https://github.com/codesport/admin-panel/tree/main-final-espanol#los-primeros-pasos-el-establecer-de-un-entorno-de-desarrollo-para-react) 
-* [Etapa 1: Planear La Aplicación y Crear un Sitio Estático sin Estado](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-1-planear-la-aplicaci%C3%B3n-y-crear-un-sitio-est%C3%A1tico-sin-estado)
-* [Etapa 2: Integrar El Estado y Diseñar la Funcionalidad de Maestro-Detalle](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-2-integrar-el-estado-y-dise%C3%B1ar-la-funcionalidad-de-maestro-detalle)
-* [Etapa 3: Expandir el estado añadiendo la funcionalidad de crear y eliminar](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-3-expandir-el-estado-a%C3%B1adiendo-la-funcionalidad-de-crear-y-eliminar)
-* [Etapa 4: Completar la aplicación Y Armar la Funcionalidad de Actualización](https://github.com/codesport/admin-panel/tree/main-final-espanol#etapa-4-completar-la-aplicaci%C3%B3n-y-armar-la-funcionalidad-de-actualizaci%C3%B3n)
-* [Créditos](https://github.com/codesport/admin-panel/tree/main-final-espanol#cr%C3%A9ditos)
-* [Observaciones Finales, Conclusiones y Próximos Pasos](https://github.com/codesport/admin-panel/tree/main-final-espanol#observaciones-finales-conclusiones-y-pr%C3%B3ximos-pasos)
+* [Créditos al Autor](#cr%C3%A9ditos-del-autor)
+* [Panorama Breve del Proyecto](#panorama-breve-del-proyecto)
+* [Los Primeros Pasos: El Establecer de un Entorno de Desarrollo Para React](#los-primeros-pasos-el-establecer-de-un-entorno-de-desarrollo-para-react) 
+* [Etapa 1: Planear La Aplicación y Crear un Sitio Estático sin Estado](#etapa-1-planear-la-aplicaci%C3%B3n-y-crear-un-sitio-est%C3%A1tico-sin-estado)
+* [Etapa 2: Integrar El Estado y Diseñar la Funcionalidad de Maestro-Detalle](#etapa-2-integrar-el-estado-y-dise%C3%B1ar-la-funcionalidad-de-maestro-detalle)
+* [Etapa 3: Expandir el estado añadiendo la funcionalidad de crear y eliminar](#etapa-3-expandir-el-estado-a%C3%B1adiendo-la-funcionalidad-de-crear-y-eliminar)
+* [Etapa 4: Completar la aplicación Y Armar la Funcionalidad de Actualización](#etapa-4-completar-la-aplicaci%C3%B3n-y-armar-la-funcionalidad-de-actualizaci%C3%B3n)
+* [Créditos](#cr%C3%A9ditos)
+* [Observaciones Finales, Conclusiones y Próximos Pasos](#observaciones-finales-conclusiones-y-pr%C3%B3ximos-pasos)
 
 # Créditos del Autor
-Esta tutoría y el código del proyecto fueron creados por Marcus “Arroyo” B.   Su usuario y apodo de GitHub es el [codesport](https://github.com/codesport)
+Esta tutoría y el código del proyecto fueron creados por **Marcus “Arroyo” B.**   Su usuario y apodo de GitHub es el [codesport](https://github.com/codesport)
 
 ## Licencia
 Este proyecto (es decir, el código así como también esta tutoría) está presentado con [licencia de MIT](LICENSE.md).
@@ -22,12 +22,14 @@ Esta es una tutoría comprehensiva. Se dirige al aprendedor por la creación de 
 Al aprendedor se le guía en crear un programa interactivo y de estado. Este programa será una aplicación completa con las funciones de Crear, Actualizar, Borrar, y Leer. Encima de eso,  se realiza la aplicación como un base y fundación para ser adaptada para otras aplicaciones así como una tienda de comercio electrónico, un sistema de reservaras para un hotel o restaurante así como también una lista de tareas pendientes 
 
 ## Versión 6 de JavaScript / ESCM Script Versión 6 (ES6)
+
 Una meta adicional de esta tutoría es proporcionar al aprendedor una fundación firme de los conceptos de primordiales de React. Así, una parte importante de tal fundación es un entendimiento de las actualizaciones a JavaScript realizado por ES6.
 
 ## Como Obtener el Beneficio Máximo de Este Tutorial
 
 Dado el tratamiento del tema al fondo, se recomienda que el estudiante se dirija a las secciones más relevantes a su etapa de aprendizaje. Por ejemplo, una persona que tenga cero conocimientos de React deber enfocarse en las secciones “Sobre React” y  “Para Comenzar”. En cambio un aprendedor que ya tiene un ambiente de desarrollo de node.js instalado en su portátil puede comenzar con la Etapa 1. 
 En resumen, el aprendedor debería sentirse cómodo con navegar a las etapas y secciones que le sierva mejor.
+
 
 # Sobre React
 
@@ -54,7 +56,7 @@ Como `let` y `const`, las funciones de las flechas son "hiperlocalizadas". Esto 
 
 El siguiente ejemplo muestra la función tradicional y su equivalente función de flecha. 
 
-**Favor de Notar:** Observa que la muestra abajo **solo demuestra el uso del sintaxis**, no el limite al nivel de bloque ni el enlace de la declaraciones al "scope" local
+**Favor de Notar:** Observa que la muestra abajo **solo demuestra el uso del sintaxis**, no el limite al nivel de bloque ni el enlace de la declaraciones al "scope" local.
 
 ```javascript
 const OUTER = 10;
@@ -76,7 +78,7 @@ const MyOtherComponent = () => {
 
    * **Consejo Pro 1:** Una buena regla general para los novatos es **siempre usar las funciones de flecha** al definir los métodos dentro de los componentes de la clase. 
 
-Si no se usan funciones de flecha para declarar un método, tal método debe ser apegado y enlazado dentro del constructor de su clase asi: `this.miMetodoEspcial = this.miMetodoEspecial.bind(this);` 
+Si no se usan funciones de flecha para declarar un método, tal método debe ser apegado y enlazado dentro del constructor de su clase asi: `this.miMetodoEspecial = this.miMetodoEspecial.bind(this);` 
 
 Si te decides utilizar las funciones de flechas para definir componentes funcionales, hay que declararlas como constantes por medio de la palabra clave de `const`
 
@@ -134,14 +136,14 @@ VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán 
 5. **index.css:** Hoja de estilo global para el proyecto de React. Dentro de la comunidad de desarrolladores de React se considera una buena práctica el optar
 por el CSS de componentes específicos. Es decir, dicho CSS se escribe directamente en el componente. Se realiza a través de objetos CSS o [Bibliotecas de CSS adentro de JavaScript](https://www.npmtrends.com/styled-components-vs-emotion-vs-react-bootstrap) como *styled-Components*, *react-bootstrap*, etc.
 
-6. **App.css:** hoja de estilo externa para el App.js. Como el index.css, el App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. **TODO:** Borrar este archivo
+6. **App.css:** Hoja de estilo externa para el App.js. Como el index.css, el App.css es minificada y agregada en una hoja de estilo "global" en la construcción y compilación de la aplicación. **TODO:** Borrar este archivo
 
 7. **index.js:** Punto de entrada de la aplicación.  Renderiza App.js a una `id` arbitrario (por defecto la id es 'root') en public/index.html.  **TODO:** Abra este archivo y actualice para importar la aplicación desde './componentes/App'.
 
 8. **App.js:** Un componente de contenedor y padre para las aplicaciones de React. **TODO:** Borre su contenido y muévalo a l `src/componentes`
 
 
-Actualización de la Estructura del Directorio
+### Actualización de la Estructura del Directorio
 
 1. Crear ls carpetas de `componentes/` e `imágenes/` bajo del directorio `src/`
 2. Eliminar `App.css` y `App‐test.js` del directorio de `src/`. Mueva el `App.js` a `componentes/`
@@ -172,7 +174,7 @@ admin-panel/
   └── README.md
 ```
 
-**Figura 1: Una estructura de carpetas propuesta para React**
+**Figura 1: Una Estructura de Carpetas Propuesta para React**
 
 
 
