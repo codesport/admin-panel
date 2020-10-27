@@ -235,7 +235,7 @@ Dada la simplicidad de la actual iteración de nuestra aplicación, puede argume
 **Consejo Pro 7**
 
 > Para armar la aplicación en un manera correcta, se necesita pensar sobre la mínima cantidad de 
-> estado mutable que requeriría la aplicación. Se necesita desentrenar la mínima representación 
+> estado mutable que requeriría la aplicación. Se necesita desentrañar la mínima representación 
 > del estado que la aplicación necesitaría y después calcule el resto bajo demanda.
 >  *- [Pensando en React](https://es.reactjs.org/docs/thinking-in-react.html)*
 
