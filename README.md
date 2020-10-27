@@ -404,7 +404,7 @@ enviada al componente Create.
 
 **Favor de Nota:** React requiere que cada elemento de una lista que se presenta al DOM tenga un UUID. En la [línea 2 de Create.js](src/components/Create.js#L2) importamos la biblioteca UUID de JavaScript: `import { v4 } from 'uuid'`.
 
-En la figura 13, invocamos el UUID en la línea 44 de [Create.js](src/components/Create.js#L44) por  uso del `{ v4 }`
+En la figura 13, invocamos el UUID en la [línea 44 de Create.js](src/components/Create.js#L44) por  uso del `id v4 `
 
 Por favor, consulte los comentarios de la Figura 13 para un análisis adicional de Create.js
 
