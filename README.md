@@ -35,7 +35,7 @@ En resumen, el aprendedor debería sentirse cómodo con navegar a las etapas y s
 
 React es una biblioteca  del lado cliente (es, decir, “front end”) creado por Facebook.  Se enfoca en la interfaz de usuario renderizado. Es decir, la “Vista” del  Vista Modelo y Control  paradigma  de arquitectura de diseño de desarrollo de software. Adicionalmente, fue lanzado al público por Facebook  el [29 de mayo de 2013](https://www.google.com.mx/search?q=cuando+fue+creado+React?).
 
-React se aprovecha de JavaScript ES6.  Y programas de React son escritos en una sintaxis llamado [JSX](https://www.google.com.mx/search?q=Que%20es%20el%20JSX). JSX es innovador por la razón que permite el desarrollador combinar HTML y JavaScript en una manera natural. Tan natural que efectivamente se escribe y combine HTML y JavaScript en la misma línea de código.
+React se aprovecha de JavaScript ES6.  Y programas de React son escritos en un sintaxis llamado [JSX](https://www.google.com.mx/search?q=Que%20es%20el%20JSX). JSX es innovador por la razón que permite el desarrollador combinar HTML y JavaScript en una manera natural. Tan natural que efectivamente se escribe y combine HTML y JavaScript en la misma línea de código.
 
 ## Convencionales de Codificación en React
 Código en React se trata de elementos básicos  o “bloques de construcción”  que se llaman componentes, en lo cual hay dos tipos: componentes de clase y  funcionales.  Y  escribimos los nombres de tales componentes en Caso Pascal.  Es decir, con la primera letra en de cada palabra en escrita en mayúsculas. En cambio, los nombres de métodos de clases, variables, y funciones dentro de componentes se escribe con la primera letra en minúscula. Es, decir caso Camello.
@@ -48,15 +48,15 @@ React se aprovecha del JavaScript ES6. ES6 se lleva nuevos caracterices (e.g., c
 
 **[`const`](https://www.google.com/search?q=el+uso+de+la+declaracion+const+en+JavaScript+ES6):** es la declaración constante. También es *hiperlocalizada* y se limita a un bloque de código determinado en lo que está asignada. Conclusión:  Las funciones pueden ser asignadas a constantes y se usan a menudo en React. Funciones de constantes son utilizados para las declaraciones de función usando funciones de flecha. También, vale la pena mencionar que, en React, normalmente no escribimos nuestras constantes en mayúsculas. !Aprende más en acerca de [`const`en Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Sentencias/const)!
 
-### Las Funciones de Flecha: `()=>`
+### [Las Funciones de Flecha: `()=>`](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions)
 
 Como `let` y `const`, las funciones de las flechas son "hiperlocalizadas". Esto significa que sólo son "conscientes de" y se ejecutan en el alcance y ámbito donde fueron creadas. Por otro lado, las funciones tradicionales de JavaScript suben al alcance de la ventana (es decir, suben al window scope de JavaScript).
 
- Debido a esta localización del scope, las funciones de flecha son de particular interés a los desarrolladores de React usando funciones de clase y haciendo referencia a instancias de `this`.  De hecho, las funciones de flecha anulan la necesidad de enlazar "manualmente" las funciones a una clase dada dentro de su constructor. [Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions) tiene un tutorial excelente acerca de las funciones de flecha. 
+ Debido a esta localización del scope, las funciones de flecha son de particular interés a los desarrolladores de React usando funciones de clase y haciendo referencia a instancias de `this`.  De hecho, las funciones de flecha anulan la necesidad de enlazar "manualmente" las funciones su una clase adentro de su constructor. [Mozilla](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Funciones/Arrow_functions) tiene un tutorial excelente acerca de las funciones de flecha. 
 
 El siguiente ejemplo muestra la función tradicional y su equivalente función de flecha. 
 
-**Favor de Notar:** Observa que la muestra abajo **solo demuestra el uso del sintaxis**, no el limite al nivel de bloque ni el enlace de la declaraciones al "scope" local.
+**Favor de Notar:** Observe que la muestra abajo **solo demuestra el uso del sintaxis**, no el limite al nivel de bloque ni el enlace de la declaraciones al "scope" local.
 
 ```javascript
 const OUTER = 10;
