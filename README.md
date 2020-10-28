@@ -19,9 +19,11 @@ Este proyecto (es decir, el código así como también esta tutoría) está pres
 # Panorama Breve del Proyecto
 Esta es una tutoría comprehensiva. Se dirige al aprendedor por la creación de una aplicación de software para manejar el inventario de la cosecha de una granja.
 
-Se puede probar el producto final [en el servidor](https://8np2d.csb.app/) en vivo y directo.  Y, si Ud. quisiera agregar al inventario actual, se puede utilizar las siguientes rutas de archivo para agregarlo las fotos de cultivos. NB: Hay que clic el botón de [`"Add (create)"`](https://8np2d.csb.app/) para añadir nuevos cultivos.
+Se puede probar el producto final [en el servidor](https://8np2d.csb.app/) en vivo y directo.  Y, si Ud. quisiera agregar al inventario actual, se puede utilizar las siguientes rutas de archivo para agregarlo las fotos de cultivos. 
 
-Por favor, también anote que los archivos que se han guardado anteriormente al servidor están listados abajo del encabezado de la tabla *Ruta local de la Foto*.
+* Hay que clic el botón de [`"Add (create)"`](https://8np2d.csb.app/) para añadir nuevos cultivos.
+
+* También anote que los archivos que se han guardado anteriormente al servidor están listados abajo del encabezado de la tabla *Ruta Local de Foto*.
 
 Cultivo| Ruta Local de Foto | URL Externa 
 :-------|----------------------|:-----------:
