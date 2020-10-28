@@ -10,7 +10,7 @@
 * [Observaciones Finales, Conclusiones y Próximos Pasos](#observaciones-finales-conclusiones-y-pr%C3%B3ximos-pasos)
 
 # Créditos del Autor
-Esta tutoría y el código del proyecto fueron creados por **Ing. Marcus “Arroyo” B.**   Su usuario y apodo en GitHub es el [codesport](https://github.com/codesport)
+Esta tutoría y el código del proyecto fueron creados por el **Ing. Marcus “Arroyo” B.**   Su usuario y apodo en GitHub es el [codesport](https://github.com/codesport)
 
 ## Licencia
 Este proyecto (es decir, el código así como también esta tutoría) está presentado con [licencia de MIT](LICENSE.md).
