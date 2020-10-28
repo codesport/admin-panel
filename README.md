@@ -30,6 +30,7 @@ Remolacha|  images/loose-beets.jpg |    |
 Perejil italiano|  images/italian-parsley.jpg|
 Kiwi|  images/kiwi.jpg |    |
 Hojas de berza|  images/collard-greens.jpg |    |
+
 **Table 1: Rutas de Archivos [en el Servidor](https://8np2d.csb.app/) y un URL para Agregar Fotos de Muestra de los Cultivos a la Aplicación**  
 
 Al aprendedor se le guía en crear un programa interactivo y de estado. Este programa será una aplicación completa con las funciones de Crear, Leer, Actualizar, y Eliminar. Encima de eso,  se realiza la aplicación como un base y fundación para ser adaptada para otras aplicaciones así como una tienda de comercio electrónico, un sistema de reservaras para un hotel o restaurante así como también una lista de tareas pendientes 
