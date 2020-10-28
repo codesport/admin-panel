@@ -539,7 +539,7 @@ Algunos de los próximos pasos inmediatos para este proyecto incluirían:
 * Usar Jest para ejecutar pruebas automatizadas e incorporar las mejores prácticas de desarrollo impulsadas por pruebas
 * La integración con una base de datos NoSQL como MongoDB o Firebase
 * Añadiendo autenticación y control de acceso para la seguridad
-* Hospedaje en un servidor en vivo corriendo el nodo y NGINX
+* Hospedaje en un servidor en vivo corriendo el node.js y NGINX
 * Integrarse con las API para obtener datos externos
 
 Otras posibles integraciones podrían implicar:
