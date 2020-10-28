@@ -21,9 +21,9 @@ Esta es una tutoría comprehensiva. Se dirige al aprendedor por la creación de 
 
 Se puede probar el producto final [en el servidor](https://8np2d.csb.app/) en vivo y directo.  Y, si Ud. quisiera agregar al inventario actual, se puede utilizar las siguientes rutas de archivo para agregarlo las fotos de cultivos. 
 
-* Hay que clic el botón de [`"Add (create)"`](https://8np2d.csb.app/) para añadir nuevos cultivos.
+* Hay que clic el botón de [`"Add (create)"`](https://8np2d.csb.app/) para añadir nuevos cultivos
 
-* También anote que los archivos que se han guardado anteriormente al servidor están listados abajo del encabezado de la tabla *Ruta Local de Foto*.
+* También anote que los archivos que se han guardado anteriormente al servidor están listados abajo del encabezado de la tabla *Ruta Local de Foto*
 
 Cultivo| Ruta Local de Foto | URL Externa 
 :-------|----------------------|:-----------:
