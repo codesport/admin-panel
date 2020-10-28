@@ -17,8 +17,20 @@ Este proyecto (es decir, el código así como también esta tutoría) está pres
 
 
 # Panorama Breve del Proyecto
-
 Esta es una tutoría comprehensiva. Se dirige al aprendedor por la creación de una aplicación de software para manejar el inventario de la cosecha de una granja.
+
+Se puede probar el producto final [al servidor](https://8np2d.csb.app/) en vivo y directo.  Y, si Ud. quisiera agregar el inventario, se puede utilizar las siguientes rutas de archivo para agregarlo las fotos de cultivos. Anote bien que los archivos que se han guardado anteriormente al servidor están listados abajo del encabezado de la tabla "Ruta local de la Foto":
+
+Aquí hay una lista de cultivos del granja:
+
+Cultivo| Ruta Local de Foto | URL Externa 
+:-------|----------------------|:-----------:
+Fresas  |   |   https://images-na.ssl-images-amazon.com/images/I/818T0jU5rLL.AC_SL300_.jpg |
+Remolacha|  images/loose-beets.jpg |    |
+Perejil italiano|  images/italan-parsley.jpg|
+Kiwi|  images/kiwi.jpg |    |
+Berza|  images/collard-greens.jpg |    |
+
 Al aprendedor se le guía en crear un programa interactivo y de estado. Este programa será una aplicación completa con las funciones de Crear, Leer, Actualizar, y Eliminar. Encima de eso,  se realiza la aplicación como un base y fundación para ser adaptada para otras aplicaciones así como una tienda de comercio electrónico, un sistema de reservaras para un hotel o restaurante así como también una lista de tareas pendientes 
 
 ## Versión 6 de JavaScript / ESCM Script Versión 6 (ES6)
