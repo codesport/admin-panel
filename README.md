@@ -25,7 +25,7 @@ Cultivo| Ruta Local de Foto | URL Externa
 :-------|----------------------|:-----------:
 Fresas  |   |   https://images-na.ssl-images-amazon.com/images/I/818T0jU5rLL.AC_SL300_.jpg |
 Remolacha|  images/loose-beets.jpg |    |
-Perejil italiano|  images/italan-parsley.jpg|
+Perejil italiano|  images/italian-parsley.jpg|
 Kiwi|  images/kiwi.jpg |    |
 Berza|  images/collard-greens.jpg |    |
 
