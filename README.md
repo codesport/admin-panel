@@ -118,7 +118,7 @@ Componentes de clase son estructuras de lenguajes de OO. Se usan para manejar el
 
 ## A. Configuración de VSCode
 
-VS Code es nuestro editor preferido. Las siguientes extensiones lo optimizarán para el desarrollo con React
+[VS Code](https://code.visualstudio.com/download) es nuestro editor preferido. Las siguientes extensiones lo optimizarán para el desarrollo con React
 
 1. Instale [Babel Javascript](https://marketplace.visualstudio.com/items?itemName=mgmcdermott.vscode-language-babel). Creado por Michael McDermont, provee resaltado de sintaxis  para JavaScript ES6, React JSX, Flow y GraphQL.
 
