@@ -111,7 +111,7 @@ const MyOtherComponent = () => {
 
 Componentes de clase son estructuras de lenguajes de OO. Se usan para manejar el estado en aplicaciones de React. Adicionalmente, cada componente de clase deber tener un método de `render()` con una declaración `return`.
 
-   * **Consejo Pro 6:** Crea un componente de padre que controlar el estado de la aplicación. Tal clase de padre será la *única fuente de verdad*
+   * **Consejo Pro 6:** Crea un componente de padre que controla el estado de la aplicación. Tal clase de padre será la *única fuente de verdad*
 
 ---
 # Los Primeros Pasos: El Establecer de un Entorno de Desarrollo Para React
